@@ -1,0 +1,659 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>week6 lec2 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'week6';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">week6 lec2</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fweek6.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/week6.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>week6 lec2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-propagation">Backward propagation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-gradient-descent-sgd-batch-gradient-descent-gd-and-mini-batch-sgd">Stochastic Gradient Descent (SGD), Batch Gradient Descent (GD), and Mini-batch SGD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-neural-networks-dnns">Deep Neural Networks (DNNs)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="week6-lec2">
+<h1>week6 lec2<a class="headerlink" href="#week6-lec2" title="Permalink to this heading">#</a></h1>
+<section id="backward-propagation">
+<h2>Backward propagation<a class="headerlink" href="#backward-propagation" title="Permalink to this heading">#</a></h2>
+<p>Backward propagation, often referred to as backpropagation, is a fundamental concept in training artificial neural networks, especially deep learning networks. It’s an optimization algorithm used for minimizing the error in the predictions of the network. The basic idea can be summarized as follows:</p>
+<ol class="arabic simple">
+<li><p><strong>Feedforward:</strong></p>
+<ul class="simple">
+<li><p>Start by passing a training sample through the network (layer by layer) to obtain the prediction.</p></li>
+<li><p>Compute the error (or loss) which is a measure of the difference between the network’s prediction and the actual target.</p></li>
+</ul>
+</li>
+<li><p><strong>Backward Pass:</strong></p>
+<ul class="simple">
+<li><p>Propagate the error backward through the network.</p></li>
+<li><p>Starting from the output layer, compute the gradient of the loss with respect to each neuron’s output.</p></li>
+<li><p>Use these gradients to adjust the weights and biases to minimize the error.</p></li>
+</ul>
+</li>
+<li><p><strong>Chain Rule of Calculus:</strong></p>
+<ul class="simple">
+<li><p>Backpropagation makes extensive use of the chain rule from calculus to compute the gradient of the loss with respect to each parameter (weight or bias).</p></li>
+<li><p>By understanding how much each neuron in the previous layer contributed to the error, you can adjust the weights accordingly.</p></li>
+</ul>
+</li>
+<li><p><strong>Weight Update:</strong></p>
+<ul class="simple">
+<li><p>Once the gradients are calculated, they are used to adjust the weights and biases. This is typically done using an optimization algorithm like gradient descent or one of its variants.</p></li>
+<li><p>The weights are adjusted in the direction that reduces the error.</p></li>
+</ul>
+</li>
+<li><p><strong>Iterative Process:</strong></p>
+<ul class="simple">
+<li><p>This entire process (feedforward, compute error, backpropagate the error, adjust weights) is repeated many times (usually on different subsets of the training data) until the network performs well and the error is minimized.</p></li>
+</ul>
+</li>
+</ol>
+<p>In essence, backpropagation is a method of teaching a neural network how to correct its mistakes. By understanding which weights in the network contribute more to the error, and in which direction they need to be adjusted, the network can iteratively improve its predictions.</p>
+</section>
+<section id="stochastic-gradient-descent-sgd-batch-gradient-descent-gd-and-mini-batch-sgd">
+<h2>Stochastic Gradient Descent (SGD), Batch Gradient Descent (GD), and Mini-batch SGD<a class="headerlink" href="#stochastic-gradient-descent-sgd-batch-gradient-descent-gd-and-mini-batch-sgd" title="Permalink to this heading">#</a></h2>
+<p>The slide you provided appears to be discussing the distinctions and trade-offs between Stochastic Gradient Descent (SGD), Batch Gradient Descent (GD), and Mini-batch SGD. Let’s break down the main points:</p>
+<ol class="arabic simple">
+<li><p><strong>Stochastic Gradient Descent (SGD) works on single instances:</strong></p>
+<ul class="simple">
+<li><p>Instead of looking at the entire dataset to compute the gradient, SGD randomly picks one instance from the dataset at each step and computes the gradient based solely on that single instance.</p></li>
+<li><p><strong>High variance in gradients:</strong> Because it uses only one instance, the direction of the gradient can vary wildly between iterations.</p></li>
+<li><p><strong>Many, quick updates:</strong> It frequently updates the model (for each instance), which can lead to faster convergence, but can also cause the algorithm to oscillate and potentially miss the global minimum.</p></li>
+</ul>
+</li>
+<li><p><strong>Gradient Descent (GD) works on whole datasets:</strong></p>
+<ul class="simple">
+<li><p>It computes the gradient based on the entire dataset.</p></li>
+<li><p><strong>Stable update, but slow:</strong> Since it considers all training samples, the gradient direction is more stable (less variance), but this is computationally expensive and hence slower.</p></li>
+<li><p><strong>Computationally expensive:</strong> Requires processing the whole dataset to make a single update, which can be prohibitive for large datasets.</p></li>
+</ul>
+</li>
+<li><p><strong>Compromise: Mini-batch SGD (often just called “SGD”):</strong></p>
+<ul class="simple">
+<li><p>Instead of the extremes (one instance or the entire dataset), mini-batch SGD takes a middle ground by using a subset of the dataset (a mini-batch) to compute the gradient.</p></li>
+<li><p><strong>Process batches of size between 1 and m (where m is the number of instances in the dataset):</strong> For instance, a common mini-batch size might be ( b = 100 ).</p></li>
+<li><p><strong>Balances computation and stability:</strong> It strikes a balance between the computational efficiency of SGD and the stability of batch GD.</p></li>
+<li><p><strong>Can be parallelized over a cluster of GPUs:</strong> One of the biggest advantages of mini-batch SGD is that the computation over each mini-batch can be parallelized, which is particularly beneficial with modern GPU architectures. This allows for faster training times, especially when the mini-batch size is optimized for the GPU’s memory.</p></li>
+</ul>
+</li>
+</ol>
+<p>In essence, the slide is highlighting the trade-offs of these three gradient descent strategies and emphasizing that Mini-batch SGD often provides a good balance between speed and stability, making it a popular choice in deep learning and other large-scale machine learning tasks.</p>
+<hr class="docutils" />
+<p>Alright, I’ll provide a summary of the previous explanation in Chinese:</p>
+<p>这个幻灯片讨论了随机梯度下降（SGD）、批量梯度下降（GD）和小批量 SGD 之间的区别和权衡：</p>
+<ol class="arabic simple">
+<li><p><strong>随机梯度下降（SGD）针对单个实例工作：</strong></p>
+<ul class="simple">
+<li><p>SGD 随机从数据集中选择一个实例，并仅基于该单个实例计算梯度。</p></li>
+<li><p><strong>梯度的方差大：</strong> 由于它只使用一个实例，梯度的方向在迭代之间可以变得非常不稳定。</p></li>
+<li><p><strong>多次、快速的更新：</strong> 它频繁地更新模型，可能导致更快的收敛，但也可能导致算法震荡并可能错过全局最小值。</p></li>
+</ul>
+</li>
+<li><p><strong>批量梯度下降（GD）针对整个数据集工作：</strong></p>
+<ul class="simple">
+<li><p>它基于整个数据集计算梯度。</p></li>
+<li><p><strong>更新稳定但慢：</strong> 由于它考虑了所有的训练样本，梯度的方向更加稳定，但这在计算上是昂贵的，因此速度较慢。</p></li>
+<li><p><strong>计算成本高：</strong> 需要处理整个数据集来进行单次更新，对于大数据集可能是禁止性的。</p></li>
+</ul>
+</li>
+<li><p><strong>折中方案：小批量 SGD（通常简称为 “SGD”）：</strong></p>
+<ul class="simple">
+<li><p>小批量 SGD 通过使用数据集的一个子集（一个小批量）来计算梯度，取了中间的路线。</p></li>
+<li><p><strong>处理大小在 1 和 m 之间的批次（其中 m 是数据集中的实例数）：</strong> 例如，常见的小批量大小可能是 100。</p></li>
+<li><p><strong>平衡计算和稳定性：</strong> 它在 SGD 的计算效率和批量 GD 的稳定性之间取得平衡。</p></li>
+<li><p><strong>可以在 GPU 集群上并行化：</strong> 小批量 SGD 的一个最大的优点是，每个小批量上的计算可以并行化，尤其在现代 GPU 架构中尤为有益。这允许更快的训练时间，尤其是当小批量大小针对 GPU 的内存进行优化时。</p></li>
+</ul>
+</li>
+</ol>
+<p>简而言之，这个幻灯片强调了这三种梯度下降策略的权衡，并强调小批量 SGD 经常提供速度和稳定性之间的良好平衡，使其成为深度学习和其他大规模机器学习任务中的热门选择。</p>
+<hr class="docutils" />
+<p>Of course! Let’s use a simple real-world analogy to explain SGD, GD, and Mini-batch SGD:</p>
+<p><strong>Imagine you’re trying to find the deepest part of a large lake.</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Stochastic Gradient Descent (SGD):</strong></p>
+<ul class="simple">
+<li><p>This is like sending a single diver into the lake to find the deepest point. The diver dives at a random spot, measures the depth, comes up, and then dives again at another random spot. This method might find the deepest part quickly, but there’s also a chance the diver keeps missing it because they’re only checking one spot at a time. There’s a lot of variance in where the diver checks.</p></li>
+</ul>
+</li>
+<li><p><strong>Batch Gradient Descent (GD):</strong></p>
+<ul class="simple">
+<li><p>This is like draining the entire lake and then accurately measuring the depth at every single point. It’s very thorough and will definitely find the deepest part, but it’s time-consuming (draining the whole lake) and resource-intensive.</p></li>
+</ul>
+</li>
+<li><p><strong>Mini-batch Gradient Descent:</strong></p>
+<ul class="simple">
+<li><p>This is a compromise between the two methods. Imagine sending a small team of divers to different parts of the lake. Each diver checks a spot, and then they all come up and share their findings. Based on their combined knowledge, they dive again in promising areas. This method is faster than checking the entire lake all at once but is more systematic and reliable than just one diver checking random spots. It’s a balance of speed and accuracy.</p></li>
+</ul>
+</li>
+</ol>
+<p>In machine learning, the “deepest part of the lake” is the optimal set of parameters (weights) that make the model’s predictions as accurate as possible. The “divers” are equivalent to the data samples used to adjust these parameters.</p>
+<p>I hope this analogy helps clarify the concepts for you!</p>
+</section>
+<section id="deep-neural-networks-dnns">
+<h2>Deep Neural Networks (DNNs)<a class="headerlink" href="#deep-neural-networks-dnns" title="Permalink to this heading">#</a></h2>
+<p>This slide seems to be discussing some important points about training Deep Neural Networks (DNNs). Let’s break it down:</p>
+<ol class="arabic simple">
+<li><p><strong>Flexibility and the Universal Approximation Theorem:</strong></p>
+<ul class="simple">
+<li><p>DNNs are known for their flexibility. The Universal Approximation Theorem essentially says that a neural network, even a single-layer one, given the right parameters, can approximate any continuous function to a desired accuracy. This gives neural networks the potential to model complex patterns and relationships in data.</p></li>
+</ul>
+</li>
+<li><p><strong>Over-parameterization and Overfitting:</strong></p>
+<ul class="simple">
+<li><p>The flip side of this flexibility is that DNNs have a large number of parameters (weights and biases). This is referred to as over-parameterization.</p></li>
+<li><p>Over-parameterization can lead to overfitting. Overfitting happens when a model is so tuned to the training data that it starts capturing noise rather than the underlying pattern. As a result, it performs poorly on unseen data or test data.</p></li>
+</ul>
+</li>
+<li><p><strong>Initialization of Weights:</strong></p>
+<ul class="simple">
+<li><p>One common practice in training DNNs is to initialize the weights with small random values centered around zero. Proper initialization is crucial to ensure that training converges efficiently.</p></li>
+</ul>
+</li>
+<li><p><strong>Implicit Regularization and Early Stopping:</strong></p>
+<ul class="simple">
+<li><p>Regularization techniques are used to prevent overfitting. While there are explicit methods like L1 or L2 regularization, early stopping is an example of implicit regularization.</p></li>
+<li><p>Early stopping means that you halt the training process before it has fully minimized the loss on the training data, usually once performance on a validation set starts to degrade. By doing this, you’re preventing the model from overfitting to the training data.</p></li>
+</ul>
+</li>
+<li><p><strong>Shrinking DNNs Towards Linear Models with Some Activation Functions:</strong></p>
+<ul class="simple">
+<li><p>Certain activation functions, when used in DNNs, can make the network behave more like a linear model, especially if the weights are small. This could be due to saturation effects, where parts of the network don’t change much during training, effectively becoming linear.</p></li>
+<li><p>This point seems to hint at an interesting aspect of neural network behavior, suggesting that under certain conditions, DNNs might simplify their representation.</p></li>
+</ul>
+</li>
+</ol>
+<p>The slide touches upon essential aspects of DNN training, emphasizing both their capabilities and challenges, and shedding light on practical techniques used in the field.</p>
+<hr class="docutils" />
+<p>Certainly! Let’s delve deeper into the statement: “With some activation functions, this shrinks the DNN towards a linear model.”</p>
+<p>Activation functions introduce non-linearities into neural networks, allowing them to capture complex relationships. However, certain behaviors of activation functions can cause parts of the network to behave in a more linear fashion.</p>
+<ol class="arabic simple">
+<li><p><strong>Saturation of Activation Functions:</strong></p>
+<ul class="simple">
+<li><p>Some activation functions, like the sigmoid or tanh, saturate for values that are too large or too small. In these saturated regions, the gradients are close to zero.</p></li>
+<li><p>During backpropagation, when gradients are close to zero, the weight updates become minimal. This means that these neurons stop learning and adjusting their weights effectively.</p></li>
+<li><p>When neurons are in this saturated state, they essentially become linear or non-responsive, meaning they don’t contribute much to the network’s non-linear capabilities.</p></li>
+</ul>
+</li>
+<li><p><strong>Initialization and Regularization:</strong></p>
+<ul class="simple">
+<li><p>If the weights of a network are initialized too small or if some form of weight regularization pushes the weights towards smaller values, the pre-activation values (before applying the activation function) might stay in the range where the activation function behaves almost linearly. For example, in the middle range of the sigmoid or tanh functions, the behavior is approximately linear.</p></li>
+</ul>
+</li>
+<li><p><strong>ReLU Activation Function:</strong></p>
+<ul class="simple">
+<li><p>The Rectified Linear Unit (ReLU) activation function, which is defined as (f(x) = max(0, x)), is piecewise linear. While it introduces non-linearity (because of the zeroing out of negative values), its behavior is fundamentally linear for positive values. If most of the neurons in a network using ReLU are activated (have positive pre-activation values), the network behaves more like a linear model.</p></li>
+</ul>
+</li>
+</ol>
+<p>In summary, while the primary role of activation functions is to introduce non-linearities into neural networks, certain circumstances, like saturation or the inherent properties of the activation function, can cause parts of the network to behave in a more linear manner.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-propagation">Backward propagation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-gradient-descent-sgd-batch-gradient-descent-gd-and-mini-batch-sgd">Stochastic Gradient Descent (SGD), Batch Gradient Descent (GD), and Mini-batch SGD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-neural-networks-dnns">Deep Neural Networks (DNNs)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
