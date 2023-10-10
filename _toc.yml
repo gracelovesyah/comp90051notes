@@ -4,5 +4,17 @@
 format: jb-book
 root: intro
 chapters:
+- file: basics
 - file: week6
+- file: week9
+  sections:
+  - file: week9.1
+  - file: work9.2
+  - file: worksheet10
+  - file: worksheet10note
 - file: week10
+  sections:
+  - file: week10.0
+  - file: week10.1
+  - file: week10.2
+

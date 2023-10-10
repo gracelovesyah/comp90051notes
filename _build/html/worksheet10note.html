@@ -1,0 +1,597 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Workshop 10: Multi-armed bandits notes &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'worksheet10note';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="week10" href="week10.html" />
+    <link rel="prev" title="Workshop 10: Multi-armed bandits" href="worksheet10.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to COMP90051
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week6.html">week6 lec2</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="week9.html">week9</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="week9.1.html">Stochastic Multi-Armed Bandits (MABs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet10.html">Workshop 10: Multi-armed bandits</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Workshop 10: Multi-armed bandits notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week10.html">week10</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week10.1.html">wk10 notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fworksheet10note.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/worksheet10note.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Workshop 10: Multi-armed bandits notes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-epsilon-greedy-strategy">Summary of the Epsilon-Greedy Strategy:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-upper-confidence-bound-ucb-strategy">Summary of the Upper Confidence Bound (UCB) Strategy:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-offline-evaluation-for-multi-armed-bandits-mabs">Summary of Offline Evaluation for Multi-Armed Bandits (MABs):</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="workshop-10-multi-armed-bandits-notes">
+<h1>Workshop 10: Multi-armed bandits notes<a class="headerlink" href="#workshop-10-multi-armed-bandits-notes" title="Permalink to this heading">#</a></h1>
+<section id="summary-of-the-epsilon-greedy-strategy">
+<h2>Summary of the Epsilon-Greedy Strategy:<a class="headerlink" href="#summary-of-the-epsilon-greedy-strategy" title="Permalink to this heading">#</a></h2>
+<p><strong>Epsilon-Greedy Strategy Overview:</strong>
+The epsilon-greedy strategy is a simple yet effective method for addressing the exploration-exploitation dilemma in multi-armed bandit problems.</p>
+<p><strong>How It Works:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Exploitation:</strong> With probability <span class="math notranslate nohighlight">\(1-\epsilon\)</span>, the strategy selects the current “best” arm. This is the arm with the highest estimated mean reward based on the rewards observed so far.</p></li>
+<li><p><strong>Exploration:</strong> With probability <span class="math notranslate nohighlight">\(\epsilon\)</span>, the strategy selects an arm uniformly at random, allowing the algorithm to explore other options and potentially discover a better arm.</p></li>
+</ol>
+<p><strong>Estimating Mean Reward:</strong>
+The estimated mean reward for arm <span class="math notranslate nohighlight">\(k\)</span> at round <span class="math notranslate nohighlight">\(t\)</span> is denoted as <span class="math notranslate nohighlight">\(Q_{t-1,k}\)</span>. It is calculated as:</p>
+<ul class="simple">
+<li><p>If the arm <span class="math notranslate nohighlight">\(k\)</span> has been played before (i.e., <span class="math notranslate nohighlight">\(N_{t-1,k} &gt; 0\)</span>), then the estimated mean reward is the sample mean of the rewards observed for that arm so far, represented as <span class="math notranslate nohighlight">\(\hat{\mu}_{t-1,k}\)</span>.</p></li>
+<li><p>If the arm <span class="math notranslate nohighlight">\(k\)</span> has never been played (i.e., <span class="math notranslate nohighlight">\(N_{t-1,k} = 0\)</span>), then the estimated mean reward is set to an initial value <span class="math notranslate nohighlight">\(Q_0\)</span>.</p></li>
+</ul>
+<p><strong>Formulas:</strong></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(N_{t-1,k} = \sum_{\tau=1}^{t-1} \mathbb{I}[a_\tau = k]\)</span>: This represents the number of times arm <span class="math notranslate nohighlight">\(k\)</span> has been played up to round <span class="math notranslate nohighlight">\(t-1\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\mu}_{t-1,k} = \frac{1}{N_{t-1,k}} \sum_{\tau=1}^{t-1} r_{\tau} \mathbb{I}[a_\tau = k]\)</span>: This is the sample mean reward for arm <span class="math notranslate nohighlight">\(k\)</span> up to round <span class="math notranslate nohighlight">\(t-1\)</span>.</p></li>
+</ol>
+<p><strong>Hyperparameters:</strong></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span>: This is the probability with which the strategy will explore by selecting an arm at random. A higher <span class="math notranslate nohighlight">\(\epsilon\)</span> means more exploration, while a lower <span class="math notranslate nohighlight">\(\epsilon\)</span> means more exploitation.</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q_0\)</span>: This is the initial value assigned to the estimated mean reward for any arm that hasn’t been played yet.</p></li>
+</ol>
+<p><strong>Implications:</strong>
+The epsilon-greedy strategy strikes a balance between exploration and exploitation. By occasionally exploring random arms, it ensures that it doesn’t get stuck with a suboptimal choice. However, by mostly exploiting the best-known arm, it aims to maximize the cumulative reward. The choice of <span class="math notranslate nohighlight">\(\epsilon\)</span> and <span class="math notranslate nohighlight">\(Q_0\)</span> can influence the performance of the strategy, and they might need to be tuned based on the specific problem and environment.</p>
+</section>
+<section id="summary-of-the-upper-confidence-bound-ucb-strategy">
+<h2>Summary of the Upper Confidence Bound (UCB) Strategy:<a class="headerlink" href="#summary-of-the-upper-confidence-bound-ucb-strategy" title="Permalink to this heading">#</a></h2>
+<p><strong>UCB Strategy Overview:</strong>
+The Upper Confidence Bound (UCB) strategy is a sophisticated approach to the multi-armed bandit problem that balances exploration and exploitation by considering both the estimated mean reward and the uncertainty associated with each arm.</p>
+<p><strong>How It Works:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Exploitation:</strong> The strategy considers the estimated mean reward of each arm, represented as <span class="math notranslate nohighlight">\(\hat{\mu}_{t-1,k}\)</span>.</p></li>
+<li><p><strong>Exploration:</strong> The strategy adds an exploration term to the estimated mean reward. This term increases the value of arms that have been played less frequently or have higher uncertainty, encouraging the algorithm to explore them.</p></li>
+</ol>
+<p><strong>Upper Confidence Bound Calculation:</strong>
+The UCB for arm <span class="math notranslate nohighlight">\(k\)</span> at round <span class="math notranslate nohighlight">\(t\)</span> is denoted as <span class="math notranslate nohighlight">\(Q_{t-1,k}\)</span> and is calculated as:</p>
+<ul class="simple">
+<li><p>If the arm <span class="math notranslate nohighlight">\(k\)</span> has been played before (i.e., <span class="math notranslate nohighlight">\(N_{t-1,k} &gt; 0\)</span>), then the UCB is the sum of the sample mean reward and the exploration term: <span class="math notranslate nohighlight">\(\hat{\mu}_{t-1,k} + c \sqrt{\frac{\log t}{N_{t-1,k}}}\)</span>.</p></li>
+<li><p>If the arm <span class="math notranslate nohighlight">\(k\)</span> has never been played (i.e., <span class="math notranslate nohighlight">\(N_{t-1,k} = 0\)</span>), then the UCB is set to an initial value <span class="math notranslate nohighlight">\(Q_0\)</span>.</p></li>
+</ul>
+<p><strong>Formulas:</strong></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(N_{t-1,k}\)</span>: Represents the number of times arm <span class="math notranslate nohighlight">\(k\)</span> has been played up to round <span class="math notranslate nohighlight">\(t-1\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\mu}_{t-1,k}\)</span>: This is the sample mean reward for arm <span class="math notranslate nohighlight">\(k\)</span> up to round <span class="math notranslate nohighlight">\(t-1\)</span>.</p></li>
+<li><p>Exploration Term: <span class="math notranslate nohighlight">\(c \sqrt{\frac{\log t}{N_{t-1,k}}}\)</span>. This term increases as the current round <span class="math notranslate nohighlight">\(t\)</span> progresses (encouraging exploration as time goes on) and decreases as the arm <span class="math notranslate nohighlight">\(k\)</span> is played more frequently (reducing the need for exploration for well-known arms).</p></li>
+</ol>
+<p><strong>Hyperparameters:</strong></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(c\)</span>: This is the exploration parameter. A higher value of <span class="math notranslate nohighlight">\(c\)</span> encourages more exploration, while a lower value emphasizes exploitation. The choice of <span class="math notranslate nohighlight">\(c\)</span> can influence the balance between exploration and exploitation and might need to be tuned based on the specific problem and environment.</p></li>
+</ol>
+<p><strong>Implications:</strong>
+The UCB strategy is particularly effective in scenarios where the reward distributions of the arms are uncertain or have high variance. By considering both the estimated mean reward and the uncertainty, UCB ensures that the algorithm doesn’t prematurely converge to a suboptimal arm and continues to explore potentially better options.</p>
+</section>
+<section id="summary-of-offline-evaluation-for-multi-armed-bandits-mabs">
+<h2>Summary of Offline Evaluation for Multi-Armed Bandits (MABs):<a class="headerlink" href="#summary-of-offline-evaluation-for-multi-armed-bandits-mabs" title="Permalink to this heading">#</a></h2>
+<p><strong>Offline Evaluation Overview:</strong>
+Offline evaluation is a method to assess the performance of MAB algorithms using historical data, without the need to deploy the algorithm in a live environment.</p>
+<p><strong>Online vs. Offline Evaluation:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Online Evaluation:</strong> In a live setting, a MAB algorithm would compete with another algorithm, and their performances would be compared based on the cumulative rewards they achieve. However, this approach has drawbacks:</p>
+<ul class="simple">
+<li><p><strong>Initial Poor Performance:</strong> MABs start with little knowledge about the reward structure, leading to suboptimal decisions in the early rounds.</p></li>
+<li><p><strong>User Experience:</strong> In the context of the news website example, users might be exposed to less relevant or uninteresting articles during the exploration phase, affecting user satisfaction.</p></li>
+</ul>
+</li>
+<li><p><strong>Offline Evaluation:</strong> This method bypasses the need for live deployment. It involves:</p>
+<ul class="simple">
+<li><p><strong>Data Collection:</strong> Gather a sequence of arm pulls and their corresponding rewards, ideally chosen uniformly at random.</p></li>
+<li><p><strong>Simulation:</strong> Evaluate the MAB algorithm’s decisions and rewards using this historical dataset. Since the data is already collected, there’s no need to expose users to potentially suboptimal choices.</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Benefits of Offline Evaluation:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Cost-Effective:</strong> No need to deploy multiple algorithms in a live setting, saving resources.</p></li>
+<li><p><strong>User Experience:</strong> Users aren’t exposed to potentially poor decisions made by the MAB during its exploration phase.</p></li>
+<li><p><strong>Reusability:</strong> The same historical dataset can be used to evaluate multiple MAB algorithms or configurations, ensuring a consistent benchmark.</p></li>
+</ol>
+<p><strong>Implementation:</strong>
+The <code class="docutils literal notranslate"><span class="pre">offlineEvaluate</span></code> function provided simulates the performance of a MAB algorithm using a given historical dataset. This function allows for a comparison of different MAB strategies without the need for live testing.</p>
+<p><strong>Reference:</strong>
+For those interested in a deeper dive into offline evaluation, especially in the context of personalized news article recommendations, the paper by Lihong Li et al. provides a comprehensive study. This paper introduces a contextual-bandit approach to news article recommendation and discusses the nuances of offline evaluation in detail.</p>
+<p><strong>Implications:</strong>
+Offline evaluation is a powerful tool, especially in scenarios where online testing might be costly, risky, or detrimental to user experience. It allows for rapid testing and iteration of MAB strategies using consistent benchmarks. However, it’s essential to ensure that the historical data used for offline evaluation is representative of the real-world scenario the MAB will be deployed in.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="worksheet10.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Workshop 10: Multi-armed bandits</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="week10.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">week10</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-epsilon-greedy-strategy">Summary of the Epsilon-Greedy Strategy:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-upper-confidence-bound-ucb-strategy">Summary of the Upper Confidence Bound (UCB) Strategy:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-offline-evaluation-for-multi-armed-bandits-mabs">Summary of Offline Evaluation for Multi-Armed Bandits (MABs):</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
