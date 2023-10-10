@@ -170,6 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="week10.html">week10</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">wk10 notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
+
 </ul>
 </li>
 </ul>
@@ -365,7 +366,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-machine-learning-notes"><strong>Statistical Machine Learning Notes</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-summary"><strong>Mini Summary</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-view-on-discrete-data"><strong>1. Bayesian View on Discrete Data:</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beta-binomial-conjugacy"><strong>2. Beta-Binomial Conjugacy:</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniqueness-up-to-normalization"><strong>3. Uniqueness up to Normalization:</strong></a></li>
@@ -389,9 +390,27 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="wk10-notes">
 <h1>wk10 notes<a class="headerlink" href="#wk10-notes" title="Permalink to this heading">#</a></h1>
 <p>This notes is completed with assistance of <a class="reference external" href="https://chat.openai.com/c/a5a9ef56-c833-496a-8e28-df49e108ad63">ChatGPT</a></p>
-<hr class="docutils" />
-<section id="statistical-machine-learning-notes">
-<h2><strong>Statistical Machine Learning Notes</strong><a class="headerlink" href="#statistical-machine-learning-notes" title="Permalink to this heading">#</a></h2>
+<section id="mini-summary">
+<h2><strong>Mini Summary</strong><a class="headerlink" href="#mini-summary" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Bayesian Ideas in Discrete Settings</strong></p>
+<ul>
+<li><p>Beta-Binomial conjugacy</p></li>
+<li><p>Conjugate pairs; Uniqueness in proportionality</p></li>
+</ul>
+</li>
+<li><p><strong>Bayesian Classification (Logistic Regression)</strong></p>
+<ul>
+<li><p>Non-conjugacy necessitates approximation</p></li>
+</ul>
+</li>
+<li><p><strong>Rejection Sampling</strong></p>
+<ul>
+<li><p>Monte Carlo sampling: A classic method to approximate posterior</p></li>
+</ul>
+</li>
+<li><p><strong>Next time: probabilistic graphical models</strong></p></li>
+</ul>
 <section id="bayesian-view-on-discrete-data">
 <h3><strong>1. Bayesian View on Discrete Data:</strong><a class="headerlink" href="#bayesian-view-on-discrete-data" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
@@ -455,6 +474,7 @@ document.write(`
 <ul class="simple">
 <li><p>Additional resource</p>
 <ul>
+<li><p><a class="reference external" href="https://chat.openai.com/c/a3c8924c-dea7-4051-8d5c-3aa0e251a2cb">ChatNote</a></p></li>
 <li><p><a class="reference external" href="https://youtu.be/si76S7QqxTU">Rejection Sampling - VISUALLY EXPLAINED with EXAMPLES!</a></p></li>
 <li><p><a class="reference external" href="https://towardsdatascience.com/what-is-rejection-sampling-1f6aff92330d">What is Rejection Sampling?</a></p></li>
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=kYWHfgkRc9s">An introduction to rejection sampling</a></p></li>
@@ -476,8 +496,6 @@ In the example you provided, <span class="math notranslate nohighlight">\( g(\th
 <p>b. Evaluate the un-normalised posterior <span class="math notranslate nohighlight">\( q(\theta|y) \)</span> at this <span class="math notranslate nohighlight">\( \theta \)</span>.</p>
 <p>c. Sample a value <span class="math notranslate nohighlight">\( u \)</span> from a uniform distribution between 0 and <span class="math notranslate nohighlight">\( 0.5 \times M' \)</span>.</p>
 <p>d. If <span class="math notranslate nohighlight">\( u \)</span> is less than <span class="math notranslate nohighlight">\( q(\theta|y) \)</span>, accept <span class="math notranslate nohighlight">\( \theta \)</span> as a sample from the posterior. Otherwise, reject it.</p>
-<p>The choice of <span class="math notranslate nohighlight">\( M' \)</span> is crucial. It should be set such that <span class="math notranslate nohighlight">\( 0.5 \times M' \)</span> is always greater than or equal to the maximum value of <span class="math notranslate nohighlight">\( q(\theta|y) \)</span> in the interval [-1, 1]. If <span class="math notranslate nohighlight">\( M' \)</span> is chosen too small, the scaled proposal won’t envelope the target, leading to a flawed sampling process.</p>
-<p>I hope this breakdown clarifies the concept for you. Let me know if you have further questions or if there’s a specific part you’d like to delve deeper into!</p>
 </section>
 </section>
 
@@ -548,7 +566,7 @@ In the example you provided, <span class="math notranslate nohighlight">\( g(\th
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-machine-learning-notes"><strong>Statistical Machine Learning Notes</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-summary"><strong>Mini Summary</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-view-on-discrete-data"><strong>1. Bayesian View on Discrete Data:</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beta-binomial-conjugacy"><strong>2. Beta-Binomial Conjugacy:</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniqueness-up-to-normalization"><strong>3. Uniqueness up to Normalization:</strong></a></li>

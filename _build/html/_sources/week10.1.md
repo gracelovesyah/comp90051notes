@@ -1,9 +1,20 @@
 # wk10 notes
 This notes is completed with assistance of [ChatGPT](https://chat.openai.com/c/a5a9ef56-c833-496a-8e28-df49e108ad63)
 
----
+### **Mini Summary**
 
-### **Statistical Machine Learning Notes**
+- **Bayesian Ideas in Discrete Settings**
+  * Beta-Binomial conjugacy
+  * Conjugate pairs; Uniqueness in proportionality
+
+- **Bayesian Classification (Logistic Regression)**
+  * Non-conjugacy necessitates approximation
+
+- **Rejection Sampling**
+  * Monte Carlo sampling: A classic method to approximate posterior
+
+- **Next time: probabilistic graphical models**
+
 
 #### **1. Bayesian View on Discrete Data:**
 - **Generative vs. Discriminative Models**: 
@@ -40,7 +51,9 @@ This notes is completed with assistance of [ChatGPT](https://chat.openai.com/c/a
 ---
 
 ### rejection sampling
+
 - Additional resource
+    - [ChatNote](https://chat.openai.com/c/a3c8924c-dea7-4051-8d5c-3aa0e251a2cb)
     - [Rejection Sampling - VISUALLY EXPLAINED with EXAMPLES!](https://youtu.be/si76S7QqxTU)
     - [What is Rejection Sampling?](https://towardsdatascience.com/what-is-rejection-sampling-1f6aff92330d)
     - [An introduction to rejection sampling](https://www.youtube.com/watch?v=kYWHfgkRc9s)
@@ -67,7 +80,3 @@ b. Evaluate the un-normalised posterior $ q(\theta|y) $ at this $ \theta $.
 c. Sample a value $ u $ from a uniform distribution between 0 and $ 0.5 \times M' $.
 
 d. If $ u $ is less than $ q(\theta|y) $, accept $ \theta $ as a sample from the posterior. Otherwise, reject it.
-
-The choice of $ M' $ is crucial. It should be set such that $ 0.5 \times M' $ is always greater than or equal to the maximum value of $ q(\theta|y) $ in the interval [-1, 1]. If $ M' $ is chosen too small, the scaled proposal won't envelope the target, leading to a flawed sampling process.
-
-I hope this breakdown clarifies the concept for you. Let me know if you have further questions or if there's a specific part you'd like to delve deeper into!

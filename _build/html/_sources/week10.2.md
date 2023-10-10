@@ -1,8 +1,19 @@
 # PGM Representation
 This notes is completed with assistance of [ChatGPT](https://chat.openai.com/c/7887d9af-ce1c-4551-8f91-c576874448be)
 
-
 **Lecture 20: PGM Representation (COMP90051 Statistical Machine Learning)**
+
+- **Probabilistic Graphical Models**
+  * Motivation: applications, unifies algorithms
+  * Motivation: ideal tool for Bayesians
+  * Independence lowers computational/model complexity
+  * PGMs: compact representation of factorised joints
+  * U-PGMs
+
+- **Example PGMs and Applications**
+
+- **Next time: elimination for probabilistic inference**
+
 
 **Topics Covered:**
 
