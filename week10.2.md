@@ -48,4 +48,51 @@ This notes is completed with assistance of [ChatGPT](https://chat.openai.com/c/7
 - Independence and conditional independence are crucial concepts in PGMs, simplifying computations and the model.
 - PGMs are widely used in machine learning and statistics for various applications.
 
-Feel free to provide more details or ask questions about specific points!
+---
+
+
+
+**Lecture Summary: Probabilistic Graphical Models (PGMs) in Statistical Machine Learning**
+
+1. **Introduction to PGMs:**
+   - PGMs provide a compact representation of factorized joint distributions, making them ideal for Bayesian modeling.
+
+2. **Joint Distributions:**
+   - Represented as $Pr(X_1, X_2, ..., X_n)$. Directly working with these can be computationally intensive, especially as the number of variables increases.
+
+3. **Probabilistic Inference:**
+   - Uses Bayes Rule: 
+
+     $$ P(A|B) = \frac{P(B|A) \times P(A)}{P(B)} $$
+
+   - And Marginalisation: 
+
+     $$ P(A) = \sum_{B} P(A, B) $$
+
+   These tools allow us to derive probabilities and update beliefs based on new evidence.
+
+4. **Factoring Joint Distributions:**
+   - Chain Rule:
+
+     $$ Pr(X_1, X_2, ..., X_n) = \prod_{i=1}^{n} Pr(X_i | X_1, ..., X_{i-1}) $$
+
+   This expresses joint distributions as products of conditional probabilities. Independence assumptions can simplify these products.
+
+5. **Directed PGMs (Bayesian Networks):**
+   - Represented with nodes (random variables) and acyclic edges (conditional dependencies).
+   - Joint distribution factorization:
+
+     $$ Pr(X_1, X_2, ..., X_n) = \prod_{i} Pr(X_i | parents(X_i)) $$
+
+   This shows how the joint probability is a product of the probabilities of each variable given its parents in the graph.
+
+6. **Naïve Bayes Classifier:**
+   - Assumes features $X_1, ..., X_d$ are conditionally independent given class label $Y$.
+   - Joint probability:
+
+     $$ Pr(Y, X_1, ..., X_d) = Pr(Y) \times \prod_{i=1}^{d} Pr(X_i|Y) $$
+     
+   For prediction, it selects the $Y$ that maximizes $Pr(Y|X_1, ..., X_d)$.
+
+7. **Benefits of PGMs:**
+   - They allow for structured, efficient, and intuitive probabilistic modeling. The factorization and independence assumptions reduce the computational burden and the risk of overfitting.

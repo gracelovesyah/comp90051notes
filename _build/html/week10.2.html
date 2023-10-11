@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'week10.2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -428,7 +430,67 @@ document.write(`
 <li><p>Independence and conditional independence are crucial concepts in PGMs, simplifying computations and the model.</p></li>
 <li><p>PGMs are widely used in machine learning and statistics for various applications.</p></li>
 </ul>
-<p>Feel free to provide more details or ask questions about specific points!</p>
+<hr class="docutils" />
+<p><strong>Lecture Summary: Probabilistic Graphical Models (PGMs) in Statistical Machine Learning</strong></p>
+<ol class="arabic">
+<li><p><strong>Introduction to PGMs:</strong></p>
+<ul class="simple">
+<li><p>PGMs provide a compact representation of factorized joint distributions, making them ideal for Bayesian modeling.</p></li>
+</ul>
+</li>
+<li><p><strong>Joint Distributions:</strong></p>
+<ul class="simple">
+<li><p>Represented as <span class="math notranslate nohighlight">\(Pr(X_1, X_2, ..., X_n)\)</span>. Directly working with these can be computationally intensive, especially as the number of variables increases.</p></li>
+</ul>
+</li>
+<li><p><strong>Probabilistic Inference:</strong></p>
+<ul>
+<li><p>Uses Bayes Rule:</p>
+<div class="math notranslate nohighlight">
+\[ P(A|B) = \frac{P(B|A) \times P(A)}{P(B)} \]</div>
+</li>
+<li><p>And Marginalisation:</p>
+<div class="math notranslate nohighlight">
+\[ P(A) = \sum_{B} P(A, B) \]</div>
+</li>
+</ul>
+<p>These tools allow us to derive probabilities and update beliefs based on new evidence.</p>
+</li>
+<li><p><strong>Factoring Joint Distributions:</strong></p>
+<ul>
+<li><p>Chain Rule:</p>
+<div class="math notranslate nohighlight">
+\[ Pr(X_1, X_2, ..., X_n) = \prod_{i=1}^{n} Pr(X_i | X_1, ..., X_{i-1}) \]</div>
+</li>
+</ul>
+<p>This expresses joint distributions as products of conditional probabilities. Independence assumptions can simplify these products.</p>
+</li>
+<li><p><strong>Directed PGMs (Bayesian Networks):</strong></p>
+<ul>
+<li><p>Represented with nodes (random variables) and acyclic edges (conditional dependencies).</p></li>
+<li><p>Joint distribution factorization:</p>
+<div class="math notranslate nohighlight">
+\[ Pr(X_1, X_2, ..., X_n) = \prod_{i} Pr(X_i | parents(X_i)) \]</div>
+</li>
+</ul>
+<p>This shows how the joint probability is a product of the probabilities of each variable given its parents in the graph.</p>
+</li>
+<li><p><strong>Naïve Bayes Classifier:</strong></p>
+<ul>
+<li><p>Assumes features <span class="math notranslate nohighlight">\(X_1, ..., X_d\)</span> are conditionally independent given class label <span class="math notranslate nohighlight">\(Y\)</span>.</p></li>
+<li><p>Joint probability:</p>
+<div class="math notranslate nohighlight">
+\[ Pr(Y, X_1, ..., X_d) = Pr(Y) \times \prod_{i=1}^{d} Pr(X_i|Y) \]</div>
+</li>
+</ul>
+<p>For prediction, it selects the <span class="math notranslate nohighlight">\(Y\)</span> that maximizes <span class="math notranslate nohighlight">\(Pr(Y|X_1, ..., X_d)\)</span>.</p>
+</li>
+<li><p><strong>Benefits of PGMs:</strong></p>
+<ul class="simple">
+<li><p>They allow for structured, efficient, and intuitive probabilistic modeling. The factorization and independence assumptions reduce the computational burden and the risk of overfitting.</p></li>
+</ul>
+</li>
+</ol>
 </section>
 
     <script type="text/x-thebe-config">
