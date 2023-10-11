@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Bayesian regression &#8212; My sample book</title>
+    <title>Additional Notes &#8212; My sample book</title>
   
   
   
@@ -63,9 +63,10 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'week9.2';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'week10.3';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="PGM Representation" href="week10.2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -156,7 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week6.html">week6 lec2</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week9.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -165,10 +166,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="worksheet10note.html">Workshop 10: Multi-armed bandits notes</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week10.html">week10</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="week10.html">week10</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="week10.1.html">wk10 notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Additional Notes</a></li>
 </ul>
 </li>
 </ul>
@@ -242,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fweek9.2.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fweek10.3.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -272,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/week9.2.md" target="_blank"
+      <li><a href="_sources/week10.3.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -354,7 +355,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Bayesian regression</h1>
+    <h1>Additional Notes</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -364,7 +365,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-regression-detailed-summary">9.2 Bayesian Regression: Detailed Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-bayesian">More on Bayesian</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-distributions">Joint Distributions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prior-and-posterior">Prior and Posterior</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -376,115 +381,96 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="bayesian-regression">
-<h1>Bayesian regression<a class="headerlink" href="#bayesian-regression" title="Permalink to this heading">#</a></h1>
-<p>This notes is completed with assistance of <a class="reference external" href="https://chat.openai.com/c/102a61a5-682c-499c-9004-1f43c7b798ed">ChatGPT</a></p>
-<p><strong>Example: House Price Prediction</strong></p>
-<p>Imagine you’re trying to predict the price of houses based on their size (in square feet). You decide to use linear regression for this task.</p>
-<p><strong>1. Prior Beliefs</strong>:
-Suppose you’ve been in the real estate business for a while, and you believe that, on average, houses are priced at about $100 per square foot, but you’re not entirely sure. This belief can be encoded as a prior distribution on the slope of your regression line.</p>
-<p>You might choose a Normal distribution centered at 100 (reflecting your belief about the average price per square foot) with a certain standard deviation (reflecting your uncertainty about this belief).</p>
-<p>Mathematically, this might look like:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="additional-notes">
+<h1>Additional Notes<a class="headerlink" href="#additional-notes" title="Permalink to this heading">#</a></h1>
+<section id="more-on-bayesian">
+<h2>More on Bayesian<a class="headerlink" href="#more-on-bayesian" title="Permalink to this heading">#</a></h2>
+<p>This note is completed with the assistance of <a class="reference external" href="https://chat.openai.com/c/7887d9af-ce1c-4551-8f91-c576874448be">ChatGPT</a></p>
+<p>Certainly! Let’s delve into these two fundamental aspects of Bayesian approaches:</p>
+<section id="joint-distributions">
+<h3>Joint Distributions<a class="headerlink" href="#joint-distributions" title="Permalink to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Why Bayesian Approaches Often Require Working with Joint Distributions:</strong></p>
+<ul class="simple">
+<li><p><strong>Bayes’ Theorem:</strong> The foundation of Bayesian inference is Bayes’ theorem, which relates the joint distribution and the conditional distributions of the variables involved. Specifically, it states:</p></li>
+</ul>
 <div class="math notranslate nohighlight">
-\[ w \sim \text{Normal}(100, 500) \]</div>
-<p>Here, <span class="math notranslate nohighlight">\( w \)</span> is the slope of the regression line, and the large standard deviation (500) indicates you’re quite uncertain about your belief.</p>
-<p><strong>2. Observing Data</strong>:
-Now, you collect data on 50 houses – their sizes and their prices. Some houses are <span class="math notranslate nohighlight">\(80 per square foot, some are \)</span>120, and so on. You want to use this data to refine your beliefs about the average price per square foot.</p>
-<p><strong>3. Posterior Distribution</strong>:
-Using Bayesian linear regression, you combine your prior beliefs with this new data to compute the posterior distribution of <span class="math notranslate nohighlight">\( w \)</span>.</p>
-<p>After doing the math, you might find that the posterior distribution is:</p>
+\[ P(A|B) = \frac{P(B|A) \times P(A)}{P(B)} \]</div>
+<p>Here, <span class="math notranslate nohighlight">\( P(A|B) \)</span> is the posterior, <span class="math notranslate nohighlight">\( P(B|A) \)</span> is the likelihood, <span class="math notranslate nohighlight">\( P(A) \)</span> is the prior, and <span class="math notranslate nohighlight">\( P(B) \)</span> is the evidence (or marginal likelihood). The evidence is often computed by summing or integrating over the joint distribution of <span class="math notranslate nohighlight">\( A \)</span> and <span class="math notranslate nohighlight">\( B \)</span>.</p>
+<ul class="simple">
+<li><p><strong>Updating Beliefs:</strong> Bayesian approaches are all about updating prior beliefs with new data to get a posterior belief. This updating process inherently involves working with the joint distribution of the data and the parameters.</p></li>
+<li><p><strong>Predictive Distributions:</strong> To make predictions in a Bayesian framework, we often need to integrate out the parameters over their joint distribution with the data.</p></li>
+</ul>
+</li>
+<li><p><strong>Why Choosing Appropriate Priors is Crucial in Bayesian Modeling:</strong></p>
+<ul class="simple">
+<li><p><strong>Influence on the Posterior:</strong> The prior represents our belief about a parameter before observing any data. If we have a strong prior belief (informative prior), it can significantly influence the posterior, especially if the amount of data is small. Conversely, if we have little prior knowledge, we might choose a non-informative or weak prior, letting the data play a more significant role in shaping the posterior.</p></li>
+<li><p><strong>Regularization:</strong> Priors can act as regularizers. For instance, a prior that favors smaller values of a parameter can prevent overfitting in a model, similar to L1 or L2 regularization in non-Bayesian contexts.</p></li>
+<li><p><strong>Incorporating Expert Knowledge:</strong> One of the strengths of Bayesian modeling is the ability to incorporate expert knowledge or beliefs into the model through the prior. This can be especially valuable in domains where data is scarce or expensive to obtain.</p></li>
+<li><p><strong>Model Identifiability:</strong> In some cases, without an appropriate prior, a model might be non-identifiable, meaning there could be multiple parameter values that explain the data equally well. A prior can help in pinning down a unique or more plausible solution.</p></li>
+<li><p><strong>Computational Stability:</strong> Priors can also aid in the computational stability of Bayesian inference algorithms, especially in high-dimensional parameter spaces.</p></li>
+</ul>
+</li>
+</ol>
+<p>In summary, Bayesian approaches inherently involve the manipulation and computation with joint distributions, as they provide a comprehensive view of the relationships between variables and are essential for updating beliefs and making predictions. Priors, on the other hand, are a defining feature of Bayesian modeling, allowing for the incorporation of prior beliefs and playing a crucial role in determining the behavior and properties of the resulting posterior distributions.</p>
+</section>
+<section id="prior-and-posterior">
+<h3>Prior and Posterior<a class="headerlink" href="#prior-and-posterior" title="Permalink to this heading">#</a></h3>
+<p>Updating prior beliefs is at the heart of Bayesian inference. The process involves using Bayes’ theorem to combine our prior beliefs (prior distribution) with new evidence (data) to obtain an updated belief (posterior distribution). Here’s a step-by-step breakdown:</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Prior represents?</p>
+<p>Our beliefs about the parameter(s) P(θ) before observing any data.</p>
+</div>
+<ol class="arabic simple">
+<li><p><strong>Start with a Prior Distribution:</strong></p>
+<ul class="simple">
+<li><p>The prior distribution, denoted <span class="math notranslate nohighlight">\( P(\theta) \)</span>, represents our beliefs about the parameter(s) <span class="math notranslate nohighlight">\( \theta \)</span> before observing any data. This can be based on previous studies, expert opinion, or other sources of information.</p></li>
+</ul>
+</li>
+<li><p><strong>Observe Data and Compute the Likelihood:</strong></p>
+<ul class="simple">
+<li><p>The likelihood, denoted <span class="math notranslate nohighlight">\( P(D|\theta) \)</span>, tells us how probable our observed data <span class="math notranslate nohighlight">\( D \)</span> is, given different values of the parameter(s) <span class="math notranslate nohighlight">\( \theta \)</span>. It quantifies how well different parameter values explain the observed data.</p></li>
+</ul>
+</li>
+<li><p><strong>Apply Bayes’ Theorem to Compute the Posterior Distribution:</strong></p>
+<ul class="simple">
+<li><p>The posterior distribution, denoted <span class="math notranslate nohighlight">\( P(\theta|D) \)</span>, represents our updated belief about the parameter(s) <span class="math notranslate nohighlight">\( \theta \)</span> after observing the data <span class="math notranslate nohighlight">\( D \)</span>. It’s computed using Bayes’ theorem:</p></li>
+</ul>
+</li>
+</ol>
 <div class="math notranslate nohighlight">
-\[ w|data \sim \text{Normal}(105, 50) \]</div>
-<p>This tells you that, after seeing the data, your updated belief about the average price per square foot is $105, and you’re more certain about this (as reflected by the smaller standard deviation of 50).</p>
-<p><strong>4. Uncertainty Quantification</strong>:
-The posterior distribution not only gives you an updated point estimate (the mean, <span class="math notranslate nohighlight">\(105/sqft) but also a measure of uncertainty (the standard deviation, \)</span>50). This means that while you believe the average price is around <span class="math notranslate nohighlight">\(105/sqft, it could reasonably vary by about \)</span>50 in either direction due to the variability in the data and your prior uncertainty.</p>
-<hr class="docutils" />
-<p>In this example, the Bayesian approach allowed you to incorporate your initial beliefs about house prices and then update those beliefs with observed data. The resulting posterior distribution provides both an updated estimate and a quantification of the uncertainty surrounding that estimate.</p>
-<hr class="docutils" />
-<section id="bayesian-regression-detailed-summary">
-<h2>9.2 Bayesian Regression: Detailed Summary<a class="headerlink" href="#bayesian-regression-detailed-summary" title="Permalink to this heading">#</a></h2>
-<p><strong>1. Introduction:</strong></p>
+\[ P(\theta|D) = \frac{P(D|\theta) \times P(\theta)}{P(D)} \]</div>
 <ul class="simple">
-<li><p>Traditional regression methods, like MLE and MAP, provide point estimates of parameters. These don’t capture the inherent uncertainty about parameters.</p></li>
-<li><p>Bayesian regression offers a probabilistic approach, preserving and quantifying this uncertainty.</p></li>
+<li><p>Here:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\( P(\theta|D) \)</span> is the posterior.</p></li>
+<li><p><span class="math notranslate nohighlight">\( P(D|\theta) \)</span> is the likelihood.</p></li>
+<li><p><span class="math notranslate nohighlight">\( P(\theta) \)</span> is the prior.</p></li>
+<li><p><span class="math notranslate nohighlight">\( P(D) \)</span> is the evidence or marginal likelihood. It’s a normalizing constant ensuring that the posterior distribution integrates (or sums) to 1. It’s computed by integrating (or summing) the numerator over all possible values of <span class="math notranslate nohighlight">\( \theta \)</span>:</p></li>
 </ul>
-<p><strong>2. Key Concepts &amp; Questions Addressed:</strong></p>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ P(D) = \int P(D|\theta) \times P(\theta) \, d\theta \]</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(For discrete parameters, the integral becomes a sum.)
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Interpret the Posterior Distribution:</strong></p>
 <ul class="simple">
-<li><p><strong>Point Estimates vs. Full Distribution</strong>:</p>
-<ul>
-<li><p>Point estimates, like <span class="math notranslate nohighlight">\( \hat{w} \)</span>, represent single “best” values for parameters. They don’t capture the inherent uncertainty about the parameters.</p></li>
-<li><p>Bayesian regression focuses on the entire distribution of plausible parameter values, allowing for a richer representation of uncertainty.</p></li>
+<li><p>The posterior distribution combines the information from the prior and the data. If the data are strong and informative, the posterior will be more influenced by the likelihood. If the data are weak or scarce, the prior will play a more significant role in shaping the posterior.</p></li>
+<li><p>The mode of the posterior distribution gives the Maximum A Posteriori (MAP) estimate of the parameter(s). If you’re interested in point estimates, the MAP is a common choice in Bayesian analysis.</p></li>
+<li><p>The spread or width of the posterior distribution provides a measure of uncertainty about the parameter(s). Narrower distributions indicate higher certainty.</p></li>
 </ul>
 </li>
-<li><p><strong>Sequential Bayesian Updating</strong>:</p>
-<ul>
-<li><p>This is the process of continuously refining the posterior distribution as new data is observed. The current posterior becomes the prior for the next update, allowing for a dynamic and adaptive model.</p></li>
-</ul>
-</li>
-<li><p><strong>Conjugate Priors</strong>:</p>
-<ul>
-<li><p>These are priors that, when combined with a specific likelihood, result in a posterior distribution of the same family as the prior. This property simplifies the computation of the posterior. For Bayesian linear regression, the Normal-Normal conjugacy is often used.</p></li>
-</ul>
-</li>
-<li><p><strong>Why Gaussian for Prior?</strong></p>
-<ul>
-<li><p>Gaussian distributions are mathematically tractable, especially when combined with linear models. Using a Gaussian prior centered at zero implies a belief that weights are likely to be small (or close to zero) unless the data provides strong evidence to the contrary.</p></li>
-</ul>
-</li>
-</ul>
-<p><strong>3. Mathematical Formulations:</strong></p>
+<li><p><strong>Iterative Updating:</strong></p>
 <ul class="simple">
-<li><p><strong>Prior Distribution</strong>:</p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\( w \sim Normal(0, \sigma^2 I_D) \)</span></p></li>
-<li><p>This represents our prior belief about the weights before observing any data.</p></li>
+<li><p>As more data becomes available, the posterior distribution from the previous step can be used as the prior for the next update. This iterative updating is a powerful feature of Bayesian inference, allowing for continuous learning as new evidence is gathered.</p></li>
 </ul>
 </li>
-<li><p><strong>Likelihood</strong>:</p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\( y \sim Normal(Xw, \sigma^2) \)</span></p></li>
-<li><p>This represents the probability of observing the data given the weights.</p></li>
-</ul>
-</li>
-<li><p><strong>Posterior Distribution</strong>:</p>
-<ul>
-<li><p>Using Bayes’ theorem: <span class="math notranslate nohighlight">\( p(w|X, y, \sigma^2) \propto p(y|X, w, \sigma^2) p(w) \)</span></p></li>
-<li><p>Results in a Gaussian: <span class="math notranslate nohighlight">\( Normal(w|w_N, V_N) \)</span></p></li>
-<li><p>Where:</p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\( w_N = \sigma^2 (X^T X + \sigma^2 I_D)^{-1} X^T y \)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\( V_N = \sigma^2 (X^T X + \sigma^2 I_D)^{-1} \)</span></p></li>
-</ul>
-</li>
-<li><p>The posterior mean <span class="math notranslate nohighlight">\( w_N \)</span> is analogous to the point estimate in ridge regression, with the regularization term emerging naturally from the prior.</p></li>
-</ul>
-</li>
-<li><p><strong>Predictive Distribution</strong>:</p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\( p(y_*|x_*, X, y, \sigma^2) = \int p(y_*|x_*, w, \sigma^2) p(w|X, y, \sigma^2) dw \)</span></p></li>
-<li><p>Results in a Gaussian: <span class="math notranslate nohighlight">\( Normal(y_*|x^T_* w_N, \sigma^2_N(x_*)) \)</span></p></li>
-<li><p>Where:</p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\( \sigma^2_N(x_*) = \sigma^2 + x^T_* V_N x_* \)</span></p></li>
-</ul>
-</li>
-<li><p>This distribution provides both a mean prediction and a measure of uncertainty (variance) for new data points.</p></li>
-</ul>
-</li>
-</ul>
-<p><strong>4. Advantages &amp; Insights from Bayesian Regression</strong>:</p>
-<ul class="simple">
-<li><p><strong>Uncertainty Quantification</strong>: Bayesian regression captures uncertainty in parameter estimates, providing a full probabilistic description.</p></li>
-<li><p><strong>Robustness</strong>: It’s more robust to overfitting, especially with small datasets. As you noted, Bayesian methods shine with small data and high uncertainty, while frequentist methods are more suited for larger datasets with low uncertainty.</p></li>
-<li><p><strong>Predictions vs. Parameters</strong>: In Bayesian thinking, the emphasis is more on making accurate predictions rather than precisely determining parameter values.</p></li>
-</ul>
-<p><strong>5. Future Topics</strong>:</p>
-<ul class="simple">
-<li><p>Bayesian Classification: Extending Bayesian principles to classification tasks.</p></li>
-<li><p>Probabilistic Graphical Models (PGMs): Representing complex probabilistic relationships using graphs.</p></li>
-</ul>
-<hr class="docutils" />
-<p>This detailed summary incorporates the nuances and questions you raised, providing a comprehensive overview of Bayesian Regression.</p>
+</ol>
+<p>In essence, the process of updating prior beliefs in Bayesian inference is a systematic way of combining prior knowledge with new data to refine our understanding of the underlying parameters or processes. This approach is particularly powerful in situations where data are limited or where incorporating expert knowledge is essential.</p>
+</section>
 </section>
 </section>
 
@@ -519,6 +505,15 @@ The posterior distribution not only gives you an updated point estimate (the mea
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="week10.2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">PGM Representation</p>
+      </div>
+    </a>
 </div></div>
   
 </div>
@@ -537,7 +532,11 @@ The posterior distribution not only gives you an updated point estimate (the mea
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-regression-detailed-summary">9.2 Bayesian Regression: Detailed Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-bayesian">More on Bayesian</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-distributions">Joint Distributions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prior-and-posterior">Prior and Posterior</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

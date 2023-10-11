@@ -12,6 +12,11 @@ This notes is completed with assistance of [ChatGPT](https://chat.openai.com/c/7
 
 - **Example PGMs and Applications**
 
+- **Additional Resource**
+- ((ML 13.1) Directed graphical models - introductory examples (part 1)
+)[https://www.youtube.com/watch?v=3XysEf3IQN4]
+
+
 - **Next time: elimination for probabilistic inference**
 
 
