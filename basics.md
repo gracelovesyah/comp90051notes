@@ -84,3 +84,17 @@ Certainly! Let's use a simple example to illustrate the concepts of incorporatin
 ## Multivariate Gaussian
 [(PP 6.1) Multivariate Gaussian - definition](https://www.youtube.com/watch?v=TC0ZAX3DA88)
 
+---
+
+14/10/2023
+## Learning Rate
+[Gradient Descent, Step-by-Step](https://www.youtube.com/watch?v=sDv4f4s2SB8)
+- In gradient descent, the learning rate represents the size of the steps taken during each parameter update and affects the trade-off between convergence speed and stability of the optimization process.
+- Learning rate is a hyper-parameter that controls how much we are adjusting the weights of our network with respect the loss gradient. 
+
+```{image} ./images/learningrate1.png
+:alt: learningrate1
+:class: bg-primary mb-1
+:width: 800px
+:align: center
+```

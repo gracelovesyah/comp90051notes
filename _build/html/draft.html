@@ -1,0 +1,931 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'draft';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to COMP90051
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week6.2.html">week6 lec2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week7.0.html">week7</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week7.1.html">Lecture 13. Convolutional Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.3.html">Additional Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week9.0.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week9.1.html">Stochastic Multi-Armed Bandits (MABs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week9.2.html">Bayesian regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet10.html">Workshop 10: Multi-armed bandits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet10note.html">Workshop 10: Multi-armed bandits notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week10.0.html">week10</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week10.1.html">wk10 notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet11.html">COMP90051 Workshop 11</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week11.0.html">week11</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week11.1.html">U-PGM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week11.2.html">SVM assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdraft.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/draft.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sample text with newlines</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">help me to summarise the important content described in the youtube video about svm</span>
+<span class="s2">support vector machines have a lot of</span>
+<span class="s2">terminology associated with them</span>
+<span class="s2">brace yourself hello I&#39;m Josh stormer</span>
+<span class="s2">and welcome to stat quest today we&#39;re</span>
+<span class="s2">going to talk about support vector</span>
+<span class="s2">machines and they&#39;re gonna be clearly</span>
+<span class="s2">explained note this stack quest assumes</span>
+<span class="s2">that you are already familiar with the</span>
+<span class="s2">trade-off that plagues all of machine</span>
+<span class="s2">learning the bias-variance tradeoff you</span>
+<span class="s2">should also be familiar with</span>
+<span class="s2">cross-validation if not check out the</span>
+<span class="s2">quests the links are in the description</span>
+<span class="s2">below</span>
+<span class="s2">Basic concepts and Maximal Margin Classifiers</span>
+<span class="s2">let&#39;s start by imagining we measured the</span>
+<span class="s2">mass of a bunch of mice the red dots</span>
+<span class="s2">represent mice that are not obese and</span>
+<span class="s2">the green dots represent mice that are</span>
+<span class="s2">obese based on these observations we can</span>
+<span class="s2">pick a threshold and when we get a new</span>
+<span class="s2">observation that has less mass than the</span>
+<span class="s2">threshold we can classify it as not</span>
+<span class="s2">obese</span>
+<span class="s2">and when we get a new observation with</span>
+<span class="s2">more mass than the threshold we can</span>
+<span class="s2">classify it as obese</span>
+<span class="s2">however what if we get a new observation</span>
+<span class="s2">here</span>
+<span class="s2">because this observation has more mass</span>
+<span class="s2">than the threshold we classify it as</span>
+<span class="s2">obese but that doesn&#39;t make sense</span>
+<span class="s2">because it is much closer to the</span>
+<span class="s2">observations that are not obese so this</span>
+<span class="s2">threshold is pretty lame can we do</span>
+<span class="s2">better</span>
+<span class="s2">yes going back to the original training</span>
+<span class="s2">data set we can focus on the</span>
+<span class="s2">observations on the edges of each</span>
+<span class="s2">cluster and use the midpoint between</span>
+<span class="s2">them as the threshold</span>
+<span class="s2">now when a new observation falls on the</span>
+<span class="s2">left side of the threshold it will be</span>
+<span class="s2">closer to the observations that are not</span>
+<span class="s2">obese than it is to the obese</span>
+<span class="s2">observations so it makes sense to</span>
+<span class="s2">classify this new observation as not</span>
+<span class="s2">obese BAM</span>
+<span class="s2">no it&#39;s a terminology alert the shortest</span>
+<span class="s2">distance between the observations and</span>
+<span class="s2">the threshold is called the margin since</span>
+<span class="s2">we put the threshold halfway between</span>
+<span class="s2">these two observations the distances</span>
+<span class="s2">between the observations and the</span>
+<span class="s2">threshold are the same and both reflect</span>
+<span class="s2">the margin</span>
+<span class="s2">when the threshold is halfway between</span>
+<span class="s2">the two observations the margin is as</span>
+<span class="s2">large as it can be for example if we</span>
+<span class="s2">move the threshold to the left a little</span>
+<span class="s2">bit then the distance between the</span>
+<span class="s2">threshold and the observation that is</span>
+<span class="s2">not obese would be smaller and thus the</span>
+<span class="s2">margin would be smaller than it was</span>
+<span class="s2">before</span>
+<span class="s2">and if we move the threshold to the</span>
+<span class="s2">right a little bit then the distance</span>
+<span class="s2">between the obese observation and the</span>
+<span class="s2">threshold would get smaller and again</span>
+<span class="s2">the margin would be smaller when we use</span>
+<span class="s2">the threshold that gives us the largest</span>
+<span class="s2">margin to make classifications heads up</span>
+<span class="s2">terminology alert we are using a maximal</span>
+<span class="s2">margin classifier BAM</span>
+<span class="s2">no no BAM maximal margin classifiers</span>
+<span class="s2">seem pretty cool but what if our</span>
+<span class="s2">training data looked like this and we</span>
+<span class="s2">had an outlier observation that was</span>
+<span class="s2">classified as not obese but was much</span>
+<span class="s2">closer to the obese observations</span>
+<span class="s2">in this case the maximum margin</span>
+<span class="s2">classifier would be super close to the</span>
+<span class="s2">obese observations and really far from</span>
+<span class="s2">the majority of the observations that</span>
+<span class="s2">are not obese</span>
+<span class="s2">now if we got this new observation we</span>
+<span class="s2">would classify it as not obese even</span>
+<span class="s2">though most of the not obese</span>
+<span class="s2">observations are much further away than</span>
+<span class="s2">the obese observations</span>
+<span class="s2">so maximum margin classifiers are super</span>
+<span class="s2">sensitive to outliers in the training</span>
+<span class="s2">data and that makes them pretty lame</span>
+<span class="s2">can we do better yes to make a threshold</span>
+<span class="s2">Soft Margins (allowing misclassifications)</span>
+<span class="s2">that is not so sensitive to outliers we</span>
+<span class="s2">must allow misclassifications</span>
+<span class="s2">for example if we put the threshold</span>
+<span class="s2">halfway between these two observations</span>
+<span class="s2">then we will miss classify this</span>
+<span class="s2">observation however now when we get a</span>
+<span class="s2">new observation here we will classify it</span>
+<span class="s2">as obese</span>
+<span class="s2">make sense because it is closer to most</span>
+<span class="s2">of the obese observations</span>
+<span class="s2">choosing a threshold that allows</span>
+<span class="s2">misclassifications</span>
+<span class="s2">is an example of the bias-variance</span>
+<span class="s2">tradeoff that plagues all of machine</span>
+<span class="s2">learning</span>
+<span class="s2">in other words before we allowed</span>
+<span class="s2">misclassifications</span>
+<span class="s2">we picked a threshold that was very</span>
+<span class="s2">sensitive to the training data it had</span>
+<span class="s2">low bias and it performed poorly when we</span>
+<span class="s2">got new data it had high variance</span>
+<span class="s2">contrast when we picked a threshold that</span>
+<span class="s2">was less sensitive to the training data</span>
+<span class="s2">and allowed misclassifications so it had</span>
+<span class="s2">higher bias it performed better when we</span>
+<span class="s2">got new data so it had low variance</span>
+<span class="s2">small BAM</span>
+<span class="s2">oh no it&#39;s another terminology alert</span>
+<span class="s2">when we allow misclassifications the</span>
+<span class="s2">distance between the observations and</span>
+<span class="s2">the threshold is called a soft margin so</span>
+<span class="s2">the question is how do we know that this</span>
+<span class="s2">soft margin is better than this soft</span>
+<span class="s2">margin the answer is simple we use</span>
+<span class="s2">cross-validation to determine how many</span>
+<span class="s2">misclassifications</span>
+<span class="s2">and observations to allow inside of the</span>
+<span class="s2">soft margin to get the best</span>
+<span class="s2">classification for example if</span>
+<span class="s2">cross-validation determined that this</span>
+<span class="s2">was the best soft margin then we would</span>
+<span class="s2">allow one miss classification and two</span>
+<span class="s2">observations that are correctly</span>
+<span class="s2">classified to be within the soft margin</span>
+<span class="s2">BAM when we use a soft margin to</span>
+<span class="s2">Soft Margin and Support Vector Classifiers</span>
+<span class="s2">determine the location of a threshold</span>
+<span class="s2">brace yourself</span>
+<span class="s2">we have another terminology alert then</span>
+<span class="s2">we are using a soft margin classifier</span>
+<span class="s2">aka a support vector classifier to</span>
+<span class="s2">classify observations</span>
+<span class="s2">the names support vector classifier</span>
+<span class="s2">comes from the fact that the</span>
+<span class="s2">observations on the edge and within the</span>
+<span class="s2">soft margin are called support factors</span>
+<span class="s2">super-small bam note if each observation</span>
+<span class="s2">had a mass measurement and a height</span>
+<span class="s2">measurement then the data would be</span>
+<span class="s2">two-dimensional</span>
+<span class="s2">when the data are two-dimensional a</span>
+<span class="s2">support vector classifier is a line</span>
+<span class="s2">and in this case the soft margin is</span>
+<span class="s2">measured from these two points the blue</span>
+<span class="s2">parallel lines give us a sense of where</span>
+<span class="s2">all of the other points are in relation</span>
+<span class="s2">to the soft margin</span>
+<span class="s2">these observations are outside of the</span>
+<span class="s2">soft margin</span>
+<span class="s2">and this observation is inside the soft</span>
+<span class="s2">margin and misclassified</span>
+<span class="s2">just like before we used</span>
+<span class="s2">cross-validation to determine that</span>
+<span class="s2">allowing this miss classification</span>
+<span class="s2">results in better classification in the</span>
+<span class="s2">long run</span>
+<span class="s2">BAM now if each observation has a mass a</span>
+<span class="s2">height and an age then the data would be</span>
+<span class="s2">three-dimensional note the axis that age</span>
+<span class="s2">is on is supposed to represent depth and</span>
+<span class="s2">these circles are larger in order to</span>
+<span class="s2">appear closer and thus younger and these</span>
+<span class="s2">circles are smaller in order to look</span>
+<span class="s2">further away and thus older</span>
+<span class="s2">when the data are three-dimensional the</span>
+<span class="s2">support vector classifier forms a plane</span>
+<span class="s2">instead of a line and we classify new</span>
+<span class="s2">observations by determining which side</span>
+<span class="s2">of the plane they are on for example if</span>
+<span class="s2">this were a new observation we would</span>
+<span class="s2">classify it as not obese since it is</span>
+<span class="s2">above the support vector classifier</span>
+<span class="s2">note if we measured mass height age and</span>
+<span class="s2">blood pressure then the data would be in</span>
+<span class="s2">four dimensions and I don&#39;t know how to</span>
+<span class="s2">draw four dimensional graph</span>
+<span class="s2">wah-wah but we know that when the data</span>
+<span class="s2">are one-dimensional the support vector</span>
+<span class="s2">classifier is a single point on a</span>
+<span class="s2">one-dimensional number line just in</span>
+<span class="s2">mathematical jargon a point is a flat</span>
+<span class="s2">affin zero dimensional subspace</span>
+<span class="s2">and when the data are in two dimensions</span>
+<span class="s2">the support vector classifier is a</span>
+<span class="s2">one-dimensional line in a two</span>
+<span class="s2">dimensional space</span>
+<span class="s2">in mathematical jargon a line is a flat</span>
+<span class="s2">affin one-dimensional subspace</span>
+<span class="s2">and when the data are three-dimensional</span>
+<span class="s2">the support vector classifier is a</span>
+<span class="s2">two-dimensional plane in a</span>
+<span class="s2">three-dimensional space in mathematical</span>
+<span class="s2">jargon a plane is a flat affin two</span>
+<span class="s2">dimensional subspace and when the data</span>
+<span class="s2">are in four or more dimensions the</span>
+<span class="s2">support vector classifier is a</span>
+<span class="s2">hyperplane</span>
+<span class="s2">in mathematical jargon a hyperplane is a</span>
+<span class="s2">flat Athene subspace note technically</span>
+<span class="s2">speaking all flat Athene subspaces are</span>
+<span class="s2">called hyperplanes so technically</span>
+<span class="s2">speaking this one-dimensional line is a</span>
+<span class="s2">hyperplane but we generally only use the</span>
+<span class="s2">term when we can&#39;t draw it on paper</span>
+<span class="s2">small BAM because this is just more</span>
+<span class="s2">terminology ugh</span>
+<span class="s2">support vector classifier seemed pretty</span>
+<span class="s2">cool because they can handle outliers</span>
+<span class="s2">and because they can allow</span>
+<span class="s2">misclassifications</span>
+<span class="s2">they can handle overlapping</span>
+<span class="s2">classifications</span>
+<span class="s2">but what if this was our training data</span>
+<span class="s2">and we had tons of overlap</span>
+<span class="s2">in this new example with tons of overlap</span>
+<span class="s2">we are now looking at drug dosages</span>
+<span class="s2">and the red dots represent patients that</span>
+<span class="s2">were not cured</span>
+<span class="s2">and the green dots represent patients</span>
+<span class="s2">that were cured</span>
+<span class="s2">in other words the drug doesn&#39;t work if</span>
+<span class="s2">the dosage is too small or too large it</span>
+<span class="s2">only works when the dosage is just right</span>
+<span class="s2">now no matter where we put the</span>
+<span class="s2">classifier we will make a lot of</span>
+<span class="s2">misclassifications</span>
+<span class="s2">so support vector classifier czar only</span>
+<span class="s2">semi-cool since they don&#39;t perform well</span>
+<span class="s2">with this type of data can we do better</span>
+<span class="s2">than maximal margin classifiers and</span>
+<span class="s2">support vector classifier x&#39; yes</span>
+<span class="s2">since maximal margin classifiers and</span>
+<span class="s2">support vector classifier x&#39; can&#39;t</span>
+<span class="s2">handle this data it&#39;s high time we</span>
+<span class="s2">talked about support vector machines so</span>
+<span class="s2">Intuition behind Support Vector Machines</span>
+<span class="s2">let&#39;s start by getting an intuitive</span>
+<span class="s2">sense of the main ideas behind support</span>
+<span class="s2">vector machines we start by adding a</span>
+<span class="s2">y-axis so we can draw a graph the x axis</span>
+<span class="s2">coordinates in this graph will be the</span>
+<span class="s2">dosages that we have already observed</span>
+<span class="s2">and the y axis coordinates will be the</span>
+<span class="s2">square of the dosages so for this</span>
+<span class="s2">observation with dosage equals 0.5 on</span>
+<span class="s2">the x axis the y axis value equals</span>
+<span class="s2">dosage squared which equals 0.5 squared</span>
+<span class="s2">which equals 0.25</span>
+<span class="s2">now we use dosage squared for this</span>
+<span class="s2">y-axis coordinate and then we use dosage</span>
+<span class="s2">squared for the y-axis coordinates for</span>
+<span class="s2">the remaining observations</span>
+<span class="s2">since each observation has X and y-axis</span>
+<span class="s2">coordinates the data are now</span>
+<span class="s2">two-dimensional and now that the data</span>
+<span class="s2">are two-dimensional we can draw a</span>
+<span class="s2">support vector classifier that separates</span>
+<span class="s2">the people who were cured from the</span>
+<span class="s2">people who were not cured</span>
+<span class="s2">and the support vector classifier can be</span>
+<span class="s2">used to classify new observations for</span>
+<span class="s2">example if a new observation had this</span>
+<span class="s2">dosage then we could calculate the</span>
+<span class="s2">y-axis coordinate by squaring the dosage</span>
+<span class="s2">and classify the observation as not</span>
+<span class="s2">cured because it ended up on this side</span>
+<span class="s2">of the support vector classifier on the</span>
+<span class="s2">other hand if we got a new observation</span>
+<span class="s2">with this dosage then we would square</span>
+<span class="s2">the dosage and get a y-axis coordinate</span>
+<span class="s2">and classify this observation as cured</span>
+<span class="s2">because it falls on the other side of</span>
+<span class="s2">the support vector classifier BAM the</span>
+<span class="s2">main ideas behind support vector</span>
+<span class="s2">machines are one start with data in a</span>
+<span class="s2">relatively low dimension in this example</span>
+<span class="s2">the data started in one dimension to</span>
+<span class="s2">move the data into a higher dimension in</span>
+<span class="s2">this example we move the data from one</span>
+<span class="s2">dimension to two dimensions three find a</span>
+<span class="s2">support vector classifier that separates</span>
+<span class="s2">the higher dimensional data into two</span>
+<span class="s2">groups</span>
+<span class="s2">that&#39;s all there is to it double BAM</span>
+<span class="s2">going back to the original one</span>
+<span class="s2">dimensional data you may be wondering</span>
+<span class="s2">why we decided to create y-axis</span>
+<span class="s2">coordinates with dosage squared</span>
+<span class="s2">why not dosage cubed</span>
+<span class="s2">or pi divided by four times the square</span>
+<span class="s2">root of dosage in other words how do we</span>
+<span class="s2">decide how to transform the data</span>
+<span class="s2">The polynomial kernel function</span>
+<span class="s2">in order to make the mathematics</span>
+<span class="s2">possible support vector machines use</span>
+<span class="s2">something called kernel functions to</span>
+<span class="s2">systematically find support vector</span>
+<span class="s2">classifier in higher dimensions so let</span>
+<span class="s2">me show you how a kernel function</span>
+<span class="s2">systematically finds support vector</span>
+<span class="s2">classifier in higher dimensions for this</span>
+<span class="s2">example I use the polynomial kernel</span>
+<span class="s2">which has a parameter D which stands for</span>
+<span class="s2">the degree of the polynomial when D</span>
+<span class="s2">equals 1 the polynomial kernel computes</span>
+<span class="s2">the relationships between each pair of</span>
+<span class="s2">observations in one dimension</span>
+<span class="s2">chips are used to find a support vector</span>
+<span class="s2">classifier</span>
+<span class="s2">when D equals two we get a second</span>
+<span class="s2">dimension based on dosages squared</span>
+<span class="s2">and the polynomial kernel computes the</span>
+<span class="s2">two-dimensional relationships between</span>
+<span class="s2">each pair of observations</span>
+<span class="s2">and those relationships are used to find</span>
+<span class="s2">a support vector classifier</span>
+<span class="s2">and when we set D equal three then we</span>
+<span class="s2">would get a third dimension based on</span>
+<span class="s2">dosages cubed and the polynomial kernel</span>
+<span class="s2">computes the three-dimensional</span>
+<span class="s2">relationships between each pair of</span>
+<span class="s2">observations</span>
+<span class="s2">and those relationships are used to find</span>
+<span class="s2">a support vector classifier</span>
+<span class="s2">and when D equals four or more then we</span>
+<span class="s2">get even more dimensions to find a</span>
+<span class="s2">support vector classifier</span>
+<span class="s2">in summary the polynomial kernel</span>
+<span class="s2">systematically increases dimensions by</span>
+<span class="s2">setting D the degree of the polynomial</span>
+<span class="s2">and the relationships between each pair</span>
+<span class="s2">of observations are used to find a</span>
+<span class="s2">support vector classifier</span>
+<span class="s2">last but not least we can find a good</span>
+<span class="s2">value for D with cross validation double</span>
+<span class="s2">bam another very commonly used kernel is</span>
+<span class="s2">The radial basis function (RBF) kernel</span>
+<span class="s2">the radial kernel also known as the</span>
+<span class="s2">radial basis function kernel</span>
+<span class="s2">unfortunately the radio Colonel finds</span>
+<span class="s2">support vector classifier x&#39; in infinite</span>
+<span class="s2">dimensions so I can&#39;t give you an</span>
+<span class="s2">example of what it does exactly however</span>
+<span class="s2">when using it on a new observation like</span>
+<span class="s2">this the radio kernel behaves like a</span>
+<span class="s2">weighted nearest neighbor model in other</span>
+<span class="s2">words the closest observations aka</span>
+<span class="s2">the nearest neighbors have a lot of</span>
+<span class="s2">influence on how we classify the new</span>
+<span class="s2">observation and observations that are</span>
+<span class="s2">further away have relatively little</span>
+<span class="s2">influence on the classification so since</span>
+<span class="s2">these observations are the closest to</span>
+<span class="s2">the new observation the radio kernel</span>
+<span class="s2">uses their classification for the new</span>
+<span class="s2">observation BAM now for the sake of</span>
+<span class="s2">The kernel trick</span>
+<span class="s2">completeness let me mention one last</span>
+<span class="s2">detail about kernels</span>
+<span class="s2">although the examples I&#39;ve given show</span>
+<span class="s2">the data being transformed from a</span>
+<span class="s2">relatively low dimension to a relatively</span>
+<span class="s2">high dimension</span>
+<span class="s2">kernel functions only calculate the</span>
+<span class="s2">relationships between every pair of</span>
+<span class="s2">points as if they are in the higher</span>
+<span class="s2">dimensions they don&#39;t actually do the</span>
+<span class="s2">transformation</span>
+<span class="s2">this trick calculating the</span>
+<span class="s2">high-dimensional relationships without</span>
+<span class="s2">actually transforming the data to the</span>
+<span class="s2">higher dimension is called the kernel</span>
+<span class="s2">trick the kernel trick reduces the</span>
+<span class="s2">amount of computation required for</span>
+<span class="s2">support vector machines by avoiding the</span>
+<span class="s2">math that transforms the data from low</span>
+<span class="s2">to high dimensions and it makes</span>
+<span class="s2">calculating the relationships in the</span>
+<span class="s2">infinite dimensions used by the radial</span>
+<span class="s2">kernel possible</span>
+<span class="s2">Summary of concepts</span>
+<span class="s2">however regardless of how the</span>
+<span class="s2">relationships are calculated the</span>
+<span class="s2">concepts are the same</span>
+<span class="s2">when we have two categories but no</span>
+<span class="s2">obvious linear classifier that separates</span>
+<span class="s2">them in a nice way</span>
+<span class="s2">support vector machines work by moving</span>
+<span class="s2">the data into a relatively high</span>
+<span class="s2">dimensional space and finding a</span>
+<span class="s2">relatively high dimensional support</span>
+<span class="s2">vector classifier that can effectively</span>
+<span class="s2">classify the observations</span>
+<span class="s2">triple bam&quot;&quot;&quot;</span>
+
+<span class="c1"># Remove newlines and merge into a single paragraph</span>
+<span class="n">merged_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+
+<span class="c1"># Print the result</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">merged_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  help me to summarise the important content described in the youtube video about svm support vector machines have a lot of terminology associated with them brace yourself hello I&#39;m Josh stormer and welcome to stat quest today we&#39;re going to talk about support vector machines and they&#39;re gonna be clearly explained note this stack quest assumes that you are already familiar with the trade-off that plagues all of machine learning the bias-variance tradeoff you should also be familiar with cross-validation if not check out the quests the links are in the description below Basic concepts and Maximal Margin Classifiers let&#39;s start by imagining we measured the mass of a bunch of mice the red dots represent mice that are not obese and the green dots represent mice that are obese based on these observations we can pick a threshold and when we get a new observation that has less mass than the threshold we can classify it as not obese and when we get a new observation with more mass than the threshold we can classify it as obese however what if we get a new observation here because this observation has more mass than the threshold we classify it as obese but that doesn&#39;t make sense because it is much closer to the observations that are not obese so this threshold is pretty lame can we do better yes going back to the original training data set we can focus on the observations on the edges of each cluster and use the midpoint between them as the threshold now when a new observation falls on the left side of the threshold it will be closer to the observations that are not obese than it is to the obese observations so it makes sense to classify this new observation as not obese BAM no it&#39;s a terminology alert the shortest distance between the observations and the threshold is called the margin since we put the threshold halfway between these two observations the distances between the observations and the threshold are the same and both reflect the margin when the threshold is halfway between the two observations the margin is as large as it can be for example if we move the threshold to the left a little bit then the distance between the threshold and the observation that is not obese would be smaller and thus the margin would be smaller than it was before and if we move the threshold to the right a little bit then the distance between the obese observation and the threshold would get smaller and again the margin would be smaller when we use the threshold that gives us the largest margin to make classifications heads up terminology alert we are using a maximal margin classifier BAM no no BAM maximal margin classifiers seem pretty cool but what if our training data looked like this and we had an outlier observation that was classified as not obese but was much closer to the obese observations in this case the maximum margin classifier would be super close to the obese observations and really far from the majority of the observations that are not obese now if we got this new observation we would classify it as not obese even though most of the not obese observations are much further away than the obese observations so maximum margin classifiers are super sensitive to outliers in the training data and that makes them pretty lame can we do better yes to make a threshold Soft Margins (allowing misclassifications) that is not so sensitive to outliers we must allow misclassifications for example if we put the threshold halfway between these two observations then we will miss classify this observation however now when we get a new observation here we will classify it as obese make sense because it is closer to most of the obese observations choosing a threshold that allows misclassifications is an example of the bias-variance tradeoff that plagues all of machine learning in other words before we allowed misclassifications we picked a threshold that was very sensitive to the training data it had low bias and it performed poorly when we got new data it had high variance contrast when we picked a threshold that was less sensitive to the training data and allowed misclassifications so it had higher bias it performed better when we got new data so it had low variance small BAM oh no it&#39;s another terminology alert when we allow misclassifications the distance between the observations and the threshold is called a soft margin so the question is how do we know that this soft margin is better than this soft margin the answer is simple we use cross-validation to determine how many misclassifications and observations to allow inside of the soft margin to get the best classification for example if cross-validation determined that this was the best soft margin then we would allow one miss classification and two observations that are correctly classified to be within the soft margin BAM when we use a soft margin to Soft Margin and Support Vector Classifiers determine the location of a threshold brace yourself we have another terminology alert then we are using a soft margin classifier aka a support vector classifier to classify observations the names support vector classifier comes from the fact that the observations on the edge and within the soft margin are called support factors super-small bam note if each observation had a mass measurement and a height measurement then the data would be two-dimensional when the data are two-dimensional a support vector classifier is a line and in this case the soft margin is measured from these two points the blue parallel lines give us a sense of where all of the other points are in relation to the soft margin these observations are outside of the soft margin and this observation is inside the soft margin and misclassified just like before we used cross-validation to determine that allowing this miss classification results in better classification in the long run BAM now if each observation has a mass a height and an age then the data would be three-dimensional note the axis that age is on is supposed to represent depth and these circles are larger in order to appear closer and thus younger and these circles are smaller in order to look further away and thus older when the data are three-dimensional the support vector classifier forms a plane instead of a line and we classify new observations by determining which side of the plane they are on for example if this were a new observation we would classify it as not obese since it is above the support vector classifier note if we measured mass height age and blood pressure then the data would be in four dimensions and I don&#39;t know how to draw four dimensional graph wah-wah but we know that when the data are one-dimensional the support vector classifier is a single point on a one-dimensional number line just in mathematical jargon a point is a flat affin zero dimensional subspace and when the data are in two dimensions the support vector classifier is a one-dimensional line in a two dimensional space in mathematical jargon a line is a flat affin one-dimensional subspace and when the data are three-dimensional the support vector classifier is a two-dimensional plane in a three-dimensional space in mathematical jargon a plane is a flat affin two dimensional subspace and when the data are in four or more dimensions the support vector classifier is a hyperplane in mathematical jargon a hyperplane is a flat Athene subspace note technically speaking all flat Athene subspaces are called hyperplanes so technically speaking this one-dimensional line is a hyperplane but we generally only use the term when we can&#39;t draw it on paper small BAM because this is just more terminology ugh support vector classifier seemed pretty cool because they can handle outliers and because they can allow misclassifications they can handle overlapping classifications but what if this was our training data and we had tons of overlap in this new example with tons of overlap we are now looking at drug dosages and the red dots represent patients that were not cured and the green dots represent patients that were cured in other words the drug doesn&#39;t work if the dosage is too small or too large it only works when the dosage is just right now no matter where we put the classifier we will make a lot of misclassifications so support vector classifier czar only semi-cool since they don&#39;t perform well with this type of data can we do better than maximal margin classifiers and support vector classifier x&#39; yes since maximal margin classifiers and support vector classifier x&#39; can&#39;t handle this data it&#39;s high time we talked about support vector machines so Intuition behind Support Vector Machines let&#39;s start by getting an intuitive sense of the main ideas behind support vector machines we start by adding a y-axis so we can draw a graph the x axis coordinates in this graph will be the dosages that we have already observed and the y axis coordinates will be the square of the dosages so for this observation with dosage equals 0.5 on the x axis the y axis value equals dosage squared which equals 0.5 squared which equals 0.25 now we use dosage squared for this y-axis coordinate and then we use dosage squared for the y-axis coordinates for the remaining observations since each observation has X and y-axis coordinates the data are now two-dimensional and now that the data are two-dimensional we can draw a support vector classifier that separates the people who were cured from the people who were not cured and the support vector classifier can be used to classify new observations for example if a new observation had this dosage then we could calculate the y-axis coordinate by squaring the dosage and classify the observation as not cured because it ended up on this side of the support vector classifier on the other hand if we got a new observation with this dosage then we would square the dosage and get a y-axis coordinate and classify this observation as cured because it falls on the other side of the support vector classifier BAM the main ideas behind support vector machines are one start with data in a relatively low dimension in this example the data started in one dimension to move the data into a higher dimension in this example we move the data from one dimension to two dimensions three find a support vector classifier that separates the higher dimensional data into two groups that&#39;s all there is to it double BAM going back to the original one dimensional data you may be wondering why we decided to create y-axis coordinates with dosage squared why not dosage cubed or pi divided by four times the square root of dosage in other words how do we decide how to transform the data The polynomial kernel function in order to make the mathematics possible support vector machines use something called kernel functions to systematically find support vector classifier in higher dimensions so let me show you how a kernel function systematically finds support vector classifier in higher dimensions for this example I use the polynomial kernel which has a parameter D which stands for the degree of the polynomial when D equals 1 the polynomial kernel computes the relationships between each pair of observations in one dimension chips are used to find a support vector classifier when D equals two we get a second dimension based on dosages squared and the polynomial kernel computes the two-dimensional relationships between each pair of observations and those relationships are used to find a support vector classifier and when we set D equal three then we would get a third dimension based on dosages cubed and the polynomial kernel computes the three-dimensional relationships between each pair of observations and those relationships are used to find a support vector classifier and when D equals four or more then we get even more dimensions to find a support vector classifier in summary the polynomial kernel systematically increases dimensions by setting D the degree of the polynomial and the relationships between each pair of observations are used to find a support vector classifier last but not least we can find a good value for D with cross validation double bam another very commonly used kernel is The radial basis function (RBF) kernel the radial kernel also known as the radial basis function kernel unfortunately the radio Colonel finds support vector classifier x&#39; in infinite dimensions so I can&#39;t give you an example of what it does exactly however when using it on a new observation like this the radio kernel behaves like a weighted nearest neighbor model in other words the closest observations aka the nearest neighbors have a lot of influence on how we classify the new observation and observations that are further away have relatively little influence on the classification so since these observations are the closest to the new observation the radio kernel uses their classification for the new observation BAM now for the sake of The kernel trick completeness let me mention one last detail about kernels although the examples I&#39;ve given show the data being transformed from a relatively low dimension to a relatively high dimension kernel functions only calculate the relationships between every pair of points as if they are in the higher dimensions they don&#39;t actually do the transformation this trick calculating the high-dimensional relationships without actually transforming the data to the higher dimension is called the kernel trick the kernel trick reduces the amount of computation required for support vector machines by avoiding the math that transforms the data from low to high dimensions and it makes calculating the relationships in the infinite dimensions used by the radial kernel possible Summary of concepts however regardless of how the relationships are calculated the concepts are the same when we have two categories but no obvious linear classifier that separates them in a nice way support vector machines work by moving the data into a relatively high dimensional space and finding a relatively high dimensional support vector classifier that can effectively classify the observations triple bam
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
