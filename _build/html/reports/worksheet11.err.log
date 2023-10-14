@@ -1,0 +1,62 @@
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/graceliu/Library/Python/3.11/lib/python/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py", line 650, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/client.py", line 650, in async_setup_kernel
+    yield
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Generate samples from the posterior predictive
+n_samples = 100
+for s in range(n_samples):
+    # Draw weight vector from the posterior
+    w_s = ... # fill in
+    # Compute predictive mean for all test instances simultaneously given 
+    # w = w_s
+    mu = Phi_test @ w_s
+    # Draw responses for all test instances simultaneously given w = w_s
+    y_s = ... # fill in
+    
+    # Plot the responses for all test instances
+    p = plt.plot(X_test.ravel(), y_s, ':', lw=1)
+
+plt.plot(X, Y, 'ro', label='Train')
+plt.plot(X_test, Phi_test @ w_N, 'g:', label='Sample')
+plt.plot(X_test.ravel(), Y_test_gold, 'k', label='Model mean')
+
+plt.ylim(-2, 5)
+plt.xlabel('$x$')
+plt.ylabel('$y$')
+plt.legend()
+plt.show()
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[7], line 8[0m
+[1;32m      5[0m w_s [38;5;241m=[39m [38;5;241m.[39m[38;5;241m.[39m[38;5;241m.[39m [38;5;66;03m# fill in[39;00m
+[1;32m      6[0m [38;5;66;03m# Compute predictive mean for all test instances simultaneously given [39;00m
+[1;32m      7[0m [38;5;66;03m# w = w_s[39;00m
+[0;32m----> 8[0m mu [38;5;241m=[39m [43mPhi_test[49m[43m [49m[38;5;241;43m@[39;49m[43m [49m[43mw_s[49m
+[1;32m      9[0m [38;5;66;03m# Draw responses for all test instances simultaneously given w = w_s[39;00m
+[1;32m     10[0m y_s [38;5;241m=[39m [38;5;241m.[39m[38;5;241m.[39m[38;5;241m.[39m [38;5;66;03m# fill in[39;00m
+
+[0;31mValueError[0m: matmul: Input operand 1 does not have enough dimensions (has 0, gufunc core with signature (n?,k),(k,m?)->(n?,m?) requires 1)
+

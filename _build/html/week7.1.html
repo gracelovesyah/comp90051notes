@@ -1,0 +1,718 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 13. Convolutional Neural Networks &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'week7.1';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lecture 14." href="week7.2.html" />
+    <link rel="prev" title="week7" href="week7.0.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to COMP90051
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week6.2.html">week6 lec2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="week7.0.html">week7</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lecture 13. Convolutional Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.3.html">Additional Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week9.0.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week9.1.html">Stochastic Multi-Armed Bandits (MABs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week9.2.html">Bayesian regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet10.html">Workshop 10: Multi-armed bandits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet10note.html">Workshop 10: Multi-armed bandits notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week10.0.html">week10</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week10.1.html">wk10 notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet11.html">COMP90051 Workshop 11</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week11.0.html">week11</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week11.1.html">U-PGM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fweek7.1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/week7.1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 13. Convolutional Neural Networks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-notes-by-hand">Random notes by hand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolutional-neural-networks-convnets-or-cnns-overview"><strong>Convolutional Neural Networks (ConvNets or CNNs) Overview</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-principles"><strong>Basic Principles:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architectural-components"><strong>Architectural Components:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications"><strong>Applications:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-cnns"><strong>Advantages of CNNs:</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-13-convolutional-neural-networks">
+<h1>Lecture 13. Convolutional Neural Networks<a class="headerlink" href="#lecture-13-convolutional-neural-networks" title="Permalink to this heading">#</a></h1>
+<p>This notes is completed with assistance of <a class="reference external" href="https://chat.openai.com/c/446f0a4a-334c-463e-8c08-b23536813867">ChatGPT</a></p>
+<ul class="simple">
+<li><p>Additional Resources</p>
+<ul>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=ryJ6Bna-ZNU">Youtube: weight sharing</a></p></li>
+<li></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<div class="tip admonition">
+<p class="admonition-title">Quick Question</p>
+<p>What are the choice of activation functions and loss functions or a binary classification deep learning model?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Answer</p>
+<ol class="arabic">
+<li><p><strong>Activation Function</strong>:</p>
+<ul class="simple">
+<li><p><strong>Output Layer</strong>:</p>
+<ul>
+<li><p><strong>Sigmoid (Logistic) Activation</strong>: It squashes the output between 0 and 1, which can be interpreted as the probability of belonging to the positive class.
+[ \sigma(z) = \frac{1}{1 + e^{-z}} ]</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Loss Function</strong>:</p>
+<ul>
+<li><p><strong>Binary Cross-Entropy (Log Loss)</strong>: It is the most commonly used loss function for binary classification problems. Given that ( p ) is the prediction from our model (output of sigmoid activation) and ( y ) is the actual label (0 or 1), the binary cross-entropy loss is:
+[ L(p, y) = -y \log(p) - (1 - y) \log(1 - p) ]</p>
+<p>This loss function penalizes wrong predictions. The farther the prediction is from the actual label, the higher the loss.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>Notes</strong>:</p>
+<ul class="simple">
+<li><p>Ensure that you have only one neuron in the output layer for binary classification with a sigmoid activation function.</p></li>
+<li><p>For binary classification, while the sigmoid activation is used in the output layer, you’d typically use other activation functions (like ReLU) in the hidden layers to introduce non-linearity and capture complex patterns.</p></li>
+<li><p>The optimizer used (like Adam, SGD, etc.) will try to minimize the Binary Cross-Entropy loss during training.</p></li>
+</ul>
+<p>Using the sigmoid activation function in the output layer along with the binary cross-entropy loss is a well-established practice for binary classification problems in deep learning.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Question</p>
+<p>In image detection, why can CNN recognise a triangle image even if it not on the same spot?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Answer</p>
+<p>The reason convolutional neural networks (CNNs) possess translational invariance, and can recognize patterns regardless of their position in the input, stems from their foundational operations and architecture. Let’s break down the “why” behind this:</p>
+<ol class="arabic simple">
+<li><p><strong>Convolution Operation</strong>: At its core, the convolution operation involves taking a small, fixed-size filter (or kernel) and sliding it over the entire input image to produce a feature map. This operation captures local spatial features from the input.</p>
+<ul class="simple">
+<li><p><strong>Shared Weights</strong>: Each position in the feature map is computed using the same weights from the filter. Thus, no matter where a particular feature (like an edge or a texture) appears in the image, the filter can detect it.</p></li>
+</ul>
+</li>
+<li><p><strong>Pooling</strong>: Many CNN architectures also include pooling layers (often max pooling) which down-sample the feature maps. This operation provides a level of spatial invariance as it retains only the dominant feature in a local region, making the network less sensitive to the exact position of features.</p></li>
+<li><p><strong>Hierarchical Feature Learning</strong>: As you progress deeper into a CNN, the layers tend to recognize more complex, higher-level features. The initial layers might detect simple edges, while deeper layers might detect shapes or even more complex structures. Each subsequent layer builds upon the previous, allowing the network to recognize patterns regardless of their spatial arrangement.</p></li>
+<li><p><strong>Benefit of Local Connectivity</strong>: In CNNs, neurons in a given layer do not connect to every neuron in the previous layer (unlike fully connected networks). Instead, they only connect to a small local region of the input. This local connectivity ensures that the network learns local spatial hierarchies, which contribute to its ability to recognize patterns anywhere in the input.</p></li>
+</ol>
+<p>In essence, CNNs are designed to automatically and adaptively learn spatial hierarchies of features from input images. The convolution operation’s nature ensures that if a feature is learned once, it can be recognized anywhere in the image, granting the CNN its translational invariance property.</p>
+</div>
+<hr class="docutils" />
+<section id="random-notes-by-hand">
+<h2>Random notes by hand<a class="headerlink" href="#random-notes-by-hand" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>CNN are motivated by: efficiency and translation invariance.</p></li>
+<li><p>translation invariant: you can recognize an object as an object, even when its appearance varies in some way.</p></li>
+<li><p>filters / kernel (<span class="math notranslate nohighlight">\(w\)</span>): for extracting features from image (a form of vector of weights)</p></li>
+<li><p>parameter sharing: learn translation invariant filters</p></li>
+<li><p>convolution operator: technique to match filter to image</p></li>
+</ul>
+<hr class="docutils" />
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>• When input and kernel have the same pattern: high activation response</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="convolutional-neural-networks-convnets-or-cnns-overview">
+<h2><strong>Convolutional Neural Networks (ConvNets or CNNs) Overview</strong><a class="headerlink" href="#convolutional-neural-networks-convnets-or-cnns-overview" title="Permalink to this heading">#</a></h2>
+<section id="basic-principles">
+<h3><strong>Basic Principles:</strong><a class="headerlink" href="#basic-principles" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Convolution Operator:</strong></p>
+<ul class="simple">
+<li><p>Originates from signal processing.</p></li>
+<li><p>Defined by the integral/sum of the product of two functions, with one function being a flipped and shifted version of the other.</p></li>
+<li><p>Measures how the shape of one function matches the other as it slides along.</p></li>
+<li><p>In the context of CNNs, it is applied to discrete inputs like images or sequences.</p></li>
+</ul>
+</li>
+<li><p><strong>Convolution in 2D:</strong></p>
+<ul class="simple">
+<li><p>Applied extensively for image processing tasks.</p></li>
+<li><p>Helps in producing a “Feature Map”, a 2D representation showing the presence of a specific pattern (defined by a kernel) at different locations in an input image.</p></li>
+<li><p>Different kernels can detect different patterns (like edges, textures, etc.)</p></li>
+</ul>
+</li>
+<li><p><strong>Convolution in 1D:</strong></p>
+<ul class="simple">
+<li><p>Primarily for sequential data such as time series or text.</p></li>
+<li><p>Captures patterns or n-grams in sequences, like word combinations in text data.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="architectural-components">
+<h3><strong>Architectural Components:</strong><a class="headerlink" href="#architectural-components" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Convolution Layers:</strong></p>
+<ul class="simple">
+<li><p>Extract features from input data using the convolution operation.</p></li>
+<li><p>Filter weights are learned during training.</p></li>
+</ul>
+</li>
+<li><p><strong>Downsampling via Max Pooling:</strong></p>
+<ul class="simple">
+<li><p>Reduces the spatial dimension, retaining dominant features.</p></li>
+<li><p>Helps prevent overfitting and reduces computational demand.</p></li>
+<li><p>Not entirely differentiable, but gradients are defined based on the “sub-gradient” for backpropagation.</p></li>
+</ul>
+</li>
+<li><p><strong>Fully Connected Layers:</strong></p>
+<ul class="simple">
+<li><p>Used towards the end of the network.</p></li>
+<li><p>Combines the features learned and makes predictions or classifications.</p></li>
+</ul>
+</li>
+<li><p><strong>Residual Connections (specific to ResNet):</strong></p>
+<ul class="simple">
+<li><p>Helps in training very deep networks by adding the input to the output of layers.</p></li>
+<li><p>Alleviates the vanishing gradient problem in deep networks.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="applications">
+<h3><strong>Applications:</strong><a class="headerlink" href="#applications" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Computer Vision:</strong></p>
+<ul class="simple">
+<li><p>LeNet-5: An early and influential CNN model.</p></li>
+<li><p>ResNet: Introduced residual connections, allowing for the training of much deeper networks.</p></li>
+<li><p>Common practice involves using transfer learning, i.e., pretraining on a large dataset and fine-tuning on a smaller, task-specific dataset.</p></li>
+</ul>
+</li>
+<li><p><strong>Language Processing:</strong></p>
+<ul class="simple">
+<li><p>1D convolutions applied to word sequences.</p></li>
+<li><p>CNNs can effectively classify sentences and other text-based tasks.</p></li>
+<li><p>Research by Yoon Kim in 2014 highlighted the efficacy of CNNs for sentence classification.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="advantages-of-cnns">
+<h3><strong>Advantages of CNNs:</strong><a class="headerlink" href="#advantages-of-cnns" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Translation Invariance:</strong></p>
+<ul class="simple">
+<li><p>CNNs can detect patterns regardless of their position in the input.</p></li>
+<li><p>Max-pooling further amplifies this characteristic.</p></li>
+</ul>
+</li>
+<li><p><strong>Parameter Sharing:</strong></p>
+<ul class="simple">
+<li><p>Reduces the number of parameters to learn, as the same filter is used across the entire input.</p></li>
+</ul>
+</li>
+<li><p><strong>Hierarchical Pattern Learning:</strong></p>
+<ul class="simple">
+<li><p>Stacking multiple convolution layers allows CNNs to learn complex patterns. Early layers might detect simple patterns like edges, while deeper layers can detect more abstract features.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="week7.0.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">week7</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="week7.2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lecture 14.</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-notes-by-hand">Random notes by hand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolutional-neural-networks-convnets-or-cnns-overview"><strong>Convolutional Neural Networks (ConvNets or CNNs) Overview</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-principles"><strong>Basic Principles:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architectural-components"><strong>Architectural Components:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications"><strong>Applications:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-cnns"><strong>Advantages of CNNs:</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -2,7 +2,43 @@
 ## More on Bayesian
 This note is completed with the assistance of [ChatGPT](https://chat.openai.com/c/7887d9af-ce1c-4551-8f91-c576874448be)
 
-Certainly! Let's delve into these two fundamental aspects of Bayesian approaches:
+
+### Useful Resources
+**Bayesian Regression and Inference Youtube Series**
+- [The Battle of Polynomials | Towards Bayesian Regression](https://www.youtube.com/watch?v=VQ1dxoopfEI&list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn)
+- [Maximum Likelihood Estimation - THINK PROBABILITY FIRST!](https://www.youtube.com/watch?v=NyH9K3stvP8&list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&index=2)
+- [Bayesian Curve Fitting - Your First Baby Steps!](https://www.youtube.com/watch?v=dW_IwqNnapM&list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&index=3)
+- [Sum Rule, Product Rule, Joint & Marginal Probability - CLEARLY EXPLAINED with EXAMPLES!](https://www.youtube.com/watch?v=xjLqawhT3bY&list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&index=4)
+- [Posterior Predictive Distribution - Proper Bayesian Treatment!](https://www.youtube.com/watch?v=Kz7YbxHkVI0&list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&index=5)🌟🌟🌟
+- [How to Read & Make Graphical Models?](https://www.youtube.com/watch?v=1u_5ZNFAItc&list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&index=6)
+- [Conjugate Prior - Use & Limitations CLEARLY EXPLAINED!](https://www.youtube.com/watch?v=pG0S2u188bg&list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&index=7)
+- [Monte Carlo Methods - VISUALLY EXPLAINED!](https://www.youtube.com/watch?v=uUqK_me5xUo&list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&index=8)
+- [Markov Chains - VISUALLY EXPLAINED + History!](https://www.youtube.com/watch?v=CIe869Rce2k&list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&index=9)
+- [Metropolis-Hastings - VISUALLY EXPLAINED!](https://www.youtube.com/watch?v=oX2wIGSn4jY&list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&index=10)
+- [Probabilistic Programming - FOUNDATIONS & COMPREHENSIVE REVIEW!](https://www.youtube.com/watch?v=-C8PGgnF1yg&list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&index=11)
+
+```{image} ./images/bayesian2.png
+:alt: b2
+:class: bg-primary mb-1
+:width: 800px
+:align: center
+```
+
+```{image} ./images/bayesian1.png
+:alt: b1
+:class: bg-primary mb-1
+:width: 800px
+:align: center
+```
+
+```{image} ./images/bayesian3.png
+:alt: b3
+:class: bg-primary mb-1
+:width: 800px
+:align: center
+```
+
+
 ### Joint Distributions
 1. **Why Bayesian Approaches Often Require Working with Joint Distributions:**
 
@@ -68,3 +104,66 @@ $$ P(D) = \int P(D|\theta) \times P(\theta) \, d\theta $$
    - As more data becomes available, the posterior distribution from the previous step can be used as the prior for the next update. This iterative updating is a powerful feature of Bayesian inference, allowing for continuous learning as new evidence is gathered.
 
 In essence, the process of updating prior beliefs in Bayesian inference is a systematic way of combining prior knowledge with new data to refine our understanding of the underlying parameters or processes. This approach is particularly powerful in situations where data are limited or where incorporating expert knowledge is essential.
+
+---
+
+The posterior distribution for $ \mathbf{w} $ given data $ \mathbf{X} $ and $ \mathbf{y} $ is derived using Bayes' theorem. Let's break down the derivation:
+
+---
+
+**Bayes' Theorem:**
+
+$$ p(A|B) = \frac{p(B|A) \times p(A)}{p(B)} $$
+
+Where:
+- $ p(A|B) $ is the posterior probability of event A given event B.
+- $ p(B|A) $ is the likelihood of event B given event A.
+- $ p(A) $ is the prior probability of event A.
+- $ p(B) $ is the marginal likelihood or evidence.
+
+---
+
+**Applying to Bayesian Linear Regression:**
+
+In the context of Bayesian linear regression:
+- $ A $ corresponds to the weights $ \mathbf{w} $.
+- $ B $ corresponds to the observed data $ \mathbf{X} $ and $ \mathbf{y} $.
+
+Using Bayes' theorem, the posterior distribution for $ \mathbf{w} $ given $ \mathbf{X} $ and $ \mathbf{y} $ is:
+
+$$ p(\mathbf{w}|\mathbf{X},\mathbf{y}) = \frac{p(\mathbf{y}|\mathbf{w},\mathbf{X}) \times p(\mathbf{w})}{p(\mathbf{y}|\mathbf{X})} $$
+
+Where:
+- $ p(\mathbf{w}|\mathbf{X},\mathbf{y}) $ is the posterior distribution of $ \mathbf{w} $.
+- $ p(\mathbf{y}|\mathbf{w},\mathbf{X}) $ is the likelihood of observing $ \mathbf{y} $ given $ \mathbf{w} $ and $ \mathbf{X} $.
+- $ p(\mathbf{w}) $ is the prior distribution of $ \mathbf{w} $.
+- $ p(\mathbf{y}|\mathbf{X}) $ is the marginal likelihood or evidence, which can be computed as an integral over all possible values of $ \mathbf{w} $:
+
+$$ p(\mathbf{y}|\mathbf{X}) = \int p(\mathbf{y}|\mathbf{w},\mathbf{X}) \times p(\mathbf{w}) \, d\mathbf{w} $$
+
+---
+
+In Bayesian linear regression, the prior $ p(\mathbf{w}) $ and the likelihood $ p(\mathbf{y}|\mathbf{w},\mathbf{X}) $ are typically chosen such that the posterior is analytically tractable. For example, if both the prior and the likelihood are Gaussian (normal) distributions, then the posterior will also be a Gaussian distribution. This choice simplifies the computation and allows for exact inference.
+
+```{admonition} Question
+why would we write the denominator as the marginal likelihood?
+```
+
+```{admonition} Answer
+:class: dropdown
+The term "marginal likelihood" or "evidence" refers to the likelihood of the observed data, marginalized (or averaged) over all possible parameter values. In the context of Bayesian linear regression, the parameter we're interested in is $ \mathbf{w} $, the vector of regression coefficients.
+
+The reason we compute the marginal likelihood in this manner is rooted in the fundamentals of Bayesian inference. Let's break it down:
+
+1. **Definition of Marginal Likelihood:** The marginal likelihood, $ p(\mathbf{y}|\mathbf{X}) $, is the probability of the observed data $ \mathbf{y} $ given the features $ \mathbf{X} $, averaged over all possible values of the parameters $ \mathbf{w} $. Mathematically, it's represented as:
+
+$$ p(\mathbf{y}|\mathbf{X}) = \int p(\mathbf{y}|\mathbf{w},\mathbf{X}) \times p(\mathbf{w}) \, d\mathbf{w} $$
+
+2. **Role in Bayes' Theorem:** The marginal likelihood serves as a normalizing constant in Bayes' theorem. It ensures that the posterior distribution $ p(\mathbf{w}|\mathbf{X},\mathbf{y}) $ is a valid probability distribution that integrates (sums) to 1.
+
+3. **Interpretation:** The marginal likelihood provides a measure of how well the model (with its associated likelihood and prior) predicts the observed data, averaged over all possible parameter values. It plays a crucial role in model comparison, where models with higher marginal likelihoods are generally preferred.
+
+4. **Computational Challenge:** Directly computing the integral can be challenging, especially in high-dimensional spaces or with complex models. However, in some cases (like when using conjugate priors), the integral can be computed analytically. In other cases, approximation methods like Markov Chain Monte Carlo (MCMC) or Variational Inference might be used.
+
+In summary, the marginal likelihood is a fundamental concept in Bayesian statistics, representing the probability of the observed data under the model, averaged over all possible parameter values. It plays a key role in both the normalization of the posterior distribution and in model comparison.
+```

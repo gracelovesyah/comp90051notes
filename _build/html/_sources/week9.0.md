@@ -6,3 +6,5 @@ This notes is completed with assistance of [ChatGPT](https://chat.openai.com/c/1
 [View Lecture 18. Bayesian regression](./slide/18.pdf)
 
 [View workshop10-slides](./slide/workshop10-slides.pdf)
+
+[View workshop10](/workshop10-slides.pdf)

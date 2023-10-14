@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Workshop 10: Multi-armed bandits notes" href="worksheet10note.html" />
-    <link rel="prev" title="Stochastic Multi-Armed Bandits (MABs)" href="week9.1.html" />
+    <link rel="prev" title="Bayesian regression" href="week9.2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -160,17 +160,36 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="week6.html">week6 lec2</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="week9.html">week9</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week6.2.html">week6 lec2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week7.0.html">week7</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week7.1.html">Lecture 13. Convolutional Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.3.html">Additional Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="week9.0.html">week9</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="week9.1.html">Stochastic Multi-Armed Bandits (MABs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week9.2.html">Bayesian regression</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Workshop 10: Multi-armed bandits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="worksheet10note.html">Workshop 10: Multi-armed bandits notes</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week10.html">week10</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week10.0.html">week10</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week10.1.html">wk10 notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet11.html">COMP90051 Workshop 11</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week11.0.html">week11</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week11.1.html">U-PGM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
 </ul>
 </li>
 </ul>
@@ -806,7 +825,7 @@ There also happens to be a 10-dimensional context vector for each arm (modelling
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EpsGreedy average reward 0.01625
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EpsGreedy average reward 0.04875
 </pre></div>
 </div>
 </div>
@@ -820,10 +839,10 @@ There also happens to be a 10-dimensional context vector for each arm (modelling
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UCB average reward 0.10125
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UCB average reward 0.1025
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/7q/7h5d5cp54fs6_718f38b_hd00000gn/T/ipykernel_26403/1835402886.py:43: RuntimeWarning: invalid value encountered in scalar multiply
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/7q/7h5d5cp54fs6_718f38b_hd00000gn/T/ipykernel_85578/1835402886.py:43: RuntimeWarning: invalid value encountered in scalar multiply
   self.mean_rewards[arm] = (self.mean_rewards[arm] * (self.n_pulls[arm] - 1) + reward) / self.n_pulls[arm]
 </pre></div>
 </div>
@@ -845,7 +864,7 @@ There also happens to be a 10-dimensional context vector for each arm (modelling
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8b6332532195cba7437bda5c96757c9d097c8d4536c32658645b9049e580b01f.png" src="_images/8b6332532195cba7437bda5c96757c9d097c8d4536c32658645b9049e580b01f.png" />
+<img alt="_images/8bef3661395031afe4265df9942149d1c0af98599a424cb6521908938ea3f522.png" src="_images/8bef3661395031afe4265df9942149d1c0af98599a424cb6521908938ea3f522.png" />
 </div>
 </div>
 </section>
@@ -883,12 +902,12 @@ There also happens to be a 10-dimensional context vector for each arm (modelling
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="week9.1.html"
+       href="week9.2.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Stochastic Multi-Armed Bandits (MABs)</p>
+        <p class="prev-next-title">Bayesian regression</p>
       </div>
     </a>
     <a class="right-next"

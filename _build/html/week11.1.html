@@ -1,0 +1,756 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>U-PGM &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'week11.1';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ASM2 feedback" href="asm1feedback.html" />
+    <link rel="prev" title="week11" href="week11.0.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to COMP90051
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week6.2.html">week6 lec2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week7.0.html">week7</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week7.1.html">Lecture 13. Convolutional Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.3.html">Additional Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week9.0.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week9.1.html">Stochastic Multi-Armed Bandits (MABs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week9.2.html">Bayesian regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet10.html">Workshop 10: Multi-armed bandits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet10note.html">Workshop 10: Multi-armed bandits notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week10.0.html">week10</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week10.1.html">wk10 notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet11.html">COMP90051 Workshop 11</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="week11.0.html">week11</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">U-PGM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fweek11.1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/week11.1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>U-PGM</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hmm">HMM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-cont-evaluation-decoding-learning">Example cont. Evaluation, Decoding, Learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pixel-labelling-tasks-in-computer-vision">Pixel labelling tasks in Computer Vision</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crf">CRF</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="u-pgm">
+<h1>U-PGM<a class="headerlink" href="#u-pgm" title="Permalink to this heading">#</a></h1>
+<p>This note is completed with the assistance of <a class="reference external" href="https://chat.openai.com/c/7887d9af-ce1c-4551-8f91-c576874448be">ChatGPT</a></p>
+<p><strong>Undirected Probabilistic Graphical Models (U-PGMs or Markov Random Fields):</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Definition and Structure:</strong></p>
+<ul class="simple">
+<li><p>U-PGMs are undirected graphical models parameterized by positive-valued functions of the variables and a global normalization.</p></li>
+<li><p>They are also known as Markov Random Fields (MRFs).</p></li>
+</ul>
+</li>
+<li><p><strong>Difference between Directed and Undirected PGMs:</strong></p>
+<ul class="simple">
+<li><p><strong>Undirected PGMs:</strong></p>
+<ul>
+<li><p>Edges are undirected.</p></li>
+<li><p>Each node represents a random variable.</p></li>
+<li><p>Each clique in the graph has a “factor” associated with it.</p></li>
+<li><p>The joint probability is proportional to the product of these factors.</p></li>
+</ul>
+</li>
+<li><p><strong>Directed PGMs:</strong></p>
+<ul>
+<li><p>Edges have a direction.</p></li>
+<li><p>Each node represents a random variable.</p></li>
+<li><p>Each node has a conditional probability based on its parents in the graph.</p></li>
+<li><p>The joint probability is the product of these conditionals.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Maximal Clique:</strong></p>
+<ul class="simple">
+<li><p>A clique is a set of fully connected nodes.</p></li>
+<li><p>A maximal clique is the largest clique in the graph, meaning no additional nodes can be added to it while maintaining full connectivity.</p></li>
+</ul>
+</li>
+<li><p><strong>Conversion from Directed to Undirected PGMs:</strong></p>
+<ul class="simple">
+<li><p>Copy nodes.</p></li>
+<li><p>Make edges undirected.</p></li>
+<li><p>“Moralize” parent nodes by connecting them.</p></li>
+</ul>
+</li>
+<li><p><strong>Advantages of U-PGMs:</strong></p>
+<ul class="simple">
+<li><p>They are a generalization of directed PGMs.</p></li>
+<li><p>They offer a simpler means of modeling without the need for per-factor normalization.</p></li>
+<li><p>General inference algorithms often use the U-PGM representation.</p></li>
+</ul>
+</li>
+<li><p><strong>Disadvantages:</strong></p>
+<ul class="simple">
+<li><p>They have slightly weaker independence assumptions.</p></li>
+<li><p>Calculating the global normalization term (Z) can be intractable, except for specific structures like chains or trees.</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+<p><strong>Conditional Random Fields (CRFs):</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Definition:</strong></p>
+<ul class="simple">
+<li><p>CRFs are a type of U-PGM tailored for structured prediction, especially for sequences.</p></li>
+</ul>
+</li>
+<li><p><strong>Applications:</strong></p>
+<ul class="simple">
+<li><p>Used for tasks like part-of-speech tagging, where observed outputs are words and states are tags like noun, verb, etc.</p></li>
+</ul>
+</li>
+<li><p><strong>Discriminative Nature:</strong></p>
+<ul class="simple">
+<li><p>CRFs are discriminative models, focusing on modeling the boundary between classes. They model the conditional probability ( P(Q|O) ), where ( Q ) is the sequence of states and ( O ) is the sequence of observations.</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+<p><strong>Hidden Markov Models (HMMs):</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Definition:</strong></p>
+<ul class="simple">
+<li><p>HMMs are generative models representing sequences of observations and their underlying states.</p></li>
+</ul>
+</li>
+<li><p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p>Transition probability matrix (A).</p></li>
+<li><p>Output probability matrix (B).</p></li>
+<li><p>Initial state distribution (Π).</p></li>
+</ul>
+</li>
+<li><p><strong>Applications:</strong></p>
+<ul class="simple">
+<li><p>Used in speech recognition, biological sequence analysis, and part-of-speech tagging.</p></li>
+</ul>
+</li>
+<li><p><strong>Fundamental Tasks:</strong></p>
+<ul class="simple">
+<li><p><strong>Evaluation:</strong> Determine the likelihood of an observation sequence given an HMM.</p></li>
+<li><p><strong>Decoding:</strong> Find the most probable hidden state sequence for a given observation sequence.</p></li>
+<li><p><strong>Learning:</strong> Adjust the parameters of the HMM based on observed data.</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+<p><strong>Applications in Computer Vision:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Pixel Labeling Tasks:</strong></p>
+<ul class="simple">
+<li><p>Tasks include semantic labeling, figure-ground segmentation, and denoising.</p></li>
+<li><p>The hidden states represent the semantics of the image, while pixels are the observed outputs.</p></li>
+</ul>
+</li>
+<li><p><strong>Relation to HMMs:</strong></p>
+<ul class="simple">
+<li><p>The tasks in computer vision can be seen as spatial versions of HMMs, where the spatial structure of an image is analogous to the temporal structure in HMMs.</p></li>
+</ul>
+</li>
+</ol>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
+<p>In the context of the sentence “I love Machine Learning” and its inferred sequence of tags “noun, verb, noun, noun” using an HMM:</p>
+<ol class="arabic simple">
+<li><p><strong>O (Observation Sequence):</strong></p>
+<ul class="simple">
+<li><p>( O ) represents the sequence of observed data.</p></li>
+<li><p>In this example, ( O ) is the sentence “I love Machine Learning”. It’s the data that you can directly observe and want to infer hidden states (tags) for.</p></li>
+</ul>
+</li>
+<li><p><strong>μ (HMM Model):</strong></p>
+<ul class="simple">
+<li><p>( \mu ) represents the HMM model itself, which includes:</p>
+<ul>
+<li><p><strong>State Set:</strong> The possible parts of speech tags (e.g., noun, verb, adjective, adverb, etc.).</p></li>
+<li><p><strong>Transition Probabilities (A):</strong> The probabilities of transitioning from one part of speech to another. For instance, the probability of a noun being followed by a verb, a verb being followed by an adjective, etc.</p></li>
+<li><p><strong>Emission Probabilities (B):</strong> The probabilities of a particular word being emitted for a given part of speech. For example, the probability that the word “love” is a verb, the probability that “I” is a noun, etc.</p></li>
+<li><p><strong>Initial State Probabilities (Π):</strong> The probabilities of starting a sentence with each possible part of speech.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>In the given example, the HMM model ( \mu ) would have been trained on a large corpus of sentences with known parts of speech tags. This training allows the model to learn the transition and emission probabilities, which it then uses to infer the sequence of tags for new sentences like “I love Machine Learning”.</p>
+<hr class="docutils" />
+<p>In the context of the sentence “I love Machine Learning” and its inferred sequence of tags “noun, verb, noun, noun” using an HMM, let’s break down the tasks of Evaluation, Decoding, and Learning:</p>
+</section>
+<hr class="docutils" />
+<section id="hmm">
+<h2>HMM<a class="headerlink" href="#hmm" title="Permalink to this heading">#</a></h2>
+<section id="example-cont-evaluation-decoding-learning">
+<h3>Example cont. Evaluation, Decoding, Learning<a class="headerlink" href="#example-cont-evaluation-decoding-learning" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Evaluation:</strong></p>
+<ul class="simple">
+<li><p><strong>Task:</strong> Given an HMM model ( \mu ) and an observation sequence ( O ), determine the likelihood ( Pr(O|\mu) ).</p></li>
+<li><p><strong>In this example:</strong> The task would be to compute the likelihood of observing the sentence “I love Machine Learning” given the HMM model ( \mu ) (which has been trained on a corpus of sentences with known parts of speech tags). Essentially, how probable is this sequence of words given the model we have?</p></li>
+</ul>
+</li>
+<li><p><strong>Decoding:</strong></p>
+<ul class="simple">
+<li><p><strong>Task:</strong> Given an HMM model ( \mu ) and an observation sequence ( O ), determine the most probable hidden state sequence ( Q ).</p></li>
+<li><p><strong>In this example:</strong> The task is to find the most likely sequence of parts of speech tags (hidden states) for the sentence “I love Machine Learning” given the HMM model ( \mu ). The result, in this case, is “noun, verb, noun, noun”. This is the sequence of tags that the model believes is most likely to have generated the observed sequence of words.</p></li>
+</ul>
+</li>
+<li><p><strong>Learning:</strong></p>
+<ul class="simple">
+<li><p><strong>Task:</strong> Given an observation sequence ( O ) and a set of states, learn the parameters ( A ) (transition probabilities), ( B ) (emission probabilities), and ( \Pi ) (initial state probabilities).</p></li>
+<li><p><strong>In this example:</strong> If we were given a large corpus of sentences (like “I love Machine Learning”) with their corresponding parts of speech tags (like “noun, verb, noun, noun”), the task would be to adjust or train the HMM model ( \mu ) to best fit this data. This involves estimating the transition probabilities between tags, the probabilities of words being emitted for given tags, and the probabilities of starting a sentence with each possible tag.</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+<p><strong>Summary:</strong></p>
+<p>In the context of the example:</p>
+<ul class="simple">
+<li><p><strong>Evaluation</strong> is about assessing how well the model explains the observed sentence.</p></li>
+<li><p><strong>Decoding</strong> is about finding the best sequence of tags for the sentence given the model.</p></li>
+<li><p><strong>Learning</strong> is about adjusting the model based on a dataset of sentences and their corresponding tags to make it more accurate for future predictions.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="pixel-labelling-tasks-in-computer-vision">
+<h2>Pixel labelling tasks in Computer Vision<a class="headerlink" href="#pixel-labelling-tasks-in-computer-vision" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="crf">
+<h2>CRF<a class="headerlink" href="#crf" title="Permalink to this heading">#</a></h2>
+<p>A practical example using <strong>Part-of-Speech Tagging</strong> with Conditional Random Fields (CRFs):</p>
+<hr class="docutils" />
+<p><strong>Scenario:</strong>
+Imagine we have a sentence, and we want to predict the part-of-speech (POS) tag for each word in the sentence. The sentence is:</p>
+<p><strong>Sentence (Observations, O):</strong> “She enjoys reading books.”</p>
+<hr class="docutils" />
+<p><strong>Task:</strong>
+Given the sentence, we want to predict the POS tag for each word. The possible POS tags include nouns (N), verbs (V), pronouns (PR), adverbs (ADV), and prepositions (P), among others.</p>
+<hr class="docutils" />
+<p><strong>Using CRFs:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Features:</strong> CRFs rely on features to make predictions. For POS tagging, features might include:</p>
+<ul class="simple">
+<li><p>The current word (e.g., “enjoys”).</p></li>
+<li><p>The previous word (e.g., “She”).</p></li>
+<li><p>The next word (e.g., “reading”).</p></li>
+<li><p>Whether the current word is capitalized.</p></li>
+<li><p>Whether the current word is a known verb or noun, etc.</p></li>
+</ul>
+</li>
+<li><p><strong>Model Training:</strong> Using a labeled dataset (sentences with known POS tags), we train the CRF to understand the relationships between words and their corresponding POS tags based on the features.</p></li>
+<li><p><strong>Prediction:</strong> Once trained, given a new sentence, the CRF can predict the POS tags for each word based on the features and the learned relationships.</p></li>
+</ol>
+<hr class="docutils" />
+<p><strong>Predicted Tags (States, Q):</strong>
+Using our trained CRF model on the sentence “She enjoys reading books.”, we might get the following POS tags:</p>
+<p>“She” (PR) - Pronoun
+“enjoys” (V) - Verb
+“reading” (V) - Verb
+“books” (N) - Noun
+“.” (Punctuation)</p>
+<hr class="docutils" />
+<p><strong>Summary:</strong>
+In this example, the CRF uses the features of each word in the sentence, along with the learned relationships from the training data, to predict the most likely POS tag for each word. The advantage of CRFs over other models like HMMs is that they can consider a wide range of features and capture complex dependencies between words, making them particularly effective for tasks like POS tagging.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="week11.0.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">week11</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="asm1feedback.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ASM2 feedback</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hmm">HMM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-cont-evaluation-decoding-learning">Example cont. Evaluation, Decoding, Learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pixel-labelling-tasks-in-computer-vision">Pixel labelling tasks in Computer Vision</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crf">CRF</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

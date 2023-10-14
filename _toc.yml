@@ -5,17 +5,45 @@ format: jb-book
 root: intro
 chapters:
 - file: basics
-- file: week6
-- file: week9
+- file: week6.0
+  sections:
+  - file: week6.1
+  - file: week6.2
+  - file: worksheet7
+  - file: worksheet7note
+
+- file: week7.0
+  sections:
+  - file: week7.1
+  - file: week7.2
+  - file: week7.3
+  - file: worksheet8
+  - file: worksheet8note
+
+- file: week8.0
+  sections:
+  - file: week8.1
+  - file: week8.2
+  - file: worksheet9
+  - file: worksheet9note
+
+
+- file: week9.0
   sections:
   - file: week9.1
-  - file: work9.2
+  - file: week9.2
   - file: worksheet10
   - file: worksheet10note
-- file: week10
+- file: week10.0
   sections:
-  - file: week10.0
   - file: week10.1
   - file: week10.2
   - file: week10.3
-
+  - file: worksheet11
+  - file: worksheet11note
+- file: week11.0
+  sections:
+  - file: week11.1
+  - file: week11.2
+  - file: week11.3
+  - file: asm1feedback

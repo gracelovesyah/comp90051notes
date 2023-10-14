@@ -66,6 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'week10.3';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="COMP90051 Workshop 11" href="worksheet11.html" />
     <link rel="prev" title="PGM Representation" href="week10.2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -159,17 +160,36 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="week6.html">week6 lec2</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week9.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week6.2.html">week6 lec2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week7.0.html">week7</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week7.1.html">Lecture 13. Convolutional Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.3.html">Additional Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week9.0.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week9.1.html">Stochastic Multi-Armed Bandits (MABs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week9.2.html">Bayesian regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="worksheet10.html">Workshop 10: Multi-armed bandits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="worksheet10note.html">Workshop 10: Multi-armed bandits notes</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="week10.html">week10</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="week10.0.html">week10</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="week10.1.html">wk10 notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Additional Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet11.html">COMP90051 Workshop 11</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week11.0.html">week11</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week11.1.html">U-PGM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
 </ul>
 </li>
 </ul>
@@ -366,6 +386,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-bayesian">More on Bayesian</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-resources">Useful Resources</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-distributions">Joint Distributions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prior-and-posterior">Prior and Posterior</a></li>
 </ul>
@@ -386,7 +407,26 @@ document.write(`
 <section id="more-on-bayesian">
 <h2>More on Bayesian<a class="headerlink" href="#more-on-bayesian" title="Permalink to this heading">#</a></h2>
 <p>This note is completed with the assistance of <a class="reference external" href="https://chat.openai.com/c/7887d9af-ce1c-4551-8f91-c576874448be">ChatGPT</a></p>
-<p>Certainly! Let’s delve into these two fundamental aspects of Bayesian approaches:</p>
+<section id="useful-resources">
+<h3>Useful Resources<a class="headerlink" href="#useful-resources" title="Permalink to this heading">#</a></h3>
+<p><strong>Bayesian Regression and Inference Youtube Series</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=VQ1dxoopfEI&amp;list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn">The Battle of Polynomials | Towards Bayesian Regression</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=NyH9K3stvP8&amp;list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&amp;index=2">Maximum Likelihood Estimation - THINK PROBABILITY FIRST!</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=dW_IwqNnapM&amp;list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&amp;index=3">Bayesian Curve Fitting - Your First Baby Steps!</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=xjLqawhT3bY&amp;list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&amp;index=4">Sum Rule, Product Rule, Joint &amp; Marginal Probability - CLEARLY EXPLAINED with EXAMPLES!</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=Kz7YbxHkVI0&amp;list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&amp;index=5">Posterior Predictive Distribution - Proper Bayesian Treatment!</a>🌟🌟🌟</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=1u_5ZNFAItc&amp;list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&amp;index=6">How to Read &amp; Make Graphical Models?</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=pG0S2u188bg&amp;list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&amp;index=7">Conjugate Prior - Use &amp; Limitations CLEARLY EXPLAINED!</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=uUqK_me5xUo&amp;list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&amp;index=8">Monte Carlo Methods - VISUALLY EXPLAINED!</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=CIe869Rce2k&amp;list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&amp;index=9">Markov Chains - VISUALLY EXPLAINED + History!</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=oX2wIGSn4jY&amp;list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&amp;index=10">Metropolis-Hastings - VISUALLY EXPLAINED!</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=-C8PGgnF1yg&amp;list=PLivJwLo9VCUISiuiRsbm5xalMbIwOHOOn&amp;index=11">Probabilistic Programming - FOUNDATIONS &amp; COMPREHENSIVE REVIEW!</a></p></li>
+</ul>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/bayesian2.png"><img alt="b2" class="bg-primary mb-1 align-center" src="_images/bayesian2.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/bayesian1.png"><img alt="b1" class="bg-primary mb-1 align-center" src="_images/bayesian1.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/bayesian3.png"><img alt="b3" class="bg-primary mb-1 align-center" src="_images/bayesian3.png" style="width: 800px;" /></a>
+</section>
 <section id="joint-distributions">
 <h3>Joint Distributions<a class="headerlink" href="#joint-distributions" title="Permalink to this heading">#</a></h3>
 <ol class="arabic">
@@ -470,6 +510,60 @@ document.write(`
 </li>
 </ol>
 <p>In essence, the process of updating prior beliefs in Bayesian inference is a systematic way of combining prior knowledge with new data to refine our understanding of the underlying parameters or processes. This approach is particularly powerful in situations where data are limited or where incorporating expert knowledge is essential.</p>
+<hr class="docutils" />
+<p>The posterior distribution for <span class="math notranslate nohighlight">\( \mathbf{w} \)</span> given data <span class="math notranslate nohighlight">\( \mathbf{X} \)</span> and <span class="math notranslate nohighlight">\( \mathbf{y} \)</span> is derived using Bayes’ theorem. Let’s break down the derivation:</p>
+<hr class="docutils" />
+<p><strong>Bayes’ Theorem:</strong></p>
+<div class="math notranslate nohighlight">
+\[ p(A|B) = \frac{p(B|A) \times p(A)}{p(B)} \]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( p(A|B) \)</span> is the posterior probability of event A given event B.</p></li>
+<li><p><span class="math notranslate nohighlight">\( p(B|A) \)</span> is the likelihood of event B given event A.</p></li>
+<li><p><span class="math notranslate nohighlight">\( p(A) \)</span> is the prior probability of event A.</p></li>
+<li><p><span class="math notranslate nohighlight">\( p(B) \)</span> is the marginal likelihood or evidence.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Applying to Bayesian Linear Regression:</strong></p>
+<p>In the context of Bayesian linear regression:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( A \)</span> corresponds to the weights <span class="math notranslate nohighlight">\( \mathbf{w} \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( B \)</span> corresponds to the observed data <span class="math notranslate nohighlight">\( \mathbf{X} \)</span> and <span class="math notranslate nohighlight">\( \mathbf{y} \)</span>.</p></li>
+</ul>
+<p>Using Bayes’ theorem, the posterior distribution for <span class="math notranslate nohighlight">\( \mathbf{w} \)</span> given <span class="math notranslate nohighlight">\( \mathbf{X} \)</span> and <span class="math notranslate nohighlight">\( \mathbf{y} \)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[ p(\mathbf{w}|\mathbf{X},\mathbf{y}) = \frac{p(\mathbf{y}|\mathbf{w},\mathbf{X}) \times p(\mathbf{w})}{p(\mathbf{y}|\mathbf{X})} \]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( p(\mathbf{w}|\mathbf{X},\mathbf{y}) \)</span> is the posterior distribution of <span class="math notranslate nohighlight">\( \mathbf{w} \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( p(\mathbf{y}|\mathbf{w},\mathbf{X}) \)</span> is the likelihood of observing <span class="math notranslate nohighlight">\( \mathbf{y} \)</span> given <span class="math notranslate nohighlight">\( \mathbf{w} \)</span> and <span class="math notranslate nohighlight">\( \mathbf{X} \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( p(\mathbf{w}) \)</span> is the prior distribution of <span class="math notranslate nohighlight">\( \mathbf{w} \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( p(\mathbf{y}|\mathbf{X}) \)</span> is the marginal likelihood or evidence, which can be computed as an integral over all possible values of <span class="math notranslate nohighlight">\( \mathbf{w} \)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ p(\mathbf{y}|\mathbf{X}) = \int p(\mathbf{y}|\mathbf{w},\mathbf{X}) \times p(\mathbf{w}) \, d\mathbf{w} \]</div>
+<hr class="docutils" />
+<p>In Bayesian linear regression, the prior <span class="math notranslate nohighlight">\( p(\mathbf{w}) \)</span> and the likelihood <span class="math notranslate nohighlight">\( p(\mathbf{y}|\mathbf{w},\mathbf{X}) \)</span> are typically chosen such that the posterior is analytically tractable. For example, if both the prior and the likelihood are Gaussian (normal) distributions, then the posterior will also be a Gaussian distribution. This choice simplifies the computation and allows for exact inference.</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>why would we write the denominator as the marginal likelihood?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Answer</p>
+<p>The term “marginal likelihood” or “evidence” refers to the likelihood of the observed data, marginalized (or averaged) over all possible parameter values. In the context of Bayesian linear regression, the parameter we’re interested in is <span class="math notranslate nohighlight">\( \mathbf{w} \)</span>, the vector of regression coefficients.</p>
+<p>The reason we compute the marginal likelihood in this manner is rooted in the fundamentals of Bayesian inference. Let’s break it down:</p>
+<ol class="arabic simple">
+<li><p><strong>Definition of Marginal Likelihood:</strong> The marginal likelihood, <span class="math notranslate nohighlight">\( p(\mathbf{y}|\mathbf{X}) \)</span>, is the probability of the observed data <span class="math notranslate nohighlight">\( \mathbf{y} \)</span> given the features <span class="math notranslate nohighlight">\( \mathbf{X} \)</span>, averaged over all possible values of the parameters <span class="math notranslate nohighlight">\( \mathbf{w} \)</span>. Mathematically, it’s represented as:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ p(\mathbf{y}|\mathbf{X}) = \int p(\mathbf{y}|\mathbf{w},\mathbf{X}) \times p(\mathbf{w}) \, d\mathbf{w} \]</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Role in Bayes’ Theorem:</strong> The marginal likelihood serves as a normalizing constant in Bayes’ theorem. It ensures that the posterior distribution <span class="math notranslate nohighlight">\( p(\mathbf{w}|\mathbf{X},\mathbf{y}) \)</span> is a valid probability distribution that integrates (sums) to 1.</p></li>
+<li><p><strong>Interpretation:</strong> The marginal likelihood provides a measure of how well the model (with its associated likelihood and prior) predicts the observed data, averaged over all possible parameter values. It plays a crucial role in model comparison, where models with higher marginal likelihoods are generally preferred.</p></li>
+<li><p><strong>Computational Challenge:</strong> Directly computing the integral can be challenging, especially in high-dimensional spaces or with complex models. However, in some cases (like when using conjugate priors), the integral can be computed analytically. In other cases, approximation methods like Markov Chain Monte Carlo (MCMC) or Variational Inference might be used.</p></li>
+</ol>
+<p>In summary, the marginal likelihood is a fundamental concept in Bayesian statistics, representing the probability of the observed data under the model, averaged over all possible parameter values. It plays a key role in both the normalization of the posterior distribution and in model comparison.</p>
+</div>
 </section>
 </section>
 </section>
@@ -514,6 +608,15 @@ document.write(`
         <p class="prev-next-title">PGM Representation</p>
       </div>
     </a>
+    <a class="right-next"
+       href="worksheet11.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">COMP90051 Workshop 11</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -533,6 +636,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-bayesian">More on Bayesian</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-resources">Useful Resources</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-distributions">Joint Distributions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prior-and-posterior">Prior and Posterior</a></li>
 </ul>

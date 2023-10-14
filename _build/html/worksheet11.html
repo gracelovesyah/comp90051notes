@@ -1,0 +1,1096 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>COMP90051 Workshop 11 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'worksheet11';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="week11" href="week11.0.html" />
+    <link rel="prev" title="Additional Notes" href="week10.3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to COMP90051
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week6.2.html">week6 lec2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week7.0.html">week7</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week7.1.html">Lecture 13. Convolutional Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.3.html">Additional Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week9.0.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week9.1.html">Stochastic Multi-Armed Bandits (MABs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week9.2.html">Bayesian regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet10.html">Workshop 10: Multi-armed bandits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet10note.html">Workshop 10: Multi-armed bandits notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="week10.0.html">week10</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="week10.1.html">wk10 notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">COMP90051 Workshop 11</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week11.0.html">week11</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week11.1.html">U-PGM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fworksheet11.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/worksheet11.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>COMP90051 Workshop 11</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-regression">Bayesian Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-data-set">1. Regression data set</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-basis-functions">Polynomial basis functions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-regression-with-known-variance">2. Bayesian regression with known variance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-predictions">3. Making predictions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-model-selection">4. Bayesian model selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-bayesian-regression-with-unknown-variance-optional">Bonus: Bayesian regression with unknown variance (optional)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="comp90051-workshop-11">
+<h1>COMP90051 Workshop 11<a class="headerlink" href="#comp90051-workshop-11" title="Permalink to this heading">#</a></h1>
+<section id="bayesian-regression">
+<h2>Bayesian Regression<a class="headerlink" href="#bayesian-regression" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>In this worksheet, we’ll revisit linear regression from a Bayesian perspective.
+We’ll build on the standard frequentist approach to linear regression (see Worksheet 3), which assumes a conditional model for the response of the form:</p>
+<div class="math notranslate nohighlight">
+\[
+y_i | \mathbf{x}_i \sim \operatorname{Normal}[\mathbf{x}_i^\top \mathbf{w}, \sigma^2], \quad \forall i \in \{1, \ldots, n\}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{x}_i \in \mathbb{R}^{d}\)</span> is a vector of predictors (prepended with a constant predictor to incorporate a bias term), <span class="math notranslate nohighlight">\(\mathbf{w} \in \mathbb{R}^{d}\)</span> is an unknown weight vector and <span class="math notranslate nohighlight">\(\sigma^2\)</span> is a known constant variance.</p>
+<p>Working from a Bayesian perspective, we’ll treat the unknown weight vector <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> as a <em>random variable</em> and specify a prior distribution that encodes our belief about <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> before observing any data.
+We’ll then apply Bayesian inference to update our belief about <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> after observing data, and to make predictions using <em>all settings of the weights</em> according to their posterior probabilities.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">108</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">PolynomialFeatures</span><span class="p">,</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">BayesianRidge</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="regression-data-set">
+<h3>1. Regression data set<a class="headerlink" href="#regression-data-set" title="Permalink to this heading">#</a></h3>
+<p>Let’s generate a small synthetic data set in 1D according to the following model:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\newcommand\ys{\mathbf{y}}
+\newcommand\xs{\mathbf{x}}
+\newcommand\Xs{\mathbf{X}}
+\newcommand\ws{\mathbf{w}}
+\newcommand\Vs{\mathbf{V}}
+\newcommand\Is{\mathbf{I}}
+\begin{align*}
+x_i &amp;\sim \mathrm{Uniform}[0,1] \\
+y_i | x_i, \sigma^2 &amp;\sim \mathrm{Normal}\!\left[5\left(x - \frac{1}{2}\right)^2, \sigma^2 \right]
+\end{align*}
+\end{split}\]</div>
+<p>By focussing on the 1D case, it’ll be straightforward to visualise the results.
+We’ll keep the data set small, since Bayesian approaches are particularly useful when limited data is available.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_instances</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># keep this small: don&#39;t want too much noise</span>
+
+<span class="c1"># generate data matrix with rows as instances</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_instances</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># generate the target response values using the quadratic function</span>
+<span class="c1"># and additive noise</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sigma</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_instances</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+
+<span class="c1"># plot the training data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Train&#39;</span><span class="p">)</span>
+
+<span class="c1"># and plot the true function (without noise)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+<span class="n">Y_test_gold</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="n">X_test</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test_gold</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Model mean&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e71d02e2ad5f35846d0c288c3d7d0b1516a0f4404ccf358123091090ba2a8319.png" src="_images/e71d02e2ad5f35846d0c288c3d7d0b1516a0f4404ccf358123091090ba2a8319.png" />
+</div>
+</div>
+<section id="polynomial-basis-functions">
+<h4>Polynomial basis functions<a class="headerlink" href="#polynomial-basis-functions" title="Permalink to this heading">#</a></h4>
+<p>Since the relationship between <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(x\)</span> is non-linear, we’ll apply polynomial basis expansion to degree <span class="math notranslate nohighlight">\(k\)</span>.
+Specifically, we replace the original data matrix <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> by the transformed matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{\Phi} = \begin{bmatrix}
+    1 &amp; x_1 &amp; x_1^2 &amp; \ldots &amp; x_1^k \\
+    1 &amp; x_2 &amp; x_2^2 &amp; \ldots &amp; x_2^k \\
+    \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+    1 &amp; x_n &amp; x_n^2 &amp; \ldots &amp; x_n^k \\
+\end{bmatrix}.
+\end{split}\]</div>
+<p>Note that we’re including a column of ones to incorporate a bias term.</p>
+<p>The function below is a wrapper around <code class="docutils literal notranslate"><span class="pre">sklearn.preprocessing.PolynomialFeatures</span></code>, which implements the above transformation on a train/test set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">polynomial_features</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">degree</span><span class="p">,</span> <span class="n">include_bias</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Augments data matrices X_train and X_test with polynomial features</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">poly</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="n">degree</span><span class="p">,</span> <span class="n">include_bias</span><span class="o">=</span><span class="n">include_bias</span><span class="p">)</span>
+    
+    <span class="n">Phi_train</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+    <span class="n">Phi_test</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">Phi_train</span><span class="p">,</span> <span class="n">Phi_test</span>
+    
+<span class="n">Phi</span><span class="p">,</span> <span class="n">Phi_test</span> <span class="o">=</span> <span class="n">polynomial_features</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong>Discussion question</strong>: How does this basis trick relate to kernel methods?</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="bayesian-regression-with-known-variance">
+<h3>2. Bayesian regression with known variance<a class="headerlink" href="#bayesian-regression-with-known-variance" title="Permalink to this heading">#</a></h3>
+<p>Let’s begin with a quick recap of the model introduced in lectures.
+As mentioned in the intro, the likelihood is identical to the one used in standard frequentist linear regression.
+What’s new is the prior on the weight vector <span class="math notranslate nohighlight">\(\ws\)</span>, which is assumed to be normal with mean zero and isotropic variance <span class="math notranslate nohighlight">\(\gamma^2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\ws | \gamma &amp;\sim \operatorname{Normal}\!\left[\mathbf{0}, \gamma^2 \mathbf{I}_{d}\right] \\
+y_i | \xs_i, \ws, \sigma &amp;\sim \operatorname{Normal}\!\left[\xs_i^\top \ws, \sigma^2\right] &amp; \forall i \in \{1,\ldots,n\}
+\end{align*}
+\end{split}\]</div>
+<p>By setting the prior mean to zero and choosing a small <span class="math notranslate nohighlight">\(\gamma^2\)</span>, we are effectively penalising weight vectors with a large <span class="math notranslate nohighlight">\(L_2\)</span> norm.</p>
+<p>Given this model, the next step is to solve for the posterior over <span class="math notranslate nohighlight">\(\ws\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+p(\ws | \Xs, \ys, \sigma, \gamma) 
+= \frac{p(\ys | \Xs, \ws, \sigma) p(\ws | \gamma)}{p(\ys | \Xs, \sigma)} 
+= \frac{\prod_{i=1}^n p(y_i | \xs_i, \ws, \sigma) p(\ws | \gamma)}{\int_{\ws} d\ws\prod_{i=1}^n p(y_i | \xs_i, \ws, \sigma) p(\ws | \gamma)} 
+\end{align*}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Xs \in \mathbb{R}^{n \times d}\)</span> is a matrix of observed predictors and <span class="math notranslate nohighlight">\(\ys \in \mathbb{R}^{n}\)</span> is the corresponding vector of observed responses.</p>
+<p>In lectures, we derived the following solution:</p>
+<div class="math notranslate nohighlight">
+\[
+\ws | \Xs, \ys, \sigma, \gamma \sim \operatorname{Normal}[\ws_N, \mathbf{V}_N]
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Vs_N = \sigma^2 \left( \Xs^\top \Xs + \frac{\sigma^2}{\gamma^2} \Is_{d} \right)^{-1}\)</span> and <span class="math notranslate nohighlight">\(\ws_N = \frac{1}{\sigma^2} \Vs_N \Xs^\top \ys\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Exercise:</strong> Complete the function below to compute the posterior mean <span class="math notranslate nohighlight">\(\ws_N\)</span> and covariance matrix <span class="math notranslate nohighlight">\(\Vs_N\)</span> for the weights based on the expression above.</p>
+<p><em>Hints:</em></p>
+<ul class="simple">
+<li><p><em>the NumPy <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> operator represents matrix multiplication</em></p></li>
+<li><p><em><code class="docutils literal notranslate"><span class="pre">np.linalg.inv</span></code> can be used to compute the matrix inverse</em></p></li>
+<li><p><em><code class="docutils literal notranslate"><span class="pre">np.identity</span></code> or <code class="docutils literal notranslate"><span class="pre">np.eye</span></code> can be used to generate an identity matrix</em></p></li>
+</ul>
+<hr class="docutils" />
+<p>where <span class="math notranslate nohighlight">\(\Vs_N = \sigma^2 \left( \Xs^\top \Xs + \frac{\sigma^2}{\gamma^2} \Is_{d} \right)^{-1}\)</span> and <span class="math notranslate nohighlight">\(\ws_N = \frac{1}{\sigma^2} \Vs_N \Xs^\top \ys\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_posterior_params</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">gamma</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the parameters (mean and covariance) for the posterior over the weights</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    X : numpy array, shape (n_instances, n_features)</span>
+<span class="sd">        feature matrix</span>
+<span class="sd">    Y : numpy array, shape (n_instances,)</span>
+<span class="sd">        target class labels relative to X</span>
+<span class="sd">    sigma : float</span>
+<span class="sd">        positive scale parameter for y</span>
+<span class="sd">    gamma : float</span>
+<span class="sd">        positive scale parameter for w_i</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    The following items in a tuple:</span>
+<span class="sd">    w_N : numpy array, shape (n_features,)</span>
+<span class="sd">        mean parameter</span>
+<span class="sd">    V_N : numpy array, shape (n_features, n_features)</span>
+<span class="sd">        covariance parameter</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">V_N</span> <span class="o">=</span> <span class="n">sigma</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="nd">@X</span> <span class="o">+</span> <span class="p">(</span><span class="n">sigma</span> <span class="o">/</span> <span class="n">gamma</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="c1"># fill in</span>
+    <span class="n">w_N</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">sigma</span> <span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">V_N</span> <span class="o">@</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Y</span><span class="p">)</span> <span class="c1"># fill in</span>
+    
+    <span class="k">return</span> <span class="n">w_N</span><span class="p">,</span> <span class="n">V_N</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># larger implies more permissive, i.e. a more diffuse prior</span>
+<span class="n">w_N</span><span class="p">,</span> <span class="n">V_N</span> <span class="o">=</span> <span class="n">compute_posterior_params</span><span class="p">(</span><span class="n">Phi</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">gamma</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s plot the prior and posterior over <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> to see how they differ.
+Since <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> is <span class="math notranslate nohighlight">\(d\)</span>-dimensional, we can only visualise the posterior over a couple of components at a time.
+Here we look at <span class="math notranslate nohighlight">\(p(w_1, w_2|\mathbf{X}, \mathbf{y}, \sigma, \gamma)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set up a 2d plot mesh</span>
+<span class="n">w1</span><span class="p">,</span> <span class="n">w2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mf">.05</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mf">.05</span><span class="p">]</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">w1</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">w2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()]</span>
+
+<span class="c1"># which weights do we want to see?</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="c1"># plot a bivariate normal for the prior</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">p_w</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">cov</span><span class="o">=</span><span class="n">gamma</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">CS</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">p_w</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">w1</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">CS</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;rx&#39;</span><span class="p">)</span> <span class="c1"># add prior mean</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$w_1$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$w_2$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Prior $p(w_1, w_2|\gamma)$&#39;</span><span class="p">)</span>
+
+<span class="c1"># plot a bivariate normal for the posterior</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">w_N</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">w_N</span><span class="p">[</span><span class="n">j</span><span class="p">]])</span>
+<span class="n">cov</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([[</span><span class="n">V_N</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">],</span> <span class="n">V_N</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]],</span> <span class="p">[</span><span class="n">V_N</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">],</span> <span class="n">V_N</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">]]])</span>
+<span class="n">p_w</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="n">mean</span><span class="p">,</span> <span class="n">cov</span><span class="o">=</span><span class="n">cov</span><span class="p">)</span>
+<span class="n">CS</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">p_w</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">w1</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">CS</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_N</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">w_N</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="s1">&#39;rx&#39;</span><span class="p">)</span> <span class="c1"># add posterior mean</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$w_1$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$w_2$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Posterior $p(w_1, w_2|X,y,\gamma,\sigma)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/305506d8ed3809ec190eef9b56f723dfca59f6c0678472ad4b3fc5c43a99232f.png" src="_images/305506d8ed3809ec190eef9b56f723dfca59f6c0678472ad4b3fc5c43a99232f.png" />
+</div>
+</div>
+<hr class="docutils" />
+<p><strong>Discussion question</strong>: Can you explain why the prior and the posterior are so different? How is this related to the dataset? <em>You may like to change the parameter indices from 0,1 to other pairs to get a better idea of the full posterior.</em></p>
+</section>
+<hr class="docutils" />
+<section id="making-predictions">
+<h3>3. Making predictions<a class="headerlink" href="#making-predictions" title="Permalink to this heading">#</a></h3>
+<p>We’ve seen how to compute the posterior of the unknown weight vector <span class="math notranslate nohighlight">\(\ws\)</span>.
+But how can we use the posterior to make a prediction for a new test instance <span class="math notranslate nohighlight">\(\xs_*\)</span>?
+The proper Bayesian approach is to average over the predictions of all possible models, weighted by their posterior probability:</p>
+<div class="math notranslate nohighlight">
+\[
+\underbrace{p(y_* | \xs_*, \Xs, \ys, \sigma^2, \gamma^2)}_{\text{posterior predictive}} = \int \underbrace{p(y_*|\xs_*, \ws, \sigma^2)}_{\text{likelihood}} \underbrace{p(\ws| \Xs, \ys, \gamma^2)}_{\text{posterior}} \, \mathrm{d} \ws
+\]</div>
+<p>When we do this, we get a new distribution over the response called the <em>posterior predictive</em> which incorporates the uncertainty in <span class="math notranslate nohighlight">\(\ws\)</span>.
+Unfortunately, it’s not always possible to obtain an expression for the posterior predictive distribution in closed form.
+In these circumstances, we can obtain an approximation based on sampling:</p>
+<div class="math notranslate nohighlight">
+\[\hat{p}(y_* | \xs_*, \Xs, \ys, \sigma^2, \gamma^2) = \frac{1}{S} \sum_{s = 1}^{S} \mathbb{1}[y_* = y_s]\]</div>
+<p>where each sample <span class="math notranslate nohighlight">\(y_s\)</span> is obtained as follows:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\ws_s\)</span> is drawn from the posterior: <span class="math notranslate nohighlight">\(p(\ws | \Xs, \ys, \gamma^2) = \operatorname{Normal}[\ws; \ws_N, \mathbf{V}_N]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y_s\)</span> is drawn from the likelihood conditioned on <span class="math notranslate nohighlight">\(\ws = \ws_s\)</span>: <span class="math notranslate nohighlight">\(p(y_s | \xs_*, \ws_s, \sigma^2) = \operatorname{Normal}[y_s; \xs_*^\top \ws_s, \sigma^2]\)</span></p></li>
+</ol>
+<hr class="docutils" />
+<p><strong>Exercise:</strong> Complete the inner loop in the code block below to draw a sample from the posterior predictive distribution for all instances in the test set.</p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate samples from the posterior predictive</span>
+<span class="n">n_samples</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span>
+    <span class="c1"># Draw weight vector from the posterior</span>
+    <span class="n">w_s</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># fill in</span>
+    <span class="c1"># Compute predictive mean for all test instances simultaneously given </span>
+    <span class="c1"># w = w_s</span>
+    <span class="n">mu</span> <span class="o">=</span> <span class="n">Phi_test</span> <span class="o">@</span> <span class="n">w_s</span>
+    <span class="c1"># Draw responses for all test instances simultaneously given w = w_s</span>
+    <span class="n">y_s</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># fill in</span>
+    
+    <span class="c1"># Plot the responses for all test instances</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">y_s</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Train&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Phi_test</span> <span class="o">@</span> <span class="n">w_N</span><span class="p">,</span> <span class="s1">&#39;g:&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Sample&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">Y_test_gold</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Model mean&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">w_s</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># fill in</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Compute predictive mean for all test instances simultaneously given </span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># w = w_s</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">mu</span> <span class="o">=</span> <span class="n">Phi_test</span> <span class="o">@</span> <span class="n">w_s</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Draw responses for all test instances simultaneously given w = w_s</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">y_s</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># fill in</span>
+
+<span class="ne">ValueError</span>: matmul: Input operand 1 does not have enough dimensions (has 0, gufunc core with signature (n?,k),(k,m?)-&gt;(n?,m?) requires 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s interesting to see what happens near the data points in the training set, and away from them.
+We’ll come back to this later.</p>
+<p>But first, let’s return to the problem of computing the posterior predictive distribution.
+Since our model is simple (and the prior is conjugate to the likelihood), we don’t need to resort to sampling.
+We can evaluate the posterior predictive distribution analytically, to obtain the following solution:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+y_{*} | \xs_*, \Xs, \ys, \sigma^2, \gamma^2 \sim \operatorname{Normal}\!\left[\xs_{*}^\top \ws_N, \sigma^2_N(\xs_{*})\right] \\
+\text{where} \quad \sigma^2_N(\xs_{*}) = \sigma^2 + \xs_{*}^\top \Vs_N \xs_{*}
+\end{gather}
+\end{split}\]</div>
+<p>Note that the predictive mean is a simple application of the posterior mean to the data point, but the predictive variance is a bit more complicated.</p>
+<hr class="docutils" />
+<p><strong>Exercise:</strong> Complete the functions below to evaluate the predictive mean <span class="math notranslate nohighlight">\(\xs_{*}^\top \ws_N\)</span> and predictive standard deviation <span class="math notranslate nohighlight">\(\sigma_N(\mathbf{x}_{*})\)</span> for a collection of test instances.
+Then run the following code block to plot the results.</p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">predictive_mean</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the predictive mean for the response, given X and w</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    X : numpy array, shape (n_instances, n_features)</span>
+<span class="sd">        feature matrix</span>
+<span class="sd">    w : numpy array, shape (n_features,)</span>
+<span class="sd">        weights vector</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Y_mean : numpy array, shape: (n_instances,)</span>
+<span class="sd">        predictive mean for each instance in X</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># your code here #</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">predictive_std</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">V_N</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the predictive standard deviation for the response, given X, V_N and sigma</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    X : numpy array, shape (n_instances, n_features)</span>
+<span class="sd">        feature matrix</span>
+<span class="sd">    V_N : numpy array, shape: (n_features, n_features)</span>
+<span class="sd">        covariance parameter</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    std : numpy array, shape (n_instances,)</span>
+<span class="sd">        predictive standard deviation for each instance in X</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># your code here #</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_test_mean</span> <span class="o">=</span> <span class="n">predictive_mean</span><span class="p">(</span><span class="n">Phi_test</span><span class="p">,</span> <span class="n">w_N</span><span class="p">)</span>
+<span class="n">Y_test_std</span> <span class="o">=</span> <span class="n">predictive_std</span><span class="p">(</span><span class="n">Phi_test</span><span class="p">,</span> <span class="n">V_N</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Train&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">Y_test_mean</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">Y_test_std</span><span class="p">,</span> <span class="n">Y_test_mean</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">Y_test_std</span><span class="p">,</span> 
+                 <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;95% CI&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">Y_test_mean</span><span class="p">,</span> <span class="s1">&#39;g:&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Predictive mean&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">Y_test_gold</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Model mean&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong>Discussion questions</strong>:</p>
+<ol class="arabic simple">
+<li><p>How does the exact plot of predictive uncertainty compare to the sample-based one? How does the uncertainty change relative to the distance from training points? Can you explain why?</p></li>
+<li><p>Is a 9th degree polynomial a good choice for this problem? Based on the results above, would you recommend this model, or make a different choice?</p></li>
+<li><p>How does the setting of <code class="docutils literal notranslate"><span class="pre">gamma</span></code> affect the fit? How about the number of instances in the training set? Try some other values and see what happens.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="bayesian-model-selection">
+<h3>4. Bayesian model selection<a class="headerlink" href="#bayesian-model-selection" title="Permalink to this heading">#</a></h3>
+<p>In this section, we’ll revisit the assumption of using 9th degree polynomial features.
+To do this, we’ll evaluate competing models using the <em>model evidence</em>.
+When applied to our regression model, the model evidence can be expressed as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+p(\ys|\Xs, \sigma, \gamma) = \int p(\ys | \Xs, \sigma, \gamma, \ws) p(\ws) \, \mathrm{d} \ws.
+\]</div>
+<p>In words, we compute the likelihood conditioned on the model, and marginalise out the model parameters with respect to their prior distributions (see Sec 3.4 of Bishop).</p>
+<p>Since our model is relatively simple, we can evaluate the evidence in closed form.
+We have</p>
+<div class="math notranslate nohighlight">
+\[
+\log p(\ys|\Xs, \sigma, \gamma) = - (d+1) \log \gamma - n \log \sigma - E(\ws_N) - \frac{1}{2} \log |\Vs_N^{-1}| - \frac{n}{2} \log 2\pi
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(E(\ws_N) = \frac{1}{2 \sigma^2} \|\ys - \Xs \ws_N \|_2^2 + \frac{1}{2 \gamma^2} |\ws_N|_2^2\)</span>.</p>
+<p>In the code block below we implement a function that computes the log-evidence for a given posterior mean <span class="math notranslate nohighlight">\(\ws_N\)</span>, training data <span class="math notranslate nohighlight">\(\Xs\)</span>, <span class="math notranslate nohighlight">\(\ys\)</span> and variance parameters <span class="math notranslate nohighlight">\(\sigma\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_evidence</span><span class="p">(</span><span class="n">w_N</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">gamma</span><span class="p">):</span>
+    <span class="n">n_instances</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">gamma</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">rss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">Y</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">w_N</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">wpen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w_N</span><span class="p">,</span> <span class="n">w_N</span><span class="p">)</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="n">beta</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rss</span> <span class="o">+</span> <span class="n">alpha</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">wpen</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="n">n_features</span><span class="p">)</span> <span class="o">+</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">X</span>
+    <span class="n">lE</span> <span class="o">=</span> <span class="n">n_features</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="o">+</span> <span class="n">n_instances</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span> <span class="o">-</span> <span class="n">E</span> \
+        <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">))</span> <span class="o">-</span> <span class="n">n_instances</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+    <span class="c1"># return both the evidence, and the RSS term (the raw quality of fit)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;logEvidence&#39;</span><span class="p">:</span> <span class="n">lE</span><span class="p">,</span> <span class="s1">&#39;RSS&#39;</span><span class="p">:</span> <span class="n">rss</span><span class="p">}</span>
+
+<span class="c1"># what&#39;s the evidence for our 9th degree model?</span>
+<span class="n">compute_evidence</span><span class="p">(</span><span class="n">w_N</span><span class="p">,</span> <span class="n">Phi</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">gamma</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>So what happens if we use lower degree polynomial features, e.g., 3rd degree polynomial features?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Phi_3</span><span class="p">,</span> <span class="n">Phi_3_test</span> <span class="o">=</span> <span class="n">polynomial_features</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">w_N_3</span><span class="p">,</span> <span class="n">V_N_3</span> <span class="o">=</span> <span class="n">compute_posterior_params</span><span class="p">(</span><span class="n">Phi_3</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">gamma</span><span class="p">)</span>
+<span class="n">Y_test</span> <span class="o">=</span> <span class="n">predictive_mean</span><span class="p">(</span><span class="n">Phi_3_test</span><span class="p">,</span> <span class="n">w_N_3</span><span class="p">)</span>
+<span class="n">Y_test_std</span> <span class="o">=</span> <span class="n">predictive_std</span><span class="p">(</span><span class="n">Phi_3_test</span><span class="p">,</span> <span class="n">V_N_3</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Train&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">Y_test_mean</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">Y_test_std</span><span class="p">,</span> <span class="n">Y_test_mean</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">Y_test_std</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;95% CI&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">Y_test_mean</span><span class="p">,</span> <span class="s1">&#39;g:&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Predictive mean&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">Y_test_gold</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Model mean&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong>Discussion</strong>: Does that look like a better fit to you? Consider both the interval <span class="math notranslate nohighlight">\([0,1]\)</span> near the training points, and those outside this range.</p>
+<hr class="docutils" />
+<p>Let’s see what the <em>evidence</em> says, and compare this to the above result:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compute_evidence</span><span class="p">(</span><span class="n">w_N_3</span><span class="p">,</span> <span class="n">Phi_3</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">gamma</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The RSS has barely changed, but the evidence is much higher. We can look at various polynomial degrees to see which has the best <em>evidence</em> to perform Bayesian model selection:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">logEvidence</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">RSS</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">k_range</span><span class="p">:</span>
+    <span class="n">Phi_k</span><span class="p">,</span> <span class="n">Phi_k_test</span> <span class="o">=</span> <span class="n">polynomial_features</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="n">w_N_k</span><span class="p">,</span> <span class="n">V_N_k</span> <span class="o">=</span> <span class="n">compute_posterior_params</span><span class="p">(</span><span class="n">Phi_k</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">gamma</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">compute_evidence</span><span class="p">(</span><span class="n">w_N_k</span><span class="p">,</span> <span class="n">Phi_k</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">gamma</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Degree </span><span class="si">{}</span><span class="s1">. Log evidence </span><span class="si">{}</span><span class="s1">. RSS </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;logEvidence&#39;</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;RSS&#39;</span><span class="p">]))</span>
+    <span class="n">logEvidence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;logEvidence&#39;</span><span class="p">])</span>
+    <span class="n">RSS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;RSS&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plot the above log evidence values against the polynomial degree</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k_range</span><span class="p">,</span> <span class="n">logEvidence</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax1</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">visible</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Log Evidence&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k_range</span><span class="p">,</span> <span class="n">RSS</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Polynomial degree&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;RSS&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong>Discussion</strong>: So which model class will be chosen? Is this a reasonable situation?</p>
+</section>
+<hr class="docutils" />
+<section id="bonus-bayesian-regression-with-unknown-variance-optional">
+<h3>Bonus: Bayesian regression with unknown variance (optional)<a class="headerlink" href="#bonus-bayesian-regression-with-unknown-variance-optional" title="Permalink to this heading">#</a></h3>
+<p>In real settings, the variance for <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(\sigma^2\)</span> is unknown.
+It’s possible to account for this by putting the following prior on <span class="math notranslate nohighlight">\(\sigma^{2}\)</span>:
+$<span class="math notranslate nohighlight">\(
+\sigma^{-2} \sim \textrm{Gamma}(\alpha_1, \alpha_2)
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>\alpha_1, \alpha_2 &gt; 0$ are hyperparameters.</p>
+<p>We can also put a prior over the variance for the weights, <span class="math notranslate nohighlight">\(\gamma^2\)</span>:
+$<span class="math notranslate nohighlight">\(
+\gamma^{-2} \sim \textrm{Gamma}(\lambda_1, \lambda_2)
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>\lambda_1, \lambda_2 &gt; 0$ are hyperparameters.</p>
+<p>This model for regression (with the additional priors over <span class="math notranslate nohighlight">\(\gamma\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>) is implemented in <code class="docutils literal notranslate"><span class="pre">sklearn.linear_models.BayesianRidge</span></code>.</p>
+<hr class="docutils" />
+<p><strong>Exercise</strong>: Apply <code class="docutils literal notranslate"><span class="pre">BayesianRidge</span></code> to the training data (with the polynomial basis expansion) and compare the results to our simpler model.
+What happens if the value of <span class="math notranslate nohighlight">\(\sigma\)</span> used in our model deviates from the true value used to generate the data?
+Is <code class="docutils literal notranslate"><span class="pre">BayesianRidge</span></code> more robust in this case?</p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span> <span class="o">=</span> <span class="n">BayesianRidge</span><span class="p">(</span><span class="n">compute_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Phi</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_test_mean</span><span class="p">,</span> <span class="n">Y_test_std</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Phi_test</span><span class="p">,</span> <span class="n">return_std</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Train&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">Y_test_mean</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">Y_test_std</span><span class="p">,</span> <span class="n">Y_test_mean</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">Y_test_std</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;95% CI&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test_mean</span><span class="p">,</span> <span class="s1">&#39;g:&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Predictive mean&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test_gold</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Model mean&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="week10.3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Additional Notes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="week11.0.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">week11</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-regression">Bayesian Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-data-set">1. Regression data set</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-basis-functions">Polynomial basis functions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-regression-with-known-variance">2. Bayesian regression with known variance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-predictions">3. Making predictions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-model-selection">4. Bayesian model selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-bayesian-regression-with-unknown-variance-optional">Bonus: Bayesian regression with unknown variance (optional)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
