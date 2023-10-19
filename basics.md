@@ -7,7 +7,7 @@ The equation $ \mathbf{w}^* = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathb
 ---
 
 **Derivation of the Optimal Weights in Linear Regression (OWLS第一万遍)**:
-
+[Regression Modelling And Least-Squares](https://www.ma.imperial.ac.uk/~das01/GSACourse/Regression.pdf)
 1. **Objective**:
    - In linear regression, we aim to minimize the sum of squared residuals (SSR), which is the difference between the observed values ($ \mathbf{y} $) and the predicted values ($ \mathbf{Xw} $).
    - The objective function (SSR) is given by:
@@ -94,6 +94,50 @@ Certainly! Let's use a simple example to illustrate the concepts of incorporatin
 
 ```{image} ./images/learningrate1.png
 :alt: learningrate1
+:class: bg-primary mb-1
+:width: 800px
+:align: center
+```
+
+Absolutely, the concept of hidden layers can be abstract and sometimes confusing, especially when you're first getting into deep learning. Let's break it down:
+
+17/10/2023
+### Hidden Layers in Deep Learning:
+
+1. **Basic Idea**: 
+   - At the highest level, a neural network is designed to recognize patterns. It does this by taking input data and transforming it through multiple layers to produce an output.
+   - Hidden layers are those layers in between the input and output layers. They are called "hidden" because we don't directly interact with them (like providing input or extracting output).
+
+2. **Transformation of Data**: 
+   - Each hidden layer transforms the data a little bit, extracting and refining features as data moves through the network.
+   - The initial layers (closer to the input) might recognize basic features, like edges in the context of an image. As you progress deeper into the network, the layers recognize more complex patterns, like shapes, textures, and even entire objects.
+
+3. **Neurons and Activations**: 
+   - Each layer is made up of "neurons" that have associated weights and biases. These weights are adjusted during training.
+   - The "activation" of a neuron is a value that results from passing an input (or multiple inputs) through a neuron, which processes it using a weighted sum and a specific activation function, like ReLU or Sigmoid.
+
+4. **Why Not Directly From Input to Output?**:
+   - Hidden layers allow the network to learn and represent hierarchical features. A direct input-to-output model wouldn't be able to capture complex relationships in the data.
+   - Essentially, with each subsequent hidden layer, the model can represent more abstract and complex features, helping it generalize better to unseen data.
+
+5. **Analogy**:
+   - Think of learning a complex topic. You start with basics, and as you understand them, you move to more complex concepts built on those basics. Hidden layers in a neural network function similarly. The initial layers capture the basics, and as data progresses, each layer builds on the features extracted by the previous one.
+
+6. **Utility in Practice**:
+   - Hidden layers are essential for deep learning models to function effectively. Without them, the models wouldn't be "deep," and they'd lose their capacity to model complex data and relationships.
+   - The intermediate representations in hidden layers are not typically interpretable by humans. However, they are valuable intermediate steps for the model to produce the final result.
+
+### Conclusion:
+
+In essence, hidden layers can be seen as a series of transformations that refine and process the input data to produce an output. They enable deep learning models to capture intricate patterns and relationships in the data, making these models powerful tools for a range of tasks.
+
+---
+18/10/2023
+## Likelihood and Prob
+[Probability is not Likelihood. Find out why!!!](https://www.youtube.com/watch?v=pYxNSUDSFH4)
+
+```{image} ./images/likelihood1.png
+:alt: likelihood
 :class: bg-primary mb-1
 :width: 800px
 :align: center

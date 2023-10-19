@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="week6" href="week6.0.html" />
-    <link rel="prev" title="Welcome to COMP90051" href="intro.html" />
+    <link rel="prev" title="Revision Progress" href="revision_progress.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,6 +159,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="revision_progress.html">Revision Progress</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Basic Concepts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week6.2.html">week6 lec2</a></li>
@@ -166,11 +167,13 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week7.0.html">week7</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week7.1.html">Lecture 13. Convolutional Neural Networks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14. RNN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week7.3.html">Additional Resource</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week8.1.html">Lecture 16 Graph Convolution Networks (Deep Learning After You Drop The Camera)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week8.2.html">Lecture 16. Learning with expert advice</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week9.0.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -183,7 +186,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="week10.0.html">week10</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week10.1.html">wk10 notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes -  More on Bayesian</a></li>
 <li class="toctree-l2"><a class="reference internal" href="worksheet11.html">COMP90051 Workshop 11</a></li>
 </ul>
 </li>
@@ -191,6 +194,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="week11.1.html">U-PGM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week11.2.html">SVM assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="review.html">Review Notes</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="review0.html">Review 0</a></li>
 </ul>
 </li>
 </ul>
@@ -389,7 +396,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#owls">OWLS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fisher-info">Fisher Info</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-gaussian">Multivariate Gaussian</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-rate">Learning Rate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-rate">Learning Rate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hidden-layers-in-deep-learning">Hidden Layers in Deep Learning:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likelihood-and-prob">Likelihood and Prob</a></li>
 </ul>
             </nav>
         </div>
@@ -408,7 +420,8 @@ document.write(`
 <p>06/10/2023
 The equation <span class="math notranslate nohighlight">\( \mathbf{w}^* = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y} \)</span> is the solution for the weights <span class="math notranslate nohighlight">\( \mathbf{w}^* \)</span> in linear regression using the method of least squares. Let’s break down how we arrive at this solution:</p>
 <hr class="docutils" />
-<p><strong>Derivation of the Optimal Weights in Linear Regression (OWLS第一万遍)</strong>:</p>
+<p><strong>Derivation of the Optimal Weights in Linear Regression (OWLS第一万遍)</strong>:
+<a class="reference external" href="https://www.ma.imperial.ac.uk/~das01/GSACourse/Regression.pdf">Regression Modelling And Least-Squares</a></p>
 <ol class="arabic">
 <li><p><strong>Objective</strong>:</p>
 <ul>
@@ -515,6 +528,59 @@ The equation <span class="math notranslate nohighlight">\( \mathbf{w}^* = (\math
 <li><p>Learning rate is a hyper-parameter that controls how much we are adjusting the weights of our network with respect the loss gradient.</p></li>
 </ul>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/learningrate1.png"><img alt="learningrate1" class="bg-primary mb-1 align-center" src="_images/learningrate1.png" style="width: 800px;" /></a>
+<p>Absolutely, the concept of hidden layers can be abstract and sometimes confusing, especially when you’re first getting into deep learning. Let’s break it down:</p>
+<p>17/10/2023</p>
+<section id="hidden-layers-in-deep-learning">
+<h3>Hidden Layers in Deep Learning:<a class="headerlink" href="#hidden-layers-in-deep-learning" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Basic Idea</strong>:</p>
+<ul class="simple">
+<li><p>At the highest level, a neural network is designed to recognize patterns. It does this by taking input data and transforming it through multiple layers to produce an output.</p></li>
+<li><p>Hidden layers are those layers in between the input and output layers. They are called “hidden” because we don’t directly interact with them (like providing input or extracting output).</p></li>
+</ul>
+</li>
+<li><p><strong>Transformation of Data</strong>:</p>
+<ul class="simple">
+<li><p>Each hidden layer transforms the data a little bit, extracting and refining features as data moves through the network.</p></li>
+<li><p>The initial layers (closer to the input) might recognize basic features, like edges in the context of an image. As you progress deeper into the network, the layers recognize more complex patterns, like shapes, textures, and even entire objects.</p></li>
+</ul>
+</li>
+<li><p><strong>Neurons and Activations</strong>:</p>
+<ul class="simple">
+<li><p>Each layer is made up of “neurons” that have associated weights and biases. These weights are adjusted during training.</p></li>
+<li><p>The “activation” of a neuron is a value that results from passing an input (or multiple inputs) through a neuron, which processes it using a weighted sum and a specific activation function, like ReLU or Sigmoid.</p></li>
+</ul>
+</li>
+<li><p><strong>Why Not Directly From Input to Output?</strong>:</p>
+<ul class="simple">
+<li><p>Hidden layers allow the network to learn and represent hierarchical features. A direct input-to-output model wouldn’t be able to capture complex relationships in the data.</p></li>
+<li><p>Essentially, with each subsequent hidden layer, the model can represent more abstract and complex features, helping it generalize better to unseen data.</p></li>
+</ul>
+</li>
+<li><p><strong>Analogy</strong>:</p>
+<ul class="simple">
+<li><p>Think of learning a complex topic. You start with basics, and as you understand them, you move to more complex concepts built on those basics. Hidden layers in a neural network function similarly. The initial layers capture the basics, and as data progresses, each layer builds on the features extracted by the previous one.</p></li>
+</ul>
+</li>
+<li><p><strong>Utility in Practice</strong>:</p>
+<ul class="simple">
+<li><p>Hidden layers are essential for deep learning models to function effectively. Without them, the models wouldn’t be “deep,” and they’d lose their capacity to model complex data and relationships.</p></li>
+<li><p>The intermediate representations in hidden layers are not typically interpretable by humans. However, they are valuable intermediate steps for the model to produce the final result.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="conclusion">
+<h3>Conclusion:<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h3>
+<p>In essence, hidden layers can be seen as a series of transformations that refine and process the input data to produce an output. They enable deep learning models to capture intricate patterns and relationships in the data, making these models powerful tools for a range of tasks.</p>
+<hr class="docutils" />
+<p>18/10/2023</p>
+</section>
+</section>
+<section id="likelihood-and-prob">
+<h2>Likelihood and Prob<a class="headerlink" href="#likelihood-and-prob" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=pYxNSUDSFH4">Probability is not Likelihood. Find out why!!!</a></p>
+<a class="bg-primary mb-1 reference internal image-reference" href="images/likelihood1.png"><img alt="likelihood" class="bg-primary mb-1 align-center" src="images/likelihood1.png" style="width: 800px;" /></a>
 </section>
 </section>
 
@@ -550,12 +616,12 @@ The equation <span class="math notranslate nohighlight">\( \mathbf{w}^* = (\math
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="revision_progress.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to COMP90051</p>
+        <p class="prev-next-title">Revision Progress</p>
       </div>
     </a>
     <a class="right-next"
@@ -588,7 +654,12 @@ The equation <span class="math notranslate nohighlight">\( \mathbf{w}^* = (\math
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#owls">OWLS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fisher-info">Fisher Info</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-gaussian">Multivariate Gaussian</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-rate">Learning Rate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-rate">Learning Rate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hidden-layers-in-deep-learning">Hidden Layers in Deep Learning:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likelihood-and-prob">Likelihood and Prob</a></li>
 </ul>
   </nav></div>
 

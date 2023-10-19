@@ -8,7 +8,8 @@
     - [Recurrent Neural Networks (RNNs), Clearly Explained!!!](https://www.youtube.com/watch?v=AsNTP8Kwu80)
     - [Long Short-Term Memory (LSTM), Clearly Explained](https://www.youtube.com/watch?v=YCzL96nL7j0&t=2s)
     - [Transformer Neural Networks, ChatGPT's foundation, Clearly Explained!!!](https://www.youtube.com/watch?v=zxQyTK8quyY)
-
+- Article:
+    -[Deep Learning: Recurrent Neural Networks](https://medium.com/deeplearningbrasilia/deep-learning-recurrent-neural-networks-f9482a24d010#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjdkMzM0NDk3NTA2YWNiNzRjZGVlZGFhNjYxODRkMTU1NDdmODM2OTMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAzNjA5OTA5NDc0NTI3NTk1MTMiLCJoZCI6InN0dWRlbnQudW5pbWVsYi5lZHUuYXUiLCJlbWFpbCI6ImppYWhlM0BzdHVkZW50LnVuaW1lbGIuZWR1LmF1IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTY5NzUwMzEzNiwibmFtZSI6IkppYWhlIExpdSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NJQ2gtYlFNcV9Sbzl6WDZKSFJwOEN4YTVMaE1vR2xlOHdWSWFHOUdsNTE9czk2LWMiLCJnaXZlbl9uYW1lIjoiSmlhaGUiLCJmYW1pbHlfbmFtZSI6IkxpdSIsImxvY2FsZSI6ImVuIiwiaWF0IjoxNjk3NTAzNDM2LCJleHAiOjE2OTc1MDcwMzYsImp0aSI6IjQzNTI3MTZlOGM5MjZhZDJmNzM4YzQxZDM2ZDcxYTJhNDhhZTlhNGMifQ.Dh2lacUeIfsnDzZQxCtMtg9hkB1FpmJOxegNehElperfTkx4v_LqWTlhrG9YA3ogdjxPVzUTuiT0qg1iIZWY8LMx55wYpWQm1g1b-UBCaCf9c9Eewg1OnFXEmKyKadLdtGI8QHaTs7vII0vEN9HvBCbYZz2-aQcmQHdsGY7lETpnjhItNtnEUfaS337dbkIk44tEJTEp6xOHej3n9PY_-al61TKl6xEtP9pQhSva262ov97E5hp_xt9r4a0UMY3CwaENcIxgSUVTFEAnYAI-DVgqI_z2S8eNEcHhP0DhqYF5cFvHUt261m7OLJOjNZnakuqRBHHicfgkS4iTH3XDbA)
 ```{image} ./images/cnn1.png
 :alt: cnn
 :class: bg-primary mb-1
@@ -80,3 +81,38 @@ The equation `8*1*5*5 + 8` calculates the total number of parameters in the conv
 - `+ 8` adds the 8 bias parameters, one for each filter.
 
 Thus, the total number of parameters in the convolutional layer is \(8 \times 1 \times 5 \times 5 + 8 = 208\), not 28. It seems there might be some confusion between the size of `conv.bias` (which is 8) and the total parameter count (which is 208). The `conv.bias.size()` is `[8]`, representing one bias term for each of the 8 filters.
+
+### LSTM
+
+LSTM uses different path! 
+
+```{image} ./images/lstm1.png
+:alt: cnn
+:class: bg-primary mb-1
+:width: 800px
+:align: center
+```
+
+ ```{image} ./images/lstm2.png
+:alt: cnn
+:class: bg-primary mb-1
+:width: 800px
+:align: center
+```
+
+**input gate**
+ ```{image} ./images/lstm3.png
+:alt: cnn
+:class: bg-primary mb-1
+:width: 800px
+:align: center
+```
+
+ 
+**output gate**
+ ```{image} ./images/lstm4.png
+:alt: cnn
+:class: bg-primary mb-1
+:width: 800px
+:align: center
+```

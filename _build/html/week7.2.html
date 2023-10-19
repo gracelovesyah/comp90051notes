@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Lecture 14. &#8212; My sample book</title>
+    <title>Lecture 14. RNN &#8212; My sample book</title>
   
   
   
@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'week7.2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -157,6 +159,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="revision_progress.html">Revision Progress</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week6.2.html">week6 lec2</a></li>
@@ -164,11 +167,13 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="week7.0.html">week7</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="week7.1.html">Lecture 13. Convolutional Neural Networks</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lecture 14.</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lecture 14. RNN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week7.3.html">Additional Resource</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week8.1.html">Lecture 16 Graph Convolution Networks (Deep Learning After You Drop The Camera)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week8.2.html">Lecture 16. Learning with expert advice</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week9.0.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -189,6 +194,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="week11.1.html">U-PGM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week11.2.html">SVM assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="review.html">Review Notes</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="review0.html">Review 0</a></li>
 </ul>
 </li>
 </ul>
@@ -374,7 +383,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lecture 14.</h1>
+    <h1>Lecture 14. RNN</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -384,7 +393,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-notes">Random Notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-notes">Random Notes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-score">Attention Score</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -396,15 +409,152 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lecture-14">
-<h1>Lecture 14.<a class="headerlink" href="#lecture-14" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-14-rnn">
+<h1>Lecture 14. RNN<a class="headerlink" href="#lecture-14-rnn" title="Permalink to this heading">#</a></h1>
 <p>This notes is completed with assistance of <a class="reference external" href="https://chat.openai.com/c/e37f2c38-a8bd-49b6-ad32-65aadbb10dda">ChatGPT</a></p>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p><strong>Statistical Machine Learning &amp; RNNs</strong>:</p>
+<ul class="simple">
+<li><p><strong>RNNs</strong>: Neural networks designed for sequential data. They maintain a hidden state to capture information from past inputs.</p></li>
+<li><p><strong>Importance</strong>: Can handle inputs of varying lengths, unlike traditional feed-forward neural networks.</p></li>
+<li><p><strong>Math Involved</strong>:</p>
+<ul>
+<li><p>Hidden state update: <span class="math notranslate nohighlight">\( h_t = \text{activation}(W_{hh} h_{t-1} + W_{xh} x_t + b_h) \)</span></p></li>
+<li><p>Attention scores (in attention mechanisms): <span class="math notranslate nohighlight">\( e_{t,i} = a(s_{t-1}, h_i) \)</span></p></li>
+<li><p>Attention weights: <span class="math notranslate nohighlight">\( \alpha_{t,i} = \frac{exp(e_{t,i})}{\sum_j exp(e_{t,j})} \)</span></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Vanilla Neural Networks</strong>:</p>
+<ul class="simple">
+<li><p>Basic neural networks without recurrent or convolutional structures.</p></li>
+</ul>
+<p><strong>Attention Mechanism</strong>:</p>
+<ul class="simple">
+<li><p>Allows models to focus on specific parts of the input when producing an output.</p></li>
+<li><p>Used in Seq2Seq models for tasks like machine translation.</p></li>
+<li><p><strong>Math Involved</strong>:</p>
+<ul>
+<li><p>Context vector: <span class="math notranslate nohighlight">\( c_t = \sum_i \alpha_{t,i} h_i \)</span></p></li>
+<li><p>Attention scores: <span class="math notranslate nohighlight">\( e_{t,i} = a(s_{t-1}, h_i) \)</span></p></li>
+<li><p>Attention weights: <span class="math notranslate nohighlight">\( \alpha_{t,i} = \frac{exp(e_{t,i})}{\sum_j exp(e_{t,j})} \)</span></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Activation Functions</strong>:</p>
+<ul class="simple">
+<li><p><strong>Softmax</strong>: Converts a vector into a probability distribution.</p></li>
+<li><p><strong>Sigmoid</strong>: Maps any input into a value between 0 and 1.</p></li>
+</ul>
+<p><strong>Gradient Vanishing Problem</strong>:</p>
+<ul class="simple">
+<li><p>In deep networks, especially RNNs, gradients can become too small, causing weights to stop updating.</p></li>
+<li><p>Caused by repeated multiplications of values less than 1. (also the explosion if W &gt; 1)</p></li>
+<li><p>LSTMs and GRUs were introduced to mitigate this issue.</p></li>
+</ul>
+<p><strong>LSTM &amp; GRU</strong>:</p>
+<ul class="simple">
+<li><p>Variants of RNNs designed to capture long-term dependencies.</p></li>
+<li><p><strong>LSTM</strong>: Uses three gates (input, forget, output) and maintains a cell state.</p></li>
+<li><p><strong>GRU</strong>: Simplified version of LSTM with two gates (reset and update).</p></li>
+<li><p><strong>Reasoning</strong>: LSTMs are more expressive but computationally heavier than GRUs. Choice depends on the specific task and computational resources.</p></li>
+</ul>
+<p><strong>Transformers &amp; Self-Attention</strong>:</p>
+<ul class="simple">
+<li><p><strong>Transformers</strong>: Use self-attention mechanisms to process sequences in parallel.</p></li>
+<li><p><strong>Self-Attention</strong>: Allows each item in a sequence to consider all other items when computing its representation.</p></li>
+<li><p><strong>Math Involved</strong>:</p>
+<ul>
+<li><p>Attention scores: <span class="math notranslate nohighlight">\( e_{t,i} = a(s_{t-1}, h_i) \)</span></p></li>
+<li><p>Attention weights: <span class="math notranslate nohighlight">\( \alpha_{t,i} = \frac{exp(e_{t,i})}{\sum_j exp(e_{t,j})} \)</span></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Attention in Vision</strong>:</p>
+<ul class="simple">
+<li><p>Spatial attention allows models to focus on specific regions of an image.</p></li>
+<li><p>Useful for tasks like image captioning and visual question answering.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Questions Discussed</strong>:</p>
+<ol class="arabic simple">
+<li><p>Explanation of vanilla neural networks.</p></li>
+<li><p>How RNNs handle varying input lengths.</p></li>
+<li><p>Difference between softmax and sigmoid activations.</p></li>
+<li><p>Understanding the gradient vanishing problem.</p></li>
+<li><p>Initial weight distribution around 0 in neural networks.</p></li>
+<li><p>Differences between LSTM and GRU.</p></li>
+<li><p>Explanation of self-attention and its use in Transformers.</p></li>
+<li><p>Understanding attention heatmaps in NLP tasks.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
 <section id="random-notes">
 <h2>Random Notes<a class="headerlink" href="#random-notes" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>RNN: memory, issues when input data of different length</p></li>
 <li><p>Vanilla Neural Networks: A vanilla neural network, often simply called a feedforward neural network, is the most basic type of artificial neural network architecture. When dealing with sequential input, traditional fixed-size input neural networks like vanilla feedforward networks are not the most suitable. Sequential data has inherent temporal dependencies, meaning the order of the data points matters. Here’s how we can handle sequential input in the context of deep neural networks (DNNs):</p></li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>why is W distributed around 0 initially??</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">answer</p>
+<p>Initializing the weights of a neural network, including the recurrent weight matrix <span class="math notranslate nohighlight">\( W \)</span> in RNNs, around 0 is a common practice. The reasons for this are:</p>
+<ol class="arabic simple">
+<li><p><strong>Symmetry Breaking</strong>: If all weights are initialized to the same value, then all neurons in a given layer of the network would produce the same output and undergo the same weight updates during training. This means they would always remain identical, effectively making them useless as they wouldn’t capture diverse features. Initializing weights with small random values breaks this symmetry, ensuring that neurons evolve differently during training.</p></li>
+<li><p><strong>Activation Function Dynamics</strong>: For many activation functions, such as the sigmoid or tanh, when the input is close to 0, the function operates in a region where its slope (or derivative) is the steepest. This means that, initially, the network will have a more substantial gradient and will learn faster. If weights are initialized with large values, the activations might end up in the saturated regions of these functions where gradients are near zero, slowing down learning significantly due to the vanishing gradient problem.</p></li>
+<li><p><strong>Preventing Saturation</strong>: For activation functions like sigmoid or tanh, large input values (either positive or negative) can saturate the neuron, meaning it’s in a region where the function is almost flat. This can lead to vanishing gradients, making the network hard to train. Initializing weights around 0 ensures that neurons are in the non-saturated region of the activation function at the start of training.</p></li>
+<li><p><strong>Variance Considerations</strong>: For certain initialization techniques, like Xavier/Glorot or He initialization, the goal is to maintain the variance of activations and gradients across layers. These techniques often result in weights being initialized with values centered around 0, but the exact scale depends on the specific activation function and the number of input/output units.</p></li>
+<li><p><strong>Regularization Perspective</strong>: Initializing weights with smaller values can be seen as a form of implicit regularization, as it encourages the network to start with a simpler model, which can potentially prevent overfitting to some extent.</p></li>
+</ol>
+</div>
+<section id="attention-score">
+<h3>Attention Score<a class="headerlink" href="#attention-score" title="Permalink to this heading">#</a></h3>
+<p>The importance of a hidden state in the context of attention mechanisms is determined by its attention score, often denoted by <span class="math notranslate nohighlight">\( e \)</span>. The attention score indicates how relevant or important a particular hidden state is for a given context, such as a query or another part of the sequence.</p>
+<p>The computation of the attention score <span class="math notranslate nohighlight">\( e \)</span> can vary depending on the specific attention mechanism used, but here’s a general overview:</p>
+<hr class="docutils" />
+<p><strong>Computing Attention Scores</strong>:</p>
+<ol class="arabic simple">
+<li><p><strong>Dot Product Attention</strong>:</p>
+<ul class="simple">
+<li><p>The simplest form of attention computes the score as the dot product between the hidden state and a query vector:
+$<span class="math notranslate nohighlight">\( e = q^T \cdot h \)</span><span class="math notranslate nohighlight">\(
+Here, \)</span> q <span class="math notranslate nohighlight">\( is the query vector, and \)</span> h $ is the hidden state.</p></li>
+</ul>
+</li>
+<li><p><strong>Scaled Dot Product Attention</strong>:</p>
+<ul class="simple">
+<li><p>Similar to the dot product attention but scales the dot product by the inverse square root of the depth of the attention (used in the Transformer model):
+$<span class="math notranslate nohighlight">\( e = \frac{q^T \cdot h}{\sqrt{d}} \)</span><span class="math notranslate nohighlight">\(
+Where \)</span> d $ is the dimension of the query and hidden state.</p></li>
+</ul>
+</li>
+<li><p><strong>Additive/Multiplicative Attention</strong>:</p>
+<ul class="simple">
+<li><p>This method uses a small feed-forward network to compute the attention score:
+$<span class="math notranslate nohighlight">\( e = v^T \cdot \text{tanh}(W_1 \cdot q + W_2 \cdot h) \)</span><span class="math notranslate nohighlight">\(
+Here, \)</span> v <span class="math notranslate nohighlight">\(, \)</span> W_1 <span class="math notranslate nohighlight">\(, and \)</span> W_2 $ are learnable parameters. The idea is to project both the query and the hidden state into a shared space and then measure their compatibility.</p></li>
+</ul>
+</li>
+<li><p><strong>Content-based Attention</strong>:</p>
+<ul class="simple">
+<li><p>The score is computed based on the content of the hidden state itself, often using a neural network to produce the score.</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+<p><strong>Determining Importance</strong>:</p>
+<ul class="simple">
+<li><p>Once the raw attention scores <span class="math notranslate nohighlight">\( e \)</span> are computed for all hidden states, they are normalized using the softmax function to produce the attention weights <span class="math notranslate nohighlight">\( \alpha \)</span>:
+$<span class="math notranslate nohighlight">\( \alpha = \frac{exp(e)}{\sum exp(e)} \)</span>$</p></li>
+<li><p>These attention weights <span class="math notranslate nohighlight">\( \alpha \)</span> represent the importance or relevance of each hidden state to the current context or query. A higher weight means the corresponding hidden state is more important.</p></li>
+<li><p>The context vector, which is a weighted average of all hidden states based on the attention weights, is then computed. This context vector captures the most relevant information from the sequence for the current processing step.</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -475,7 +625,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-notes">Random Notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-notes">Random Notes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-score">Attention Score</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

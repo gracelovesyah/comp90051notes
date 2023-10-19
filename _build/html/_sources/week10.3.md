@@ -1,4 +1,4 @@
-# Additional Notes
+# Additional Notes -  More on Bayesian
 ## More on Bayesian
 This note is completed with the assistance of [ChatGPT](https://chat.openai.com/c/7887d9af-ce1c-4551-8f91-c576874448be)
 

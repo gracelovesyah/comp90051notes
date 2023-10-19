@@ -157,6 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="revision_progress.html">Revision Progress</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week6.2.html">week6 lec2</a></li>
@@ -168,7 +169,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Additional Resource</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week8.1.html">Lecture 16 Graph Convolution Networks (Deep Learning After You Drop The Camera)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week8.2.html">Lecture 16. Learning with expert advice</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week9.0.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -189,6 +192,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="week11.1.html">U-PGM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week11.2.html">SVM assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="review.html">Review Notes</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="review0.html">Overivew</a></li>
 </ul>
 </li>
 </ul>
@@ -384,7 +391,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn">CNN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn">CNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lstm">LSTM</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -411,6 +421,8 @@ document.write(`
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=zxQyTK8quyY">Transformer Neural Networks, ChatGPT’s foundation, Clearly Explained!!!</a></p></li>
 </ul>
 </li>
+<li><p>Article:
+-<a class="reference external" href="https://medium.com/deeplearningbrasilia/deep-learning-recurrent-neural-networks-f9482a24d010#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjdkMzM0NDk3NTA2YWNiNzRjZGVlZGFhNjYxODRkMTU1NDdmODM2OTMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAzNjA5OTA5NDc0NTI3NTk1MTMiLCJoZCI6InN0dWRlbnQudW5pbWVsYi5lZHUuYXUiLCJlbWFpbCI6ImppYWhlM0BzdHVkZW50LnVuaW1lbGIuZWR1LmF1IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTY5NzUwMzEzNiwibmFtZSI6IkppYWhlIExpdSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NJQ2gtYlFNcV9Sbzl6WDZKSFJwOEN4YTVMaE1vR2xlOHdWSWFHOUdsNTE9czk2LWMiLCJnaXZlbl9uYW1lIjoiSmlhaGUiLCJmYW1pbHlfbmFtZSI6IkxpdSIsImxvY2FsZSI6ImVuIiwiaWF0IjoxNjk3NTAzNDM2LCJleHAiOjE2OTc1MDcwMzYsImp0aSI6IjQzNTI3MTZlOGM5MjZhZDJmNzM4YzQxZDM2ZDcxYTJhNDhhZTlhNGMifQ.Dh2lacUeIfsnDzZQxCtMtg9hkB1FpmJOxegNehElperfTkx4v_LqWTlhrG9YA3ogdjxPVzUTuiT0qg1iIZWY8LMx55wYpWQm1g1b-UBCaCf9c9Eewg1OnFXEmKyKadLdtGI8QHaTs7vII0vEN9HvBCbYZz2-aQcmQHdsGY7lETpnjhItNtnEUfaS337dbkIk44tEJTEp6xOHej3n9PY_-al61TKl6xEtP9pQhSva262ov97E5hp_xt9r4a0UMY3CwaENcIxgSUVTFEAnYAI-DVgqI_z2S8eNEcHhP0DhqYF5cFvHUt261m7OLJOjNZnakuqRBHHicfgkS4iTH3XDbA">Deep Learning: Recurrent Neural Networks</a></p></li>
 </ul>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/cnn1.png"><img alt="cnn" class="bg-primary mb-1 align-center" src="_images/cnn1.png" style="width: 800px;" /></a>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/cnn2.png"><img alt="cnn" class="bg-primary mb-1 align-center" src="_images/cnn2.png" style="width: 800px;" /></a>
@@ -454,6 +466,16 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">8</span></code> adds the 8 bias parameters, one for each filter.</p></li>
 </ul>
 <p>Thus, the total number of parameters in the convolutional layer is (8 \times 1 \times 5 \times 5 + 8 = 208), not 28. It seems there might be some confusion between the size of <code class="docutils literal notranslate"><span class="pre">conv.bias</span></code> (which is 8) and the total parameter count (which is 208). The <code class="docutils literal notranslate"><span class="pre">conv.bias.size()</span></code> is <code class="docutils literal notranslate"><span class="pre">[8]</span></code>, representing one bias term for each of the 8 filters.</p>
+<section id="lstm">
+<h3>LSTM<a class="headerlink" href="#lstm" title="Permalink to this heading">#</a></h3>
+<p>LSTM uses different path!</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/lstm1.png"><img alt="cnn" class="bg-primary mb-1 align-center" src="_images/lstm1.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/lstm2.png"><img alt="cnn" class="bg-primary mb-1 align-center" src="_images/lstm2.png" style="width: 800px;" /></a>
+<p><strong>input gate</strong></p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/lstm3.png"><img alt="cnn" class="bg-primary mb-1 align-center" src="_images/lstm3.png" style="width: 800px;" /></a>
+<p><strong>output gate</strong></p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/lstm4.png"><img alt="cnn" class="bg-primary mb-1 align-center" src="_images/lstm4.png" style="width: 800px;" /></a>
+</section>
 </section>
 </section>
 
@@ -524,7 +546,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn">CNN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn">CNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lstm">LSTM</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -84,7 +84,6 @@ L(w, b) = \frac{1}{2}\|w\|^2 + \frac{1}{C} \sum_{i=1}^{n} L_i(w, b)
 $$
 
 In this context:
-- [ok](/_build/html/week11.2.html)
 - $\eta$ (eta) is the [learning rate](https://gracelovesyah.github.io/comp90051notes/basics.html#learning-rate)
 - $C$ is a regularization parameter
 - $\frac{1}{2\lambda}\|w\|^2$ will be used to simplify the computation of its derivative with respect to $w$

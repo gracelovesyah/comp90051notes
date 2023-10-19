@@ -4,6 +4,7 @@
 format: jb-book
 root: intro
 chapters:
+- file: revision_progress
 - file: basics
 - file: week6.0
   sections:
@@ -41,9 +42,27 @@ chapters:
   - file: week10.3
   - file: worksheet11
   - file: worksheet11note
+
 - file: week11.0
   sections:
   - file: week11.1
   - file: week11.2
   - file: week11.3
   - file: asm1feedback
+  - file: worksheet12
+  - file: worksheet12note
+
+- file: week12.0
+  sections:
+  - file: week12.1
+  - file: week12.2
+  - file: week12.3
+
+- file: review
+  sections:
+  - file: review0
+  - file: review1
+  - file: review2
+  - file: review3
+  - file: review4
+  - file: review5
