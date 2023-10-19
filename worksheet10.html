@@ -159,6 +159,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="revision_progress.html">Revision Progress</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week6.2.html">week6 lec2</a></li>
@@ -166,11 +167,13 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week7.0.html">week7</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week7.1.html">Lecture 13. Convolutional Neural Networks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14. RNN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week7.3.html">Additional Resource</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week8.1.html">Lecture 16 Graph Convolution Networks (Deep Learning After You Drop The Camera)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week8.2.html">Lecture 16. Learning with expert advice</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="week9.0.html">week9</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -183,13 +186,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="week10.0.html">week10</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week10.1.html">wk10 notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes -  More on Bayesian</a></li>
 <li class="toctree-l2"><a class="reference internal" href="worksheet11.html">COMP90051 Workshop 11</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week11.0.html">week11</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week11.1.html">U-PGM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week11.2.html">SVM assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="review.html">Review Notes</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="review0.html">Review 0</a></li>
 </ul>
 </li>
 </ul>
@@ -825,7 +833,7 @@ There also happens to be a 10-dimensional context vector for each arm (modelling
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EpsGreedy average reward 0.04875
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EpsGreedy average reward 0.01625
 </pre></div>
 </div>
 </div>
@@ -839,10 +847,10 @@ There also happens to be a 10-dimensional context vector for each arm (modelling
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UCB average reward 0.1025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UCB average reward 0.11
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/7q/7h5d5cp54fs6_718f38b_hd00000gn/T/ipykernel_85578/1835402886.py:43: RuntimeWarning: invalid value encountered in scalar multiply
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/7q/7h5d5cp54fs6_718f38b_hd00000gn/T/ipykernel_26386/1835402886.py:43: RuntimeWarning: invalid value encountered in scalar multiply
   self.mean_rewards[arm] = (self.mean_rewards[arm] * (self.n_pulls[arm] - 1) + reward) / self.n_pulls[arm]
 </pre></div>
 </div>
@@ -864,7 +872,7 @@ There also happens to be a 10-dimensional context vector for each arm (modelling
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8bef3661395031afe4265df9942149d1c0af98599a424cb6521908938ea3f522.png" src="_images/8bef3661395031afe4265df9942149d1c0af98599a424cb6521908938ea3f522.png" />
+<img alt="_images/49b6758ed2adbbbb2b232029cb2f807b4852f1890bafa66b4d99b687bf38a206.png" src="_images/49b6758ed2adbbbb2b232029cb2f807b4852f1890bafa66b4d99b687bf38a206.png" />
 </div>
 </div>
 </section>

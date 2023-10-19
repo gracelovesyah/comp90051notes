@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'week8.0';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="week8.1.html" />
+    <link rel="next" title="Lecture 16 Graph Convolution Networks (Deep Learning After You Drop The Camera)" href="week8.1.html" />
     <link rel="prev" title="Additional Resource" href="week7.3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -157,6 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="revision_progress.html">Revision Progress</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week6.2.html">week6 lec2</a></li>
@@ -164,11 +165,13 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week7.0.html">week7</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week7.1.html">Lecture 13. Convolutional Neural Networks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14. RNN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week7.3.html">Additional Resource</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">week8</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">week8</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week8.1.html">Lecture 16 Graph Convolution Networks (Deep Learning After You Drop The Camera)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week8.2.html">Lecture 16. Learning with expert advice</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week9.0.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -181,13 +184,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="week10.0.html">week10</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week10.1.html">wk10 notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes -  More on Bayesian</a></li>
 <li class="toctree-l2"><a class="reference internal" href="worksheet11.html">COMP90051 Workshop 11</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week11.0.html">week11</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week11.1.html">U-PGM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week11.2.html">SVM assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="review.html">Review Notes</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="review0.html">Review 0</a></li>
 </ul>
 </li>
 </ul>
@@ -388,8 +396,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="week8">
 <h1>week8<a class="headerlink" href="#week8" title="Permalink to this heading">#</a></h1>
 <p>This notes is completed with assistance of <a class="reference external" href="https://chat.openai.com/c/102a61a5-682c-499c-9004-1f43c7b798ed">ChatGPT</a></p>
-<p><a class="reference download internal" download="" href="_downloads/988f1131df29fad1e1461b83e7617fb8/15.pdf"><span class="xref download myst">View Lecture 15. Multi-armed bandits</span></a></p>
-<p><a class="reference download internal" download="" href="_downloads/0d3b541d7f19c4aedb679d9d1ee79643/16.pdf"><span class="xref download myst">View Lecture 16. Bayesian regression</span></a></p>
+<p><a class="reference download internal" download="" href="_downloads/988f1131df29fad1e1461b83e7617fb8/15.pdf"><span class="xref download myst">View Lecture 15. Graph Convolution Networks</span></a></p>
+<p><a class="reference download internal" download="" href="_downloads/0d3b541d7f19c4aedb679d9d1ee79643/16.pdf"><span class="xref download myst">View Lecture 16. Learning with expert advice</span></a></p>
 <p><span class="xref myst">View workshop9-slides</span></p>
 <p><span class="xref myst">View workshop9</span></p>
 <div class="toctree-wrapper compound">
@@ -441,7 +449,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Lecture 16 Graph Convolution Networks (Deep Learning After You Drop The Camera)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
