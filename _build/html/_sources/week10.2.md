@@ -95,3 +95,5 @@ This notes is completed with assistance of [ChatGPT](https://chat.openai.com/c/7
 
 7. **Benefits of PGMs:**
    - They allow for structured, efficient, and intuitive probabilistic modeling. The factorization and independence assumptions reduce the computational burden and the risk of overfitting.
+
+

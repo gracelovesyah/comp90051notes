@@ -1,0 +1,779 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Review 1 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'review1';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Review 0" href="review0.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to COMP90051
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="revision_progress.html">Revision Progress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week6.2.html">week6 lec2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week7.0.html">week7</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week7.1.html">Lecture 13. Convolutional Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14. RNN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.3.html">Additional Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week8.1.html">Lecture 16 Graph Convolution Networks (Deep Learning After You Drop The Camera)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week8.2.html">Lecture 16. Learning with expert advice</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week9.0.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week9.1.html">Stochastic Multi-Armed Bandits (MABs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week9.2.html">Bayesian regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet10.html">Workshop 10: Multi-armed bandits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet10note.html">Workshop 10: Multi-armed bandits notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week10.0.html">week10</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week10.1.html">wk10 notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes -  More on Bayesian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet11.html">COMP90051 Workshop 11</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week11.0.html">week11</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week11.1.html">U-PGM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week11.2.html">SVM assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="review.html">Review Notes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="review0.html">Review 0</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Review 1</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Freview1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/review1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Review 1</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svm">SVM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-slack-variables-xi">The slack variables <span class="math notranslate nohighlight">\( \xi \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrange-multipliers-lambda-or-alpha">Lagrange multipliers (<span class="math notranslate nohighlight">\(\lambda\)</span> or <span class="math notranslate nohighlight">\(\alpha\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primal-and-dual">Primal and Dual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kkt">KKT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rbf">RBF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proving-a-pairwise-function-is-a-kernel">proving a pairwise function is a kernel</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="review-1">
+<h1>Review 1<a class="headerlink" href="#review-1" title="Permalink to this heading">#</a></h1>
+<p>This notes is completed with assistance of <a class="reference external" href="https://chat.openai.com/c/8e5cce0e-e9b9-45de-b19b-921f71e24631">ChatGPT</a></p>
+<section id="svm">
+<h2>SVM<a class="headerlink" href="#svm" title="Permalink to this heading">#</a></h2>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Hard SVM</p></th>
+<th class="head"><p>Soft SVM</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Tolerance to Misclassification</p></td>
+<td><p>No false tolerance</p></td>
+<td><p>Includes false tolerance</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Requirement</p></td>
+<td><p>Linearly separable data</p></td>
+<td><p>Non-linearly separable data</p></td>
+</tr>
+<tr class="row-even"><td><p>Optimization Goal</p></td>
+<td><p><span class="math notranslate nohighlight">\( \min \frac{1}{2} |w|^2 \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( \min \left(\frac{1}{2} |w|^2 + C \sum_{i=1}^{n} \xi_i\right) \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Slack Variables (<span class="math notranslate nohighlight">\(\xi\)</span>))</p></td>
+<td><p>Not applicable (no violations allowed)</p></td>
+<td><p>Used to measure violations (distance to the wrong side of margin)</p></td>
+</tr>
+<tr class="row-even"><td><p>Impact of Violations</p></td>
+<td><p>Not allowed</p></td>
+<td><p>Penalized by the term <span class="math notranslate nohighlight">\( C \sum_{i=1}^{n} \xi_i \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Support Vectors</p></td>
+<td><p>Points on the margin</p></td>
+<td><p>Points on or within the margin (including misclassified points)</p></td>
+</tr>
+</tbody>
+</table>
+<section id="the-slack-variables-xi">
+<h3>The slack variables <span class="math notranslate nohighlight">\( \xi \)</span><a class="headerlink" href="#the-slack-variables-xi" title="Permalink to this heading">#</a></h3>
+<p>The slack variables <span class="math notranslate nohighlight">\( \xi \)</span> in a soft-margin SVM are not typically “calculated” directly in a stand-alone manner. Instead, they emerge as part of the SVM optimization process.</p>
+<p>In the context of a soft-margin SVM, the slack variables <span class="math notranslate nohighlight">\( \xi_i \)</span> represent the distance by which an example might violate the margin. The soft-margin SVM optimization is formulated to allow these violations but penalize them according to their magnitude, controlled by the parameter <span class="math notranslate nohighlight">\( C \)</span>.</p>
+<p>To elaborate:</p>
+<p>Given a set of training data <span class="math notranslate nohighlight">\(\{(x_1, y_1), \dots, (x_n, y_n)\}\)</span> where <span class="math notranslate nohighlight">\(x_i \in \mathbb{R}^p\)</span> and <span class="math notranslate nohighlight">\(y_i \in \{-1, 1\}\)</span>, the optimization problem for the soft-margin SVM is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\min_{w, b, \xi} \quad &amp; \frac{1}{2} ||w||^2 + C \sum_{i=1}^{n} \xi_i \\
+\text{s.t.} \quad &amp; y_i(w \cdot x_i + b) \geq 1 - \xi_i, \quad \forall i = 1, \dots, n \\
+&amp; \xi_i \geq 0, \quad \forall i = 1, \dots, n
+\end{align*}
+\end{split}\]</div>
+<p>Here’s what the constraints imply:</p>
+<ol class="arabic simple">
+<li><p>If a point <span class="math notranslate nohighlight">\( x_i \)</span> is correctly classified and lies outside the margin, then <span class="math notranslate nohighlight">\( \xi_i = 0 \)</span>.</p></li>
+<li><p>If a point <span class="math notranslate nohighlight">\( x_i \)</span> lies inside the margin but is still correctly classified, then <span class="math notranslate nohighlight">\( 0 &lt; \xi_i &lt; 1 \)</span>.</p></li>
+<li><p>If a point <span class="math notranslate nohighlight">\( x_i \)</span> is misclassified, then <span class="math notranslate nohighlight">\( \xi_i \geq 1 \)</span>.</p></li>
+</ol>
+<p>In practical terms, when you use an SVM solver (like the popular libsvm or the SVM implementation in scikit-learn), the optimization algorithm internally computes values for the decision boundary <span class="math notranslate nohighlight">\( w \)</span> and bias <span class="math notranslate nohighlight">\( b \)</span> as well as the slack variables <span class="math notranslate nohighlight">\( \xi \)</span>. Once the algorithm converges, it provides you with the optimal hyperplane and, implicitly, the associated slack variables.</p>
+<p>If you wanted to explicitly calculate the slack variable <span class="math notranslate nohighlight">\( \xi_i \)</span> for a specific data point <span class="math notranslate nohighlight">\( x_i \)</span> after training, you could use the following relation:</p>
+<div class="math notranslate nohighlight">
+\[ 
+\xi_i = \max(0, 1 - y_i(w \cdot x_i + b))
+\]</div>
+<p>This equation gives you the distance by which the example violates the margin. If it’s zero, the example does not violate the margin.</p>
+</section>
+<section id="lagrange-multipliers-lambda-or-alpha">
+<h3>Lagrange multipliers (<span class="math notranslate nohighlight">\(\lambda\)</span> or <span class="math notranslate nohighlight">\(\alpha\)</span>)<a class="headerlink" href="#lagrange-multipliers-lambda-or-alpha" title="Permalink to this heading">#</a></h3>
+<p>The Lagrange multipliers, often represented by <span class="math notranslate nohighlight">\( \alpha \)</span> in the context of SVMs, are central to the Lagrangian dual formulation of the SVM optimization problem. The computation of the Lagrange multipliers is done through quadratic programming solvers in a dual optimization framework.</p>
+<p>Here’s a broad overview of the process:</p>
+<ol class="arabic">
+<li><p><strong>Formulate the Lagrangian</strong>:
+Given the primal optimization problem of the SVM, we introduce the Lagrange multipliers (<span class="math notranslate nohighlight">\( \alpha \)</span>) and form the Lagrangian, which combines the objective function and the constraints. For the SVM, this Lagrangian is:</p>
+<div class="math notranslate nohighlight">
+\[ L(w, b, \alpha) = \frac{1}{2} \|w\|^2 - \sum_{i=1}^n \alpha_i [y_i (w \cdot x_i + b) - 1] \]</div>
+<p>Where <span class="math notranslate nohighlight">\( \alpha_i \)</span> are the Lagrange multipliers.</p>
+</li>
+<li><p><strong>Derive the Dual Problem</strong>:
+To get the dual problem, you first find the partial derivatives of <span class="math notranslate nohighlight">\( L \)</span> with respect to <span class="math notranslate nohighlight">\( w \)</span> and <span class="math notranslate nohighlight">\( b \)</span>, and then set them to zero. This will give you equations that represent <span class="math notranslate nohighlight">\( w \)</span> in terms of <span class="math notranslate nohighlight">\( \alpha \)</span> and other terms. By substituting these relations into the Lagrangian, you can transform the primal optimization problem into a dual problem which solely involves the <span class="math notranslate nohighlight">\( \alpha \)</span> values.</p></li>
+<li><p><strong>Solve the Dual Problem</strong>:
+The dual problem resulting from the above process is a quadratic programming problem. It’s a maximization problem with respect to the <span class="math notranslate nohighlight">\( \alpha \)</span>‘s. This problem can be efficiently solved using quadratic programming solvers.</p>
+<p>For the SVM, the dual problem is:</p>
+<div class="math notranslate nohighlight">
+\[ 
+   \max_\alpha \sum_{i=1}^n \alpha_i - \frac{1}{2} \sum_{i=1}^n \sum_{j=1}^n \alpha_i \alpha_j y_i y_j (x_i \cdot x_j)
+   \]</div>
+<p>Subject to:</p>
+<div class="math notranslate nohighlight">
+\[ 
+   \sum_{i=1}^n \alpha_i y_i = 0 \quad \text{and} \quad 0 \leq \alpha_i \leq C, \quad \forall i
+   \]</div>
+</li>
+<li><p><strong>Identify the Support Vectors</strong>:
+Once the <span class="math notranslate nohighlight">\( \alpha \)</span> values are found, any data point <span class="math notranslate nohighlight">\( x_i \)</span> for which <span class="math notranslate nohighlight">\( \alpha_i &gt; 0 \)</span> is considered a support vector. These are the vectors that lie on or within the margin.</p></li>
+<li><p><strong>Compute <span class="math notranslate nohighlight">\( w \)</span> and <span class="math notranslate nohighlight">\( b \)</span></strong>:
+Using the calculated <span class="math notranslate nohighlight">\( \alpha \)</span> values and the support vectors, you can compute the weight vector <span class="math notranslate nohighlight">\( w \)</span> and bias <span class="math notranslate nohighlight">\( b \)</span> to describe the optimal hyperplane.</p></li>
+</ol>
+<p>The actual computation of the Lagrange multipliers (<span class="math notranslate nohighlight">\( \alpha \)</span>) involves numerical methods, and there are specialized algorithms and libraries designed for this, like SMO (Sequential Minimal Optimization) and software packages like LIBSVM.</p>
+<p>In practical machine learning workflows, you usually don’t compute the Lagrange multipliers by hand; instead, you rely on established SVM libraries to solve the dual problem and provide the support vectors, <span class="math notranslate nohighlight">\( \alpha \)</span> values, and the hyperplane parameters.</p>
+</section>
+<section id="primal-and-dual">
+<h3>Primal and Dual<a class="headerlink" href="#primal-and-dual" title="Permalink to this heading">#</a></h3>
+<p><strong>When to Use</strong></p>
+<p>n &gt;&gt; m: primal</p>
+<p>m &gt;&gt; n: dual</p>
+<p>where n is the number of data; m is the number of features.</p>
+<p><strong>primal = dual</strong>
+Under KKT condition</p>
+</section>
+<section id="kkt">
+<h3>KKT<a class="headerlink" href="#kkt" title="Permalink to this heading">#</a></h3>
+<p>Before diving into the KKT conditions for SVM, let’s recap the primal optimization problem for the SVM:</p>
+<p><strong>Primal Problem</strong>:
+Given a set of training data <span class="math notranslate nohighlight">\(\{(x_1, y_1), \dots, (x_n, y_n)\}\)</span> where <span class="math notranslate nohighlight">\(x_i \in \mathbb{R}^p\)</span> and <span class="math notranslate nohighlight">\(y_i \in \{-1, 1\}\)</span>, the goal of the SVM is to find a separating hyperplane with maximum margin. The optimization problem is formulated as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\min_{w, b, \xi} \quad &amp; \frac{1}{2} ||w||^2 + C \sum_{i=1}^{n} \xi_i \\
+\text{s.t.} \quad &amp; y_i(w \cdot x_i + b) \geq 1 - \xi_i, \quad \forall i = 1, \dots, n \\
+&amp; \xi_i \geq 0, \quad \forall i = 1, \dots, n
+\end{align*}
+\end{split}\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( w \)</span> is the weight vector of the hyperplane.</p></li>
+<li><p><span class="math notranslate nohighlight">\( b \)</span> is the bias term.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \xi_i \)</span> are the slack variables which allow some data points to be on the wrong side of the margin (soft margin).</p></li>
+<li><p><span class="math notranslate nohighlight">\( C \)</span> is the penalty for misclassifying a point.</p></li>
+</ul>
+<p>Now, the <strong>Lagrangian</strong> for this problem is:</p>
+<div class="math notranslate nohighlight">
+\[
+L(w, b, \xi, \alpha, r) = \frac{1}{2} ||w||^2 + C \sum_{i=1}^{n} \xi_i - \sum_{i=1}^{n} \alpha_i [y_i(w \cdot x_i + b) - 1 + \xi_i] - \sum_{i=1}^{n} r_i \xi_i
+\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \alpha_i \)</span> are the Lagrange multipliers associated with the inequality constraints.</p></li>
+<li><p><span class="math notranslate nohighlight">\( r_i \)</span> are the Lagrange multipliers associated with the non-negativity constraints on <span class="math notranslate nohighlight">\( \xi_i \)</span>.</p></li>
+</ul>
+<p>The <strong>KKT conditions</strong> for the SVM optimization problem are:</p>
+<ol class="arabic simple">
+<li><p><strong>Stationarity</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\frac{\partial L}{\partial w} &amp;= 0 \implies w = \sum_{i=1}^{n} \alpha_i y_i x_i \\
+\frac{\partial L}{\partial b} &amp;= 0 \implies \sum_{i=1}^{n} \alpha_i y_i = 0 \\
+\frac{\partial L}{\partial \xi_i} &amp;= 0 \implies C - \alpha_i - r_i = 0, \quad \forall i
+\end{align*}
+\end{split}\]</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Primal feasibility</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+y_i(w \cdot x_i + b) \geq 1 - \xi_i, \quad \xi_i \geq 0, \quad \forall i
+\]</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Dual feasibility</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\alpha_i \geq 0, \quad r_i \geq 0, \quad \forall i
+\]</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Complementary slackness</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\alpha_i [y_i(w \cdot x_i + b) - 1 + \xi_i] = 0, \quad r_i \xi_i = 0, \quad \forall i
+\]</div>
+<p>The last condition, complementary slackness, has a significant implication: if <span class="math notranslate nohighlight">\( \alpha_i \)</span> is non-zero (i.e., <span class="math notranslate nohighlight">\( x_i \)</span> is a support vector), then <span class="math notranslate nohighlight">\( y_i(w \cdot x_i + b) = 1 - \xi_i \)</span>, meaning the data point either lies on the margin or is misclassified. If <span class="math notranslate nohighlight">\( \alpha_i = 0 \)</span>, then the data point lies on the correct side of the margin.</p>
+<p>These conditions are foundational for the theory of SVM and the Sequential Minimal Optimization (SMO) algorithm, which is commonly used to solve SVM problems.</p>
+</section>
+<section id="rbf">
+<h3>RBF<a class="headerlink" href="#rbf" title="Permalink to this heading">#</a></h3>
+<p>The Radial Basis Function (RBF) kernel, often referred to as the Gaussian kernel, is a popular choice in support vector machine (SVM) and other machine learning algorithms. The RBF kernel function is defined as:</p>
+<div class="math notranslate nohighlight">
+\[ K(x, y) = \exp(-\gamma \|x - y\|^2) \]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span> are two data points.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \gamma \)</span> (gamma) is a parameter that determines the shape of the decision boundary.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \|x - y\|^2 \)</span> is the squared Euclidean distance between the two points.</p></li>
+</ul>
+<p>Let’s understand the behavior of the RBF kernel with respect to the parameter <span class="math notranslate nohighlight">\( \gamma \)</span>:</p>
+<ol class="arabic simple">
+<li><p><strong>Small <span class="math notranslate nohighlight">\( \gamma \)</span> Value</strong>:</p>
+<ul class="simple">
+<li><p>The term <span class="math notranslate nohighlight">\( -\gamma \|x - y\|^2 \)</span> becomes very small (close to zero), so the exponential function approaches 1.</p></li>
+<li><p>The resulting kernel values are high even for data points that are far apart. This means the influence of a single training example reaches far, resulting in a smoother decision boundary.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\( \gamma \)</span> is too small, the model may become too simplistic and may not capture the complexities in the data. This can lead to underfitting.</p></li>
+</ul>
+</li>
+<li><p><strong>Large <span class="math notranslate nohighlight">\( \gamma \)</span> Value</strong>:</p>
+<ul class="simple">
+<li><p>The term <span class="math notranslate nohighlight">\( -\gamma \|x - y\|^2 \)</span> can become large even if <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span> are only moderately distant from each other, pushing the exponential term towards 0.</p></li>
+<li><p>The resulting kernel values decay rapidly and become close to 0 even for moderate distances. Thus, the influence of a single training example is very local.</p></li>
+<li><p>This means that the model will have a wiggly decision boundary, trying to fit closely to each data point.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\( \gamma \)</span> is too large, the model may fit too closely to the noise and outliers in the training data, leading to overfitting.</p></li>
+</ul>
+</li>
+</ol>
+<p>In essence, <span class="math notranslate nohighlight">\( \gamma \)</span> in the RBF kernel acts as an inverse radius of influence of samples selected by the model as support vectors. A smaller value means a larger radius of influence, creating a smoother decision surface, while a larger value indicates a smaller radius of influence, leading to a more intricate decision surface.</p>
+<p>When using the RBF kernel in practice, it’s crucial to choose an appropriate value for <span class="math notranslate nohighlight">\( \gamma \)</span> based on cross-validation or other model selection techniques to avoid underfitting or overfitting.</p>
+</section>
+<section id="proving-a-pairwise-function-is-a-kernel">
+<h3>proving a pairwise function is a kernel<a class="headerlink" href="#proving-a-pairwise-function-is-a-kernel" title="Permalink to this heading">#</a></h3>
+<p>In machine learning, a kernel function is a way to compute the dot product of two vectors in some (possibly infinite-dimensional) feature space. The advantage is that this computation can be done without explicitly visiting the feature space, which can be computationally expensive or even infeasible.</p>
+<ol class="arabic simple">
+<li><p><strong>Method 1: Find <span class="math notranslate nohighlight">\( \phi \)</span> Directly</strong></p>
+<ul class="simple">
+<li><p>This method involves finding an explicit mapping <span class="math notranslate nohighlight">\( \phi \)</span> from the input space to a feature space such that the kernel can be expressed as <span class="math notranslate nohighlight">\( K(u, v) = \langle \phi(u), \phi(v) \rangle \)</span>, where <span class="math notranslate nohighlight">\( \langle \cdot, \cdot \rangle \)</span> denotes the dot product.</p></li>
+<li><p>This can indeed be hard because for many kernels, the mapping <span class="math notranslate nohighlight">\( \phi \)</span> leads to an infinite-dimensional space.</p></li>
+</ul>
+</li>
+<li><p><strong>Method 2: Mercer’s Theorem</strong></p>
+<ul class="simple">
+<li><p>Mercer’s theorem provides a criterion for a function to be a kernel without explicitly finding the feature mapping <span class="math notranslate nohighlight">\( \phi \)</span>.</p></li>
+<li><p>Essentially, a function <span class="math notranslate nohighlight">\( K \)</span> is a valid kernel if and only if for any finite set of points <span class="math notranslate nohighlight">\( \{ x_1, x_2, ..., x_n \} \)</span>, the Gram matrix <span class="math notranslate nohighlight">\( G \)</span> (whose entries are given by <span class="math notranslate nohighlight">\( G_{ij} = K(x_i, x_j) \)</span>) is symmetric and positive semi-definite.</p></li>
+<li><p>The popular approach here involves proving that the Gram matrix is positive semi-definite for all possible sets of points. This is a more theoretical approach and requires a foundation in linear algebra.</p></li>
+</ul>
+</li>
+<li><p><strong>Method 3: Use Rules</strong></p>
+<ul class="simple">
+<li><p>Once you know certain functions are valid kernels, you can combine them using various rules to produce new kernels. This is the easiest method when applicable. Some of these rules include:</p>
+<ul>
+<li><p>Addition: If <span class="math notranslate nohighlight">\( K_1 \)</span> and <span class="math notranslate nohighlight">\( K_2 \)</span> are kernels, then <span class="math notranslate nohighlight">\( K(u, v) = K_1(u, v) + K_2(u, v) \)</span> is also a kernel.</p></li>
+<li><p>Scalar Multiplication: If <span class="math notranslate nohighlight">\( K_1 \)</span> is a kernel and <span class="math notranslate nohighlight">\( c \)</span> is a positive constant, then <span class="math notranslate nohighlight">\( K(u, v) = c K_1(u, v) \)</span> is a kernel.</p></li>
+<li><p>Function Multiplication: If <span class="math notranslate nohighlight">\( K_1 \)</span> is a kernel and <span class="math notranslate nohighlight">\( f \)</span> is a real-valued function, then <span class="math notranslate nohighlight">\( K(u, v) = f(u) K_1(u, v) f(v) \)</span> is a kernel.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>Understanding Mercer’s theorem and its implications can be a bit challenging without a background in functional analysis and linear algebra. If you’re diving deep into kernel methods, it might be helpful to review these topics to better grasp Mercer’s theorem and its utility.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/rbf.png"><img alt="rbf" class="bg-primary mb-1 align-center" src="_images/rbf.png" style="width: 800px;" /></a>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="review0.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Review 0</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svm">SVM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-slack-variables-xi">The slack variables <span class="math notranslate nohighlight">\( \xi \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrange-multipliers-lambda-or-alpha">Lagrange multipliers (<span class="math notranslate nohighlight">\(\lambda\)</span> or <span class="math notranslate nohighlight">\(\alpha\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primal-and-dual">Primal and Dual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kkt">KKT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rbf">RBF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proving-a-pairwise-function-is-a-kernel">proving a pairwise function is a kernel</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
