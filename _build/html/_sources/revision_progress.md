@@ -13,8 +13,8 @@
 | 8    | - [x]     | - [x]     | - [ ]   |
 | 9    | - [x]     | - [x]     | - [ ]   |
 | 10   | - [x]     | - [x]     | - [ ]   |
-| 11   | - [x]     | - [ ]     | - [ ]   |
-| 12   | - [ ]     | - [ ]     | - [ ]   |
+| 11   | - [x]     | - [x]     | - [ ]   |
+| 12   | - [x]     | - [ ]     | - [ ]   |
 
 ## Additional Lectures
 | Number | Additional Lecture 1 | Additional Lecture 2 |

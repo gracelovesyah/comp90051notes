@@ -203,6 +203,7 @@ When using the RBF kernel in practice, it's crucial to choose an appropriate val
    - Mercer's theorem provides a criterion for a function to be a kernel without explicitly finding the feature mapping $ \phi $.
    - Essentially, a function $ K $ is a valid kernel if and only if for any finite set of points $ \{ x_1, x_2, ..., x_n \} $, the Gram matrix $ G $ (whose entries are given by $ G_{ij} = K(x_i, x_j) $) is symmetric and positive semi-definite.
    - The popular approach here involves proving that the Gram matrix is positive semi-definite for all possible sets of points. This is a more theoretical approach and requires a foundation in linear algebra.
+   - The product of 2 positive semi definite matrix will result in a positive semi definite matrix.
 
 3. **Method 3: Use Rules**
    - Once you know certain functions are valid kernels, you can combine them using various rules to produce new kernels. This is the easiest method when applicable. Some of these rules include:
@@ -218,3 +219,26 @@ Understanding Mercer's theorem and its implications can be a bit challenging wit
 :width: 800px
 :align: center
 ```
+
+### Proof of Kernel
+Ah, the Taylor expansion provides another elegant way to demonstrate the validity of the kernel. Let's use this approach for the second proof:
+
+**Given Kernel: $ k'(x, x') = \exp(k(x, x')) $ for a valid kernel $ k $**
+
+We want to prove that $ k' $ is a valid kernel. 
+
+First, let's expand $ e^z $ using its Taylor series expansion:
+
+$$ e^z = 1 + z + \frac{z^2}{2!} + \frac{z^3}{3!} + \dots $$
+
+Using this expansion, we can write the kernel $ k' $ as:
+
+$$ k'(x, x') = \exp(k(x, x')) = 1 + k(x, x') + \frac{k(x, x')^2}{2!} + \frac{k(x, x')^3}{3!} + \dots $$
+
+Each term in this infinite sum corresponds to a polynomial kernel (or its higher powers) of the original kernel $ k $. Since the original kernel $ k $ is valid, its polynomial extensions (e.g., $ k(x, x')^2 $, $ k(x, x')^3 $) are also valid. This is because polynomial combinations of valid kernels are valid. 
+
+Now, the infinite sum of valid kernels is also a valid kernel, as long as the sum converges (which it does due to the properties of the exponential function and its Taylor expansion).
+
+Hence, $ k'(x, x') $ is a valid kernel. 
+
+This proof leverages the properties of the Taylor series expansion and the validity of polynomial combinations of kernels.

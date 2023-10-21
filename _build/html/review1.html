@@ -66,6 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'review1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Review 3" href="review3.html" />
     <link rel="prev" title="Review 0" href="review0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -192,12 +193,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="week11.0.html">week11</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week11.1.html">U-PGM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week11.2.html">SVM assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week11.3.html">Lecture 22. Inference on PGMs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="review.html">Review Notes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="review0.html">Review 0</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Review 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review3.html">Review 3</a></li>
 </ul>
 </li>
 </ul>
@@ -400,6 +403,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kkt">KKT</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rbf">RBF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proving-a-pairwise-function-is-a-kernel">proving a pairwise function is a kernel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-kernel">Proof of Kernel</a></li>
 </ul>
 </li>
 </ul>
@@ -636,6 +640,7 @@ y_i(w \cdot x_i + b) \geq 1 - \xi_i, \quad \xi_i \geq 0, \quad \forall i
 <li><p>Mercer’s theorem provides a criterion for a function to be a kernel without explicitly finding the feature mapping <span class="math notranslate nohighlight">\( \phi \)</span>.</p></li>
 <li><p>Essentially, a function <span class="math notranslate nohighlight">\( K \)</span> is a valid kernel if and only if for any finite set of points <span class="math notranslate nohighlight">\( \{ x_1, x_2, ..., x_n \} \)</span>, the Gram matrix <span class="math notranslate nohighlight">\( G \)</span> (whose entries are given by <span class="math notranslate nohighlight">\( G_{ij} = K(x_i, x_j) \)</span>) is symmetric and positive semi-definite.</p></li>
 <li><p>The popular approach here involves proving that the Gram matrix is positive semi-definite for all possible sets of points. This is a more theoretical approach and requires a foundation in linear algebra.</p></li>
+<li><p>The product of 2 positive semi definite matrix will result in a positive semi definite matrix.</p></li>
 </ul>
 </li>
 <li><p><strong>Method 3: Use Rules</strong></p>
@@ -652,6 +657,22 @@ y_i(w \cdot x_i + b) \geq 1 - \xi_i, \quad \xi_i \geq 0, \quad \forall i
 </ol>
 <p>Understanding Mercer’s theorem and its implications can be a bit challenging without a background in functional analysis and linear algebra. If you’re diving deep into kernel methods, it might be helpful to review these topics to better grasp Mercer’s theorem and its utility.</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/rbf.png"><img alt="rbf" class="bg-primary mb-1 align-center" src="_images/rbf.png" style="width: 800px;" /></a>
+</section>
+<section id="proof-of-kernel">
+<h3>Proof of Kernel<a class="headerlink" href="#proof-of-kernel" title="Permalink to this heading">#</a></h3>
+<p>Ah, the Taylor expansion provides another elegant way to demonstrate the validity of the kernel. Let’s use this approach for the second proof:</p>
+<p><strong>Given Kernel: <span class="math notranslate nohighlight">\( k'(x, x') = \exp(k(x, x')) \)</span> for a valid kernel <span class="math notranslate nohighlight">\( k \)</span></strong></p>
+<p>We want to prove that <span class="math notranslate nohighlight">\( k' \)</span> is a valid kernel.</p>
+<p>First, let’s expand <span class="math notranslate nohighlight">\( e^z \)</span> using its Taylor series expansion:</p>
+<div class="math notranslate nohighlight">
+\[ e^z = 1 + z + \frac{z^2}{2!} + \frac{z^3}{3!} + \dots \]</div>
+<p>Using this expansion, we can write the kernel <span class="math notranslate nohighlight">\( k' \)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[ k'(x, x') = \exp(k(x, x')) = 1 + k(x, x') + \frac{k(x, x')^2}{2!} + \frac{k(x, x')^3}{3!} + \dots \]</div>
+<p>Each term in this infinite sum corresponds to a polynomial kernel (or its higher powers) of the original kernel <span class="math notranslate nohighlight">\( k \)</span>. Since the original kernel <span class="math notranslate nohighlight">\( k \)</span> is valid, its polynomial extensions (e.g., <span class="math notranslate nohighlight">\( k(x, x')^2 \)</span>, <span class="math notranslate nohighlight">\( k(x, x')^3 \)</span>) are also valid. This is because polynomial combinations of valid kernels are valid.</p>
+<p>Now, the infinite sum of valid kernels is also a valid kernel, as long as the sum converges (which it does due to the properties of the exponential function and its Taylor expansion).</p>
+<p>Hence, <span class="math notranslate nohighlight">\( k'(x, x') \)</span> is a valid kernel.</p>
+<p>This proof leverages the properties of the Taylor series expansion and the validity of polynomial combinations of kernels.</p>
 </section>
 </section>
 </section>
@@ -696,6 +717,15 @@ y_i(w \cdot x_i + b) \geq 1 - \xi_i, \quad \xi_i \geq 0, \quad \forall i
         <p class="prev-next-title">Review 0</p>
       </div>
     </a>
+    <a class="right-next"
+       href="review3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Review 3</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -721,6 +751,7 @@ y_i(w \cdot x_i + b) \geq 1 - \xi_i, \quad \xi_i \geq 0, \quad \forall i
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kkt">KKT</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rbf">RBF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proving-a-pairwise-function-is-a-kernel">proving a pairwise function is a kernel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-kernel">Proof of Kernel</a></li>
 </ul>
 </li>
 </ul>

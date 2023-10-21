@@ -193,12 +193,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="week11.0.html">week11</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week11.1.html">U-PGM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week11.2.html">SVM assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week11.3.html">Lecture 22. Inference on PGMs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="review.html">Review Notes</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="review0.html">Review 0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="review1.html">Review 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review3.html">Review 3</a></li>
 </ul>
 </li>
 </ul>
@@ -834,7 +836,7 @@ There also happens to be a 10-dimensional context vector for each arm (modelling
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EpsGreedy average reward 0.175
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EpsGreedy average reward 0.1
 </pre></div>
 </div>
 </div>
@@ -848,10 +850,10 @@ There also happens to be a 10-dimensional context vector for each arm (modelling
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UCB average reward 0.095
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UCB average reward 0.12375
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/7q/7h5d5cp54fs6_718f38b_hd00000gn/T/ipykernel_8174/1835402886.py:43: RuntimeWarning: invalid value encountered in scalar multiply
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/7q/7h5d5cp54fs6_718f38b_hd00000gn/T/ipykernel_28416/1835402886.py:43: RuntimeWarning: invalid value encountered in scalar multiply
   self.mean_rewards[arm] = (self.mean_rewards[arm] * (self.n_pulls[arm] - 1) + reward) / self.n_pulls[arm]
 </pre></div>
 </div>
@@ -873,7 +875,7 @@ There also happens to be a 10-dimensional context vector for each arm (modelling
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/289ec1ed9f1a82f74a4ce16246563c6bd26f8f75c63ea48fb054a25cb5f674cc.png" src="_images/289ec1ed9f1a82f74a4ce16246563c6bd26f8f75c63ea48fb054a25cb5f674cc.png" />
+<img alt="_images/c5c2b0ce92aa6cac1c0e592c350aeba5c8e5c821bc7d23a17d5facc898a45f4e.png" src="_images/c5c2b0ce92aa6cac1c0e592c350aeba5c8e5c821bc7d23a17d5facc898a45f4e.png" />
 </div>
 </div>
 </section>
