@@ -1,6 +1,10 @@
 # Review 1
 This notes is completed with assistance of [ChatGPT](https://chat.openai.com/c/8e5cce0e-e9b9-45de-b19b-921f71e24631)
-
+## ToC
+- Statistical School of Thought
+- Linear Regression
+- Logistic Regression
+- SVM (hard-margin, soft-margin)
 
 ## SVM
 | Feature                    | Hard SVM                                                           | Soft SVM                                                       |

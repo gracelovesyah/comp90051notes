@@ -1,0 +1,833 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Review 2 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'review2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Review 3" href="review3.html" />
+    <link rel="prev" title="Review 1" href="review1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to COMP90051
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="revision_progress.html">Revision Progress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week1.0.html">week1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week1.1.html">Lecture 1.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week1.2.html">Lecture 2.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week1.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet2note.html">worksheet2note</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week2.0.html">week2</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week2.1.html">Lecture 3.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2.2.html">Lecture 4.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet3note.html">worksheet3note</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week3.0.html">week3</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week3.1.html">Lecture 5.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week3.2.html">Lecture 6.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week3.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet4note.html">worksheet4note</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week4.0.html">week4</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week4.1.html">Lecture 7.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week4.2.html">Lecture 8.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week4.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet5note.html">worksheet5note</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week5.0.html">week5</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week5.1.html">Lecture 9.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week5.2.html">Lecture 10.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week5.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet6note.html">worksheet6note</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week6.1.html">Lecture 11.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week6.2.html">Lecture 12.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week6.3.html">Additional notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week7.0.html">week7</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week7.1.html">Lecture 13. Convolutional Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14. RNN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.3.html">Additional Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week8.1.html">Lecture 16 Graph Convolution Networks (Deep Learning After You Drop The Camera)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week8.2.html">Lecture 16. Learning with expert advice</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week9.0.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week9.1.html">Stochastic Multi-Armed Bandits (MABs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week9.2.html">Bayesian regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet10.html">Workshop 10: Multi-armed bandits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet10note.html">Workshop 10: Multi-armed bandits notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week10.0.html">week10</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week10.1.html">wk10 notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes -  More on Bayesian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet11.html">COMP90051 Workshop 11</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week11.0.html">week11</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week11.1.html">U-PGM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week11.2.html">SVM assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week11.3.html">Lecture 22. Inference on PGMs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week12.0.html">week12</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week12.1.html">Lecture 22. Inference on PGMs Cont. &amp; Lecture 23. Gaussian Mixture Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="review.html">Review Notes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="review0.html">Review 0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review1.html">Review 1</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Review 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review3.html">Review 3</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Freview2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/review2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Review 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toc">ToC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-vs-nn">SVM vs NN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-derivative-of-loss-function">Partial Derivative of Loss Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivative-of-sigmoid-function">Derivative of Sigmoid Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn">CNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling">Pooling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="review-2">
+<h1>Review 2<a class="headerlink" href="#review-2" title="Permalink to this heading">#</a></h1>
+<p>This notes is completed with assistance of <a class="reference external" href="https://chat.openai.com/c/88d4575b-4666-4b45-a495-683fb598bd35">ChatGPT</a></p>
+<section id="toc">
+<h2>ToC<a class="headerlink" href="#toc" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Kernel Trick</p></li>
+<li><p>common kernels</p></li>
+<li><p>prove valid kernel</p></li>
+<li><p>Discriminative Neural Networks Models</p></li>
+<li><p>Perceptron</p></li>
+<li><p>Feedforward Neural Networks</p></li>
+<li><p>Convolutional Neural Networks</p></li>
+<li><p>Recurrent Neural Networks</p></li>
+<li><p>Attention</p></li>
+</ul>
+</section>
+<section id="svm-vs-nn">
+<h2>SVM vs NN<a class="headerlink" href="#svm-vs-nn" title="Permalink to this heading">#</a></h2>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>What is the difference between Feedforward Neural Networks and SVM considering their approaches in dealing with non-linearly separable data?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Answer</p>
+<p>Feedforward Neural Networks (FNNs) and Support Vector Machines (SVMs) both handle non-linearly separable data, but they approach the problem differently. FNNs, especially when equipped with non-linear activation functions, learn hierarchical representations of data by transforming input through multiple layers, allowing them to approximate any function, including non-linear boundaries. SVMs, on the other hand, utilize the kernel trick to map the input data into a higher-dimensional space where it becomes linearly separable. Instead of learning representations like FNNs, SVMs focus on finding the optimal hyperplane that maximally separates the classes in this transformed space.</p>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>What are the advantage and disadvantage of manual feature engineering and automatic data transformation in Neural Network Models?</p>
+</div>
+<div class="admonition-answer admonition">
+<p class="admonition-title">Answer</p>
+<p>The advantages and disadvantages of manual feature engineering and automatic data transformation in neural network models:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Manual Feature Engineering</p></th>
+<th class="head"><p>Automatic Data Transformation in Neural Network Models</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Advantages</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Domain Knowledge Application</p></td>
+<td><p>✅ Uses domain expertise to create meaningful features.</p></td>
+<td><p>❌ Lacks domain-specific insights.</p></td>
+</tr>
+<tr class="row-even"><td><p>Model Interpretability</p></td>
+<td><p>✅ Leads to transparent and interpretable models.</p></td>
+<td><p>❌ Often results in “black box” models.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Efficiency</p></td>
+<td><p>✅ Simpler models might suffice.</p></td>
+<td><p>❌ Requires complex models and more computational resources.</p></td>
+</tr>
+<tr class="row-even"><td><p>Adaptability</p></td>
+<td><p>❌ Might not generalize across tasks.</p></td>
+<td><p>✅ Adaptable to various tasks without manual intervention.</p></td>
+</tr>
+<tr class="row-odd"><td><p>End-to-end Learning</p></td>
+<td><p>❌ Typically not end-to-end.</p></td>
+<td><p>✅ Allows optimization from raw data to output.</p></td>
+</tr>
+<tr class="row-even"><td><p>Reduced Human Bias</p></td>
+<td><p>❌ Risk of introducing biases based on intuitions.</p></td>
+<td><p>✅ Reduces human biases in feature creation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Disadvantages</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Time Consumption</p></td>
+<td><p>✅ Requires significant time and effort.</p></td>
+<td><p>❌ Faster adaptation to new data/tasks.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Risk of Overfitting</p></td>
+<td><p>✅ Possible if features don’t generalize well.</p></td>
+<td><p>❌ Can overfit if not regularized or if data is limited.</p></td>
+</tr>
+<tr class="row-even"><td><p>Scalability</p></td>
+<td><p>❌ Needs repeated efforts for new tasks/data.</p></td>
+<td><p>✅ Scales better to different tasks without manual changes.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Note: The “✅” and “❌” symbols indicate whether the mentioned aspect is an advantage or disadvantage, respectively, for each method.</p>
+</div>
+</section>
+<section id="partial-derivative-of-loss-function">
+<h2>Partial Derivative of Loss Function<a class="headerlink" href="#partial-derivative-of-loss-function" title="Permalink to this heading">#</a></h2>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Given the following neural network for binary classification, if we use binary cross entropy as loss function, compute the partial derivative of loss function L with respect to vij (written as a formula that only contains xi, uj, wj, z and y, where y is the correct label of data. Assume we use sigmoid activation function everywhere, which are shown as f in the figure below.)</p>
+</div>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/nn1.png"><img alt="nn1" class="bg-primary mb-1 align-center" src="_images/nn1.png" style="width: 500px;" /></a>
+<div class="dropdown admonition">
+<p class="admonition-title">Answer</p>
+<p>Alright, let’s compute the derivative of the binary cross entropy loss with respect to <span class="math notranslate nohighlight">\( v_{ij} \)</span>.</p>
+<p>Given:
+Loss function <span class="math notranslate nohighlight">\( L \)</span> for binary classification with binary cross entropy:</p>
+<div class="math notranslate nohighlight">
+\[ L = -y \log(z) - (1 - y) \log(1 - z) \]</div>
+<p>Where:</p>
+<div class="math notranslate nohighlight">
+\[ z = f(s) \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[ s = \sum_j u_j w_j \]</div>
+<p>Given that <span class="math notranslate nohighlight">\( f \)</span> is the sigmoid function:</p>
+<div class="math notranslate nohighlight">
+\[ f(x) = \frac{1}{1 + e^{-x}} \]</div>
+<p>The derivative <span class="math notranslate nohighlight">\( f'(x) \)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[ f'(x) = f(x)(1 - f(x)) \]</div>
+<p>From the given neural network:</p>
+<div class="math notranslate nohighlight">
+\[ u_j = f(\sum_i x_i v_{ij}) \]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[ u_j = f(r_j) \]</div>
+<p>where <span class="math notranslate nohighlight">\( r_j \)</span> is the net input to neuron <span class="math notranslate nohighlight">\( j \)</span> in the hidden layer.</p>
+<p>Let’s compute the chain of derivatives:</p>
+<ol class="arabic simple">
+<li><p>Derivative of <span class="math notranslate nohighlight">\( L \)</span> with respect to <span class="math notranslate nohighlight">\( z \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial L}{\partial z} = \frac{z - y}{z(1 - z)} \]</div>
+<ol class="arabic simple" start="2">
+<li><p>Derivative of <span class="math notranslate nohighlight">\( z \)</span> with respect to <span class="math notranslate nohighlight">\( s \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial z}{\partial s} = f'(s) = f(s)(1 - f(s)) = z(1 - z) \]</div>
+<ol class="arabic simple" start="3">
+<li><p>Derivative of <span class="math notranslate nohighlight">\( s \)</span> with respect to <span class="math notranslate nohighlight">\( u_j \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial s}{\partial u_j} = w_j \]</div>
+<ol class="arabic simple" start="4">
+<li><p>Derivative of <span class="math notranslate nohighlight">\( u_j \)</span> with respect to <span class="math notranslate nohighlight">\( r_j \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial u_j}{\partial r_j} = f'(r_j) = f(r_j)(1 - f(r_j)) \]</div>
+<ol class="arabic simple" start="5">
+<li><p>Derivative of <span class="math notranslate nohighlight">\( r_j \)</span> with respect to <span class="math notranslate nohighlight">\( v_{ij} \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial r_j}{\partial v_{ij}} = x_i \]</div>
+<p>Using the chain rule, the partial derivative of <span class="math notranslate nohighlight">\( L \)</span> with respect to <span class="math notranslate nohighlight">\( v_{ij} \)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial L}{\partial v_{ij}} = \frac{\partial L}{\partial z} \times \frac{\partial z}{\partial s} \times \frac{\partial s}{\partial u_j} \times \frac{\partial u_j}{\partial r_j} \times \frac{\partial r_j}{\partial v_{ij}} \]</div>
+<p>Substitute in the computed derivatives:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial L}{\partial v_{ij}} = \left(\frac{z - y}{z(1 - z)}\right) \times (z(1 - z)) \times w_j \times f(r_j)(1 - f(r_j)) \times x_i \]</div>
+<p>After simplifying:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial L}{\partial v_{ij}} = (z - y) \times w_j \times f(r_j)(1 - f(r_j)) \times x_i \]</div>
+<p>And this is the partial derivative of the loss function <span class="math notranslate nohighlight">\( L \)</span> with respect to <span class="math notranslate nohighlight">\( v_{ij} \)</span>.</p>
+</div>
+</section>
+<section id="derivative-of-sigmoid-function">
+<h2>Derivative of Sigmoid Function<a class="headerlink" href="#derivative-of-sigmoid-function" title="Permalink to this heading">#</a></h2>
+<p>Given:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \frac{1}{1 + e^{-x}} \]</div>
+<p>To find <span class="math notranslate nohighlight">\( f'(x) \)</span>, differentiate with respect to <span class="math notranslate nohighlight">\( x \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[f'(x) = \frac{-1 \cdot (-e^{-x})}{(1 + e^{-x})^2} \]</div>
+<div class="math notranslate nohighlight">
+\[= \frac{e^{-x}}{(1 + e^{-x})^2} \]</div>
+<p>Notice:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \frac{1}{1 + e^{-x}} \]</div>
+<p>So:</p>
+<div class="math notranslate nohighlight">
+\[e^{-x} = \frac{1}{f(x)} - 1 \]</div>
+<p>Replacing <span class="math notranslate nohighlight">\( e^{-x} \)</span> in the derivative expression:</p>
+<div class="math notranslate nohighlight">
+\[f'(x) = f(x)(1 - f(x)) \]</div>
+<p>So, the derivative of the sigmoid function is:</p>
+<div class="math notranslate nohighlight">
+\[f'(x) = f(x)(1 - f(x)) \]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use the quotient rule of differentiation:
+If you have a function in the form <span class="math notranslate nohighlight">\( \frac{u(x)}{v(x)} \)</span>, then its derivative is:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{u'v - uv'}{v^2} \]</div>
+</div>
+</section>
+<section id="cnn">
+<h2>CNN<a class="headerlink" href="#cnn" title="Permalink to this heading">#</a></h2>
+<section id="pooling">
+<h3>Pooling<a class="headerlink" href="#pooling" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/KKmCnwGzSv8?t=58">What is pooling? | CNN’s #3</a></p></li>
+</ul>
+</section>
+<section id="calculations">
+<h3>Calculations<a class="headerlink" href="#calculations" title="Permalink to this heading">#</a></h3>
+<p><strong>(a)Size of Output Map</strong></p>
+<div class="math notranslate nohighlight">
+\[ O = \lceil \frac{W - K + 2P}{S} + 1 \rceil \]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( O \)</span> is the output size.</p></li>
+<li><p><span class="math notranslate nohighlight">\( W \)</span> is the width (or height) of the input.</p></li>
+<li><p><span class="math notranslate nohighlight">\( K \)</span> is the kernel (or filter) size.</p></li>
+<li><p><span class="math notranslate nohighlight">\( P \)</span> is the padding.</p></li>
+<li><p><span class="math notranslate nohighlight">\( S \)</span> is the stride.</p></li>
+</ul>
+<p><strong>(b) Number of parameters in each layer:</strong></p>
+<ul>
+<li><p>Parameters = <span class="math notranslate nohighlight">\( K × K × C_{in} × C_{out} \)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( K \)</span> is the kernel size.</p></li>
+<li><p><span class="math notranslate nohighlight">\( C_{in} \)</span> is the number of input channels.</p></li>
+<li><p><span class="math notranslate nohighlight">\( C_{out} \)</span> is the number of output channels (or filters).
+eg. input: 64 * 64 * 64 * 3 -&gt; 3 is the number of input channels;</p></li>
+</ul>
+<p>output channels = # of filters.</p>
+</li>
+<li><p>Pooling: No learnable parameters in max-pooling layer.</p></li>
+<li><p>Fully Connected:</p>
+<ul class="simple">
+<li><p>n * m (no bias)</p></li>
+<li><p>(n + 1) * m (with bias)</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>(c) To keep the same size of the receptive field of conv2 with fewer parameters:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Use 1x1 Convolution (a.k.a Network in Network)</strong>: Applying 1x1 convolutions can help reduce the depth (number of channels) before applying the 9x9 convolution. For example, using a 1x1 convolution to reduce the channels to 32, and then applying a 9x9 convolution.</p></li>
+<li><p><strong>Use Dilated Convolution</strong>: Instead of the regular convolution, dilated (or atrous) convolution can be used with a smaller kernel size but with increased dilation rate to achieve the same receptive field.</p></li>
+<li><p><strong>Factorized Convolution</strong>: Decompose the 9x9 convolution into two separate convolutions: one 9x1 convolution followed by a 1x9 convolution.</p></li>
+</ol>
+<p>Note: Each of the above methods reduces the number of parameters while maintaining the same receptive field, but the exact effects on performance and the number of parameters saved will vary.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="review1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Review 1</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="review3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Review 3</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toc">ToC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-vs-nn">SVM vs NN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-derivative-of-loss-function">Partial Derivative of Loss Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivative-of-sigmoid-function">Derivative of Sigmoid Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn">CNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling">Pooling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -6,10 +6,52 @@ root: intro
 chapters:
 - file: revision_progress
 - file: basics
+
+- file: week1.0
+  sections:
+  - file: week1.1
+  - file: week1.2
+  - file: week1.3
+  - file: worksheet2
+  - file: worksheet2note
+
+- file: week2.0
+  sections:
+  - file: week2.1
+  - file: week2.2
+  - file: week2.3
+  - file: worksheet3
+  - file: worksheet3note
+
+- file: week3.0
+  sections:
+  - file: week3.1
+  - file: week3.2
+  - file: week3.3
+  - file: worksheet4
+  - file: worksheet4note
+
+- file: week4.0
+  sections:
+  - file: week4.1
+  - file: week4.2
+  - file: week4.3
+  - file: worksheet5
+  - file: worksheet5note
+
+- file: week5.0
+  sections:
+  - file: week5.1
+  - file: week5.2
+  - file: week5.3
+  - file: worksheet6
+  - file: worksheet6note
+
 - file: week6.0
   sections:
   - file: week6.1
   - file: week6.2
+  - file: week6.3
   - file: worksheet7
   - file: worksheet7note
 

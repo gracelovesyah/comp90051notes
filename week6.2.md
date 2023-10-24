@@ -1,7 +1,7 @@
-# week6 lec2
+# Lecture 12.
 ## Backward propagation
 Backward propagation, often referred to as backpropagation, is a fundamental concept in training artificial neural networks, especially deep learning networks. It's an optimization algorithm used for minimizing the error in the predictions of the network. The basic idea can be summarized as follows:
-
+用来算NN里某一个参数的偏导数的(with chain rule)
 1. **Feedforward:** 
     - Start by passing a training sample through the network (layer by layer) to obtain the prediction.
     - Compute the error (or loss) which is a measure of the difference between the network's prediction and the actual target.
@@ -72,7 +72,7 @@ Alright, I'll provide a summary of the previous explanation in Chinese:
 
 ---
 
-Of course! Let's use a simple real-world analogy to explain SGD, GD, and Mini-batch SGD:
+A simple real-world analogy to explain SGD, GD, and Mini-batch SGD:
 
 **Imagine you're trying to find the deepest part of a large lake.**
 

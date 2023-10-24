@@ -18,11 +18,13 @@ What are the choice of activation functions and loss functions or a binary class
    
    - **Output Layer**: 
      - **Sigmoid (Logistic) Activation**: It squashes the output between 0 and 1, which can be interpreted as the probability of belonging to the positive class.
+
        $$ \sigma(z) = \frac{1}{1 + e^{-z}} $$
 
 2. **Loss Function**:
 
    - **Binary Cross-Entropy (Log Loss)**: It is the most commonly used loss function for binary classification problems. Given that $ p $ is the prediction from our model (output of sigmoid activation) and $ y $ is the actual label (0 or 1), the binary cross-entropy loss is:
+   
      $$ L(p, y) = -y \log(p) - (1 - y) \log(1 - p) $$
    
      This loss function penalizes wrong predictions. The farther the prediction is from the actual label, the higher the loss.
