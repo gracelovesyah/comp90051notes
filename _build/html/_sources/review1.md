@@ -246,3 +246,63 @@ Now, the infinite sum of valid kernels is also a valid kernel, as long as the su
 Hence, $ k'(x, x') $ is a valid kernel. 
 
 This proof leverages the properties of the Taylor series expansion and the validity of polynomial combinations of kernels.
+
+
+## MLE & Logistic
+
+Alright, let's break this down step by step.
+
+### Logistic Regression Model:
+
+In logistic regression, we model the probability $ p(y=1 | \mathbf{x}) $ as:
+
+$$
+p(y=1 | \mathbf{x}; \theta) = \frac{1}{1 + e^{-\mathbf{x}^T \theta}}
+$$
+
+And consequently:
+
+$$
+p(y=0 | \mathbf{x}; \theta) = 1 - p(y=1 | \mathbf{x}; \theta) = \frac{e^{-\mathbf{x}^T \theta}}{1 + e^{-\mathbf{x}^T \theta}}
+$$
+
+### Likelihood:
+
+The likelihood of the parameters $ \theta $ given a dataset $ D $ is:
+
+$$
+L(\theta; D) = \prod_{i=1}^{N} p(y^{(i)} | \mathbf{x}^{(i)}; \theta)
+$$
+
+Where $ N $ is the number of samples.
+
+### Log Likelihood:
+
+Taking the logarithm of the likelihood gives:
+
+$$
+\log L(\theta; D) = \sum_{i=1}^{N} \log p(y^{(i)} | \mathbf{x}^{(i)}; \theta)
+$$
+
+### Why Use the Logarithm?
+
+1. **Computational Stability**: Products of probabilities can be extremely small, leading to numerical underflow. Summing logarithms avoids this problem.
+2. **Simpler Derivatives**: Logarithms turn products into sums, making the differentiation process simpler when computing the gradient.
+
+### Objective for Logistic Regression:
+
+In logistic regression, we typically want to maximize the log likelihood (or equivalently, minimize the negative log likelihood):
+
+$$
+J(\theta) = -\sum_{i=1}^{N} [ y^{(i)} \log(p(y=1 | \mathbf{x}^{(i)}; \theta)) + (1 - y^{(i)}) \log(1 - p(y=1 | \mathbf{x}^{(i)}; \theta)) ]
+$$
+
+### Difficulty with Logistic Regression:
+
+Unlike linear regression, where the objective function is convex and has a closed-form solution (the normal equations), the objective function for logistic regression doesn't have a closed-form solution. This means:
+
+1. **Iterative Optimization**: We need iterative optimization algorithms like gradient descent, Newton-Raphson, etc., to find the values of $ \theta $ that minimize $ J(\theta) $.
+2. **Gradient Computation**: Each iteration requires the computation of the gradient of $ J(\theta) $ with respect to $ \theta $. This gradient is derived from the log likelihood, which is why the "log MLE trick" is applied.
+3. **No Exact Solution**: There's no formula that can directly give you the optimal parameters $ \theta $ like in linear regression. Instead, the parameters are approximated iteratively.
+
+In summary, the "log MLE trick" in logistic regression involves taking the logarithm of the likelihood to simplify the optimization process, both for computational stability and ease of differentiation. The primary challenge with logistic regression is that the optimization process is iterative, requiring multiple steps and gradient computations to converge to a solution.

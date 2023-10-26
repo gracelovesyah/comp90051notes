@@ -402,3 +402,39 @@ AKA Maximum number of points in R2 that be shattered by a square is 4
 ```
 ### Addtional Resource
 - [VC Dimension and PAC](https://www.cs.columbia.edu/~verma/classes/ml/ref/lec6_vc.pdf)
+
+
+## PCA
+
+The mathematical justification of why the eigenvectors of the covariance matrix point to the directions of maximum variance.
+
+Given:
+- A data matrix $ X $ of size $ n \times m $ where $ n $ is the number of observations and $ m $ is the number of features. The data is mean-centered (i.e., the mean of each feature is zero).
+- The covariance matrix $ C $ is given by: 
+\[ C = \frac{1}{n-1} X^T X \]
+
+We want to find the direction $ w $ (a unit vector) that maximizes the variance of the projected data.
+
+The variance $ V $ of the data projected onto $ w $ is given by:
+\[ V = w^T C w \]
+
+Under the constraint that $ w $ is a unit vector, the above expression is maximized when $ w $ is the eigenvector of $ C $ corresponding to its largest eigenvalue.
+
+### Proof:
+
+To maximize $ V $ under the constraint $ ||w|| = 1 $ (where $ ||\cdot|| $ denotes the Euclidean norm), we can use the method of Lagrange multipliers. 
+
+Consider the Lagrangian:
+\[ L(w, \lambda) = w^T C w - \lambda (w^T w - 1) \]
+
+Taking the gradient with respect to $ w $ and setting it to zero, we get:
+\[ \nabla_w L = 2Cw - 2\lambda w = 0 \]
+\[ \Rightarrow Cw = \lambda w \]
+
+This is the eigenvalue equation! It says that $ w $ is an eigenvector of $ C $ and $ \lambda $ is the corresponding eigenvalue.
+
+To maximize the variance $ V = w^T C w $, we need $ w $ to be the eigenvector corresponding to the largest eigenvalue of $ C $.
+
+### Conclusion:
+
+The direction $ w $ that maximizes the variance of the projected data is the eigenvector of the covariance matrix $ C $ corresponding to its largest eigenvalue. Similarly, subsequent principal components (orthogonal to the first) align with eigenvectors corresponding to decreasing eigenvalues.

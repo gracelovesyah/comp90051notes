@@ -66,6 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'review3';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Review 4" href="review4.html" />
     <link rel="prev" title="Review 2" href="review2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -160,6 +161,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="revision_progress.html">Revision Progress</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week1.0.html">week1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week1.1.html">Lecture 1.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week1.2.html">Lecture 2.</a></li>
@@ -215,7 +217,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="week9.0.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week9.1.html">Stochastic Multi-Armed Bandits (MABs)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week9.2.html">Bayesian regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="worksheet10.html">Workshop 10: Multi-armed bandits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="worksheet10note.html">Workshop 10: Multi-armed bandits notes</a></li>
 </ul>
 </li>
@@ -223,7 +224,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="week10.1.html">wk10 notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes -  More on Bayesian</a></li>
-<li class="toctree-l2"><a class="reference internal" href="worksheet11.html">COMP90051 Workshop 11</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week11.0.html">week11</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -242,6 +242,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="review1.html">Review 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="review2.html">Review 2</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Review 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review4.html">Review 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review5.html">Review 5</a></li>
 </ul>
 </li>
 </ul>
@@ -450,6 +452,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#def">Def</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addtional-resource">Addtional Resource</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">PCA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">Proof:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion:</a></li>
 </ul>
 </li>
 </ul>
@@ -785,6 +792,35 @@ A set of N points is said to be shattered by a hypothesis space H, if there are 
 </ul>
 </section>
 </section>
+<section id="id1">
+<h2>PCA<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>The mathematical justification of why the eigenvectors of the covariance matrix point to the directions of maximum variance.</p>
+<p>Given:</p>
+<ul class="simple">
+<li><p>A data matrix <span class="math notranslate nohighlight">\( X \)</span> of size <span class="math notranslate nohighlight">\( n \times m \)</span> where <span class="math notranslate nohighlight">\( n \)</span> is the number of observations and <span class="math notranslate nohighlight">\( m \)</span> is the number of features. The data is mean-centered (i.e., the mean of each feature is zero).</p></li>
+<li><p>The covariance matrix <span class="math notranslate nohighlight">\( C \)</span> is given by:
+[ C = \frac{1}{n-1} X^T X ]</p></li>
+</ul>
+<p>We want to find the direction <span class="math notranslate nohighlight">\( w \)</span> (a unit vector) that maximizes the variance of the projected data.</p>
+<p>The variance <span class="math notranslate nohighlight">\( V \)</span> of the data projected onto <span class="math notranslate nohighlight">\( w \)</span> is given by:
+[ V = w^T C w ]</p>
+<p>Under the constraint that <span class="math notranslate nohighlight">\( w \)</span> is a unit vector, the above expression is maximized when <span class="math notranslate nohighlight">\( w \)</span> is the eigenvector of <span class="math notranslate nohighlight">\( C \)</span> corresponding to its largest eigenvalue.</p>
+<section id="proof">
+<h3>Proof:<a class="headerlink" href="#proof" title="Permalink to this heading">#</a></h3>
+<p>To maximize <span class="math notranslate nohighlight">\( V \)</span> under the constraint <span class="math notranslate nohighlight">\( ||w|| = 1 \)</span> (where <span class="math notranslate nohighlight">\( ||\cdot|| \)</span> denotes the Euclidean norm), we can use the method of Lagrange multipliers.</p>
+<p>Consider the Lagrangian:
+[ L(w, \lambda) = w^T C w - \lambda (w^T w - 1) ]</p>
+<p>Taking the gradient with respect to <span class="math notranslate nohighlight">\( w \)</span> and setting it to zero, we get:
+[ \nabla_w L = 2Cw - 2\lambda w = 0 ]
+[ \Rightarrow Cw = \lambda w ]</p>
+<p>This is the eigenvalue equation! It says that <span class="math notranslate nohighlight">\( w \)</span> is an eigenvector of <span class="math notranslate nohighlight">\( C \)</span> and <span class="math notranslate nohighlight">\( \lambda \)</span> is the corresponding eigenvalue.</p>
+<p>To maximize the variance <span class="math notranslate nohighlight">\( V = w^T C w \)</span>, we need <span class="math notranslate nohighlight">\( w \)</span> to be the eigenvector corresponding to the largest eigenvalue of <span class="math notranslate nohighlight">\( C \)</span>.</p>
+</section>
+<section id="conclusion">
+<h3>Conclusion:<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h3>
+<p>The direction <span class="math notranslate nohighlight">\( w \)</span> that maximizes the variance of the projected data is the eigenvector of the covariance matrix <span class="math notranslate nohighlight">\( C \)</span> corresponding to its largest eigenvalue. Similarly, subsequent principal components (orthogonal to the first) align with eigenvectors corresponding to decreasing eigenvalues.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -827,6 +863,15 @@ A set of N points is said to be shattered by a hypothesis space H, if there are 
         <p class="prev-next-title">Review 2</p>
       </div>
     </a>
+    <a class="right-next"
+       href="review4.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Review 4</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -858,6 +903,11 @@ A set of N points is said to be shattered by a hypothesis space H, if there are 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#def">Def</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addtional-resource">Addtional Resource</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">PCA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">Proof:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion:</a></li>
 </ul>
 </li>
 </ul>

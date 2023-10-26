@@ -57,6 +57,7 @@ The posterior distribution $P(\theta | \text{data})$ represents the updated prob
 Suppose you have data $ \mathbf{X} $ and $ \mathbf{y} $, and you're trying to model the relationship between them using linear regression:
 
 $$ \mathbf{y} = \mathbf{X} \beta + \epsilon $$
+
 where $ \epsilon \sim N(0, \sigma^2I) $ represents the errors.
 
 ### 1. Prior:
@@ -64,6 +65,7 @@ where $ \epsilon \sim N(0, \sigma^2I) $ represents the errors.
 In the Bayesian approach, you start by defining prior distributions on the parameters you wish to estimate. For simplicity, let's consider priors on the regression coefficients $ \beta $:
 
 $$ \beta \sim N(0, \lambda^2I) $$
+
 This is a normal prior with mean 0 and variance $ \lambda^2 $. The choice of prior can be changed based on domain knowledge or other considerations.
 
 ### 2. Likelihood:
@@ -105,11 +107,14 @@ Here's a step-by-step derivation of Bayes' theorem:
 
 **Step 1: Define Conditional Probability**
 - We start with the definition of conditional probability, denoted as $P(A | B)$, which represents the probability of event $A$ occurring given that event $B$ has occurred. Mathematically, this is defined as:
+
   $$P(A | B) = \frac{P(A \cap B)}{P(B)}$$
+
   Here, $P(A \cap B)$ represents the probability of both events $A$ and $B$ occurring together.
 
 **Step 2: Rearrange the Conditional Probability Formula**
 - We can rearrange the above formula to solve for $P(A \cap B)$:
+
   $$P(A \cap B) = P(A | B) \cdot P(B)$$
 
 **Step 3: Apply the Symmetry of Conditional Probability**
@@ -117,14 +122,17 @@ Here's a step-by-step derivation of Bayes' theorem:
 
 **Step 4: Express $P(B \cap A)$ in Terms of Conditional Probability**
 - We can use the definition of conditional probability to express $P(B \cap A)$ as follows:
+
   $$P(B \cap A) = P(B | A) \cdot P(A)$$
 
 **Step 5: Equate the Expressions for $P(A \cap B)$**
 - Equate the expressions for $P(A \cap B)$ obtained in Step 2 and Step 4:
+
   $$P(A | B) \cdot P(B) = P(B | A) \cdot P(A)$$
 
 **Step 6: Solve for Bayes' Theorem**
 - Finally, we can rearrange the equation from Step 5 to obtain Bayes' theorem in its general form:
+
   $$P(A | B) = \frac{P(B | A) \cdot P(A)}{P(B)}$$
 
 This is the general form of Bayes' theorem. It provides a way to update the probability of an event $A$ in light of new evidence or information provided by event $B$. The theorem is widely used in statistics, machine learning, and various fields for tasks such as probabilistic inference, Bayesian statistics, and Bayesian reasoning.
