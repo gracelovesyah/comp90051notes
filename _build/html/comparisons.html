@@ -442,17 +442,38 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-and-underfitting">Overfitting and Underfitting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity">Linearity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-algorithms">Optimization algorithms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-algorithm-nn-vs-other">Optimisation Algorithm (NN vs Other)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-lamda-and-c">SVM lamda and C</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn">CNN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-proof">Kernel Proof</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sum">sum</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#product">product</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exp">exp</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-algorithms">Optimization algorithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-descent-algorithm"><strong>Gradient Descent Algorithm</strong>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-gradient-descent-sgd"><strong>Stochastic Gradient Descent (SGD)</strong>:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nn">NN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backpropogation">Backpropogation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rnn-and-bptt">RNN and BPTT</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-algorithm-nn-vs-other">Optimisation Algorithm (NN vs Other)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svm">SVM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lamda-and-c">lamda and C</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-proof">Kernel Proof</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sum">sum</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#product">product</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exp">exp</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn">CNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn-and-vi">CNN and VI</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-vs-discriminative">Generative vs Discriminative</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map">MAP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-between-map-and-full-bayesian-inference"><strong>Difference between MAP and Full Bayesian Inference</strong>:</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -600,9 +621,74 @@ document.write(`
 </tr>
 </tbody>
 </table>
+<section id="gradient-descent-algorithm">
+<h3><strong>Gradient Descent Algorithm</strong>:<a class="headerlink" href="#gradient-descent-algorithm" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Initialize the parameter vector <span class="math notranslate nohighlight">\( \theta \)</span> randomly or with zeros.</p></li>
+<li><p>Repeat for a specified number of iterations or until convergence:</p>
+<ol class="arabic simple">
+<li><p>Compute the gradient of the average loss over the training set:</p></li>
+</ol>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+   \nabla_\theta J(\theta) = \frac{1}{n} \sum_{i=1}^{n} \nabla_\theta l(\theta, x_i, y_i)
+   \]</div>
+<ol class="arabic simple" start="2">
+<li><p>Update the parameter vector:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+   \theta = \theta - \alpha \nabla_\theta J(\theta)
+   \]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( J(\theta) \)</span> is the average loss over the training set.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \alpha \)</span> is the learning rate, a hyperparameter that determines the step size during each iteration of the gradient descent. A higher value makes the algorithm converge faster but risks overshooting the minimum, while a lower value ensures more accurate convergence but might be slower.</p></li>
+</ul>
+</section>
+<section id="stochastic-gradient-descent-sgd">
+<h3><strong>Stochastic Gradient Descent (SGD)</strong>:<a class="headerlink" href="#stochastic-gradient-descent-sgd" title="Permalink to this heading">#</a></h3>
+<p>Stochastic Gradient Descent differs from the standard Gradient Descent in the following ways:</p>
+<ol class="arabic simple">
+<li><p><strong>Random Single Sample</strong>: Instead of calculating the gradient based on the entire training set, SGD randomly selects one example (<span class="math notranslate nohighlight">\( x_i, y_i \)</span>) at a time to compute the gradient.</p></li>
+<li><p><strong>Frequent Updates</strong>: Since it uses only one example at a time, the parameter vector <span class="math notranslate nohighlight">\( \theta \)</span> is updated more frequently, leading to much noisier steps.</p></li>
+<li><p><strong>Convergence</strong>: The frequent and noisy updates mean that SGD may never settle at the minimum. Instead, it will oscillate around the minimum. To mitigate this, the learning rate <span class="math notranslate nohighlight">\( \alpha \)</span> is often gradually decreased during training (e.g., learning rate annealing).</p></li>
+<li><p><strong>Efficiency and Scalability</strong>: SGD can be faster and more scalable than standard gradient descent, especially when the training set is large, because it starts making updates to <span class="math notranslate nohighlight">\( \theta \)</span> immediately.</p></li>
+</ol>
+<p>In summary, while standard gradient descent computes the average gradient using the entire training set, stochastic gradient descent approximates the gradient using a single, randomly-selected training example. This makes SGD noisier but often faster and more suitable for large datasets.</p>
+</section>
+</section>
+<section id="nn">
+<h2>NN<a class="headerlink" href="#nn" title="Permalink to this heading">#</a></h2>
+<section id="backpropogation">
+<h3>Backpropogation<a class="headerlink" href="#backpropogation" title="Permalink to this heading">#</a></h3>
+<section id="rnn-and-bptt">
+<h4>RNN and BPTT<a class="headerlink" href="#rnn-and-bptt" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Sequential Data</strong>:</p>
+<ul>
+<li><p>RNNs process data one step at a time with a maintained hidden state.</p></li>
+</ul>
+</li>
+<li><p><strong>Temporal Dependencies</strong>:</p>
+<ul>
+<li><p>RNNs capture relationships across sequence steps.</p></li>
+</ul>
+</li>
+<li><p><strong>Backpropagation Through Time (BPTT)</strong>:</p>
+<ul>
+<li><p>Adjusts weights considering past steps.</p></li>
+<li><p>Essential due to the influence of prior inputs on current outputs.</p></li>
+</ul>
+</li>
+</ul>
+<p>BPTT ensures RNNs account for the entire sequence when updating weights.</p>
+</section>
 </section>
 <section id="optimisation-algorithm-nn-vs-other">
-<h2>Optimisation Algorithm (NN vs Other)<a class="headerlink" href="#optimisation-algorithm-nn-vs-other" title="Permalink to this heading">#</a></h2>
+<h3>Optimisation Algorithm (NN vs Other)<a class="headerlink" href="#optimisation-algorithm-nn-vs-other" title="Permalink to this heading">#</a></h3>
 <p>Optimization algorithms in neural networks (NN) and traditional machine learning models serve the same fundamental purpose: minimizing (or maximizing) an objective function, typically the loss or cost function. However, there are differences in the challenges posed by these models, leading to nuances in the optimization techniques used. Let’s explore these differences:</p>
 <ol class="arabic simple">
 <li><p><strong>Scale of Parameters</strong>:</p>
@@ -656,8 +742,11 @@ document.write(`
 </ol>
 <p>In summary, while the core principles of optimization remain consistent across neural networks and traditional machine learning models, the scale, complexity, and challenges posed by deep learning have led to the development and adaptation of various optimization strategies specific to neural networks.</p>
 </section>
-<section id="svm-lamda-and-c">
-<h2>SVM lamda and C<a class="headerlink" href="#svm-lamda-and-c" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="svm">
+<h2>SVM<a class="headerlink" href="#svm" title="Permalink to this heading">#</a></h2>
+<section id="lamda-and-c">
+<h3>lamda and C<a class="headerlink" href="#lamda-and-c" title="Permalink to this heading">#</a></h3>
 <p>In the context of a soft-margin SVM, <span class="math notranslate nohighlight">\( \lambda \)</span> (often denoted as <span class="math notranslate nohighlight">\( \alpha \)</span> in many textbooks) and <span class="math notranslate nohighlight">\( E \)</span> (often referred to as <span class="math notranslate nohighlight">\( \xi \)</span> or slack variables) have specific interpretations:</p>
 <ol class="arabic simple">
 <li><p><strong>Lagrange Multipliers (<span class="math notranslate nohighlight">\( \lambda \)</span> or <span class="math notranslate nohighlight">\( \alpha \)</span>)</strong>:</p>
@@ -680,26 +769,22 @@ document.write(`
 </ol>
 <p>So, for the points A, B, C, and D, you’d use the criteria listed above to determine the values of <span class="math notranslate nohighlight">\( \lambda \)</span> and <span class="math notranslate nohighlight">\( E \)</span> based on their positions relative to the decision boundary and margin. The exact values would depend on the specific locations of these points in relation to the SVM’s decision boundary and margin.</p>
 </section>
-<section id="cnn">
-<h2>CNN<a class="headerlink" href="#cnn" title="Permalink to this heading">#</a></h2>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/cnn3.png"><img alt="cnn" class="bg-primary mb-1 align-center" src="_images/cnn3.png" style="width: 800px;" /></a>
-</section>
 <section id="kernel-proof">
-<h2>Kernel Proof<a class="headerlink" href="#kernel-proof" title="Permalink to this heading">#</a></h2>
+<h3>Kernel Proof<a class="headerlink" href="#kernel-proof" title="Permalink to this heading">#</a></h3>
 <section id="sum">
-<h3>sum<a class="headerlink" href="#sum" title="Permalink to this heading">#</a></h3>
+<h4>sum<a class="headerlink" href="#sum" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://stats.stackexchange.com/questions/270967/proof-of-sum-of-kernels-of-concatenated-vector">Proof of sum of kernels of concatenated vector</a></p></li>
 </ul>
 </section>
 <section id="product">
-<h3>product<a class="headerlink" href="#product" title="Permalink to this heading">#</a></h3>
+<h4>product<a class="headerlink" href="#product" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.quora.com/How-do-I-formally-proof-the-product-of-two-kernels-is-a-kernel-If-K1-x-x1-and-K2-x-x2-are-both-kernel-function-then-K1-x-x1-K2-x-x2-is-also-a-kernel">How do I formally proof the product of two kernels is a kernel? If K1 (x,x1) and K2 (x,x2) are both kernel function, then K1 (x,x1) K2 (x,x2) is also a kernel?</a></p></li>
 </ul>
 </section>
 <section id="exp">
-<h3>exp<a class="headerlink" href="#exp" title="Permalink to this heading">#</a></h3>
+<h4>exp<a class="headerlink" href="#exp" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://stats.stackexchange.com/questions/320768/proof-that-exponential-of-a-kernel-is-a-kernel">Proof that exponential of a kernel is a kernel</a></p></li>
 </ul>
@@ -747,6 +832,29 @@ document.write(`
 </ol>
 </section>
 </section>
+</section>
+<section id="cnn">
+<h2>CNN<a class="headerlink" href="#cnn" title="Permalink to this heading">#</a></h2>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/cnn3.png"><img alt="cnn" class="bg-primary mb-1 align-center" src="_images/cnn3.png" style="width: 800px;" /></a>
+<section id="cnn-and-vi">
+<h3>CNN and VI<a class="headerlink" href="#cnn-and-vi" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Convolutional Layers</strong>:</p>
+<ul>
+<li><p>Use filters with shared weights.</p></li>
+<li><p>Detect features anywhere in the image, ensuring consistent feature recognition regardless of position.</p></li>
+</ul>
+</li>
+<li><p><strong>Pooling Layers</strong>:</p>
+<ul>
+<li><p>Down-sample feature maps (e.g., max-pooling).</p></li>
+<li><p>Reduce sensitivity to exact feature locations, adding another layer of spatial invariance.</p></li>
+</ul>
+</li>
+</ul>
+<p>Together, these components enable CNNs to achieve translation-invariant classifications by recognizing and classifying image content regardless of its spatial position.</p>
+</section>
+</section>
 <section id="generative-vs-discriminative">
 <h2>Generative vs Discriminative<a class="headerlink" href="#generative-vs-discriminative" title="Permalink to this heading">#</a></h2>
 <p>Of course, I can help clarify the difference between generative and discriminative models.</p>
@@ -786,6 +894,38 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</section>
+<section id="map">
+<h2>MAP<a class="headerlink" href="#map" title="Permalink to this heading">#</a></h2>
+<section id="difference-between-map-and-full-bayesian-inference">
+<h3><strong>Difference between MAP and Full Bayesian Inference</strong>:<a class="headerlink" href="#difference-between-map-and-full-bayesian-inference" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Maximum a Posteriori (MAP)</strong>:</p>
+<ul>
+<li><p>MAP estimation provides a point estimate of a model parameter. Specifically, it estimates the mode of the posterior distribution.</p></li>
+<li><p>It is formulated as:
+[
+\theta_{\text{MAP}} = \arg\max_{\theta} P(\theta | \text{data}) = \arg\max_{\theta} P(\text{data} | \theta)P(\theta)
+]</p></li>
+<li><p>It combines the likelihood <span class="math notranslate nohighlight">\( P(\text{data} | \theta) \)</span> with the prior <span class="math notranslate nohighlight">\( P(\theta) \)</span> but doesn’t fully account for the uncertainty in the parameter’s distribution.</p></li>
+</ul>
+</li>
+<li><p><strong>Full Bayesian Inference</strong>:</p>
+<ul>
+<li><p>Instead of a point estimate, full Bayesian inference considers the entire posterior distribution of the model parameter.</p></li>
+<li><p>Predictions are made by integrating over all possible parameter values, weighted by their posterior probabilities.</p></li>
+<li><p>This method captures the inherent uncertainty in parameter estimates.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Situation where MAP and Full Bayesian Inference produce different predictions</strong>:</p>
+<p>Consider a scenario where you’re estimating the bias of a coin based on a series of tosses. Let’s assume you have a bimodal posterior distribution for the bias: one peak (mode) near <span class="math notranslate nohighlight">\( \theta = 0.2 \)</span> and another near <span class="math notranslate nohighlight">\( \theta = 0.8 \)</span>, but the latter peak is broader.</p>
+<ul class="simple">
+<li><p>Using <strong>MAP</strong>, you’d pick the bias of the coin as the value corresponding to the highest peak, let’s say <span class="math notranslate nohighlight">\( \theta = 0.2 \)</span>.</p></li>
+<li><p>With <strong>Full Bayesian Inference</strong>, when making predictions (like the probability of the next toss being heads), you’d average over both modes. Because the broader mode near <span class="math notranslate nohighlight">\( \theta = 0.8 \)</span> has a more substantial portion of the probability mass, the full Bayesian prediction might be closer to that of a coin with bias <span class="math notranslate nohighlight">\( \theta = 0.8 \)</span> than <span class="math notranslate nohighlight">\( \theta = 0.2 \)</span>.</p></li>
+</ul>
+<p>In this situation, despite the MAP estimate being <span class="math notranslate nohighlight">\( \theta = 0.2 \)</span>, the full Bayesian approach might predict as if the bias is closer to <span class="math notranslate nohighlight">\( \theta = 0.8 \)</span>, showcasing how the two methods can lead to different predictions.</p>
+</section>
 </section>
 </section>
 
@@ -858,17 +998,38 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-and-underfitting">Overfitting and Underfitting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity">Linearity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-algorithms">Optimization algorithms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-algorithm-nn-vs-other">Optimisation Algorithm (NN vs Other)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-lamda-and-c">SVM lamda and C</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn">CNN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-proof">Kernel Proof</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sum">sum</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#product">product</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exp">exp</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-algorithms">Optimization algorithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-descent-algorithm"><strong>Gradient Descent Algorithm</strong>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-gradient-descent-sgd"><strong>Stochastic Gradient Descent (SGD)</strong>:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nn">NN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backpropogation">Backpropogation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rnn-and-bptt">RNN and BPTT</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-algorithm-nn-vs-other">Optimisation Algorithm (NN vs Other)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svm">SVM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lamda-and-c">lamda and C</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-proof">Kernel Proof</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sum">sum</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#product">product</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exp">exp</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn">CNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn-and-vi">CNN and VI</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-vs-discriminative">Generative vs Discriminative</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map">MAP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-between-map-and-full-bayesian-inference"><strong>Difference between MAP and Full Bayesian Inference</strong>:</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
