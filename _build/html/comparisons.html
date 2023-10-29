@@ -1,0 +1,925 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Final Review Notes &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'comparisons';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="week1" href="week1.0.html" />
+    <link rel="prev" title="Resources" href="resources.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to COMP90051
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="revision_progress.html">Revision Progress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Final Review Notes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week1.0.html">week1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week1.1.html">Lecture 1.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week1.2.html">Lecture 2.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week1.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet2note.html">worksheet2note</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week2.0.html">week2</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week2.1.html">Lecture 3.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2.2.html">Lecture 4.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet3note.html">worksheet3note</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week3.0.html">week3</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week3.1.html">Lecture 5.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week3.2.html">Lecture 6.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week3.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet4note.html">worksheet4note</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week4.0.html">week4</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week4.1.html">Lecture 7.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week4.2.html">Lecture 8.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week4.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet5note.html">worksheet5note</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week5.0.html">week5</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week5.1.html">Lecture 9.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week5.2.html">Lecture 10.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week5.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet6note.html">worksheet6note</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week6.1.html">Lecture 11.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week6.2.html">Lecture 12.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week6.3.html">Additional notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week7.0.html">week7</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week7.1.html">Lecture 13. Convolutional Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14. RNN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.3.html">Additional Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week8.1.html">Lecture 16 Graph Convolution Networks (Deep Learning After You Drop The Camera)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week8.2.html">Lecture 16. Learning with expert advice</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week9.0.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week9.1.html">Stochastic Multi-Armed Bandits (MABs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week9.2.html">Bayesian regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet10note.html">Workshop 10: Multi-armed bandits notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week10.0.html">week10</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week10.1.html">wk10 notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes -  More on Bayesian</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week11.0.html">week11</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week11.1.html">U-PGM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week11.2.html">SVM assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week11.3.html">Lecture 22. Inference on PGMs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week12.0.html">week12</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week12.1.html">Lecture 22. Inference on PGMs Cont. &amp; Lecture 23. Gaussian Mixture Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="review.html">Review Notes</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="review0.html">Review 0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review1.html">Review 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review2.html">Review 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review3.html">Review 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review4.html">Review 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review5.html">Review 5</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcomparisons.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/comparisons.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Final Review Notes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-and-underfitting">Overfitting and Underfitting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity">Linearity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-algorithms">Optimization algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-algorithm-nn-vs-other">Optimisation Algorithm (NN vs Other)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-lamda-and-c">SVM lamda and C</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn">CNN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-proof">Kernel Proof</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sum">sum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#product">product</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exp">exp</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-vs-discriminative">Generative vs Discriminative</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="final-review-notes">
+<h1>Final Review Notes<a class="headerlink" href="#final-review-notes" title="Permalink to this heading">#</a></h1>
+<section id="overfitting-and-underfitting">
+<h2>Overfitting and Underfitting<a class="headerlink" href="#overfitting-and-underfitting" title="Permalink to this heading">#</a></h2>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Overfitting Techniques</p></th>
+<th class="head"><p>Underfitting Techniques</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Linear Regression</strong></p></td>
+<td><p>- Ridge or Lasso regularization - Feature selection - Avoid high-degree polynomials</p></td>
+<td><p>- Polynomial features - Reduce regularization strength</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Decision Trees</strong></p></td>
+<td><p>- Tree pruning - Random Forest or ensemble methods</p></td>
+<td><p>- Increase tree depth - Fewer constraints (e.g., min samples per split)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>SVM</strong></p></td>
+<td><p>- Increase regularization <span class="math notranslate nohighlight">\( C \)</span> - Simpler kernel (e.g., linear)</p></td>
+<td><p>- Decrease regularization <span class="math notranslate nohighlight">\( C \)</span> - Complex kernel (e.g., RBF)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Neural Networks</strong></p></td>
+<td><p>- Dropout - Weight regularization - Smaller network - Data augmentation - Early stopping</p></td>
+<td><p>- Larger network - More epochs - Complex architectures</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>k-NN</strong></p></td>
+<td><p>- Increase <span class="math notranslate nohighlight">\( k \)</span> - Distance weighting</p></td>
+<td><p>- Decrease <span class="math notranslate nohighlight">\( k \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Logistic Regression</strong></p></td>
+<td><p>- L1 or L2 regularization - Feature selection</p></td>
+<td><p>- Polynomial features - Reduce regularization strength</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="linearity">
+<h2>Linearity<a class="headerlink" href="#linearity" title="Permalink to this heading">#</a></h2>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Linearly Separable Data</p></th>
+<th class="head"><p>Non-Linearly Separable Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Choice of Model</strong></p></td>
+<td><p>- Linear models (e.g., Linear SVM, Logistic Regression)</p></td>
+<td><p>- Non-linear models (e.g., Kernel SVM, Decision Trees, Neural Networks)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Feature Engineering</strong></p></td>
+<td><p>- Minimal transformations required</p></td>
+<td><p>- Polynomial features, interaction terms, or domain-specific transformations might be beneficial</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Regularization</strong></p></td>
+<td><p>- Might require stronger regularization to prevent overfitting due to perfect separation</p></td>
+<td><p>- Regularization still important, but the balance might differ</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Model Complexity</strong></p></td>
+<td><p>- Simpler models often suffice</p></td>
+<td><p>- More complex models may be needed to capture data patterns</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Training Time</strong></p></td>
+<td><p>- Typically faster due to simpler models</p></td>
+<td><p>- Potentially longer, especially with non-linear algorithms</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Interpretability</strong></p></td>
+<td><p>- Linear models are usually more interpretable</p></td>
+<td><p>- Complex models (e.g., deep neural networks) might be harder to interpret</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Validation Strategy</strong></p></td>
+<td><p>- Standard validation techniques apply</p></td>
+<td><p>- Ensuring diverse data in validation sets is crucial, given data’s complexity</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Risk of Overfitting</strong></p></td>
+<td><p>- With perfect separation, there’s a risk of overfitting</p></td>
+<td><p>- Risk exists, especially with very flexible models. Techniques like pruning, dropout, or early stopping might be essential</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Kernel Methods (for SVM)</strong></p></td>
+<td><p>- Linear kernel is often suitable</p></td>
+<td><p>- Non-linear kernels (e.g., RBF, polynomial) might be required</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="optimization-algorithms">
+<h2>Optimization algorithms<a class="headerlink" href="#optimization-algorithms" title="Permalink to this heading">#</a></h2>
+<p>Optimization algorithms aim to find the best solution (or solutions) to a problem from a set of possible solutions. In machine learning and deep learning, the primary goal of an optimization algorithm is to minimize (or maximize) an objective function, typically known as the loss or cost function. By adjusting the model’s parameters, optimization algorithms try to find the parameter values that result in the lowest possible loss for the given data.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Optimization Algorithm</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Gradient Descent (Batch)</strong></p></td>
+<td><p>Updates the parameters in the direction of the negative gradient of the entire dataset at each iteration.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Stochastic Gradient Descent (SGD)</strong></p></td>
+<td><p>Updates the parameters using only one training example at a time. It can be noisier but often faster than batch gradient descent.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Mini-batch Gradient Descent</strong></p></td>
+<td><p>A compromise between batch and stochastic gradient descent: updates parameters using a subset (or “mini-batch”) of the training data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Momentum</strong></p></td>
+<td><p>Uses a moving average of past gradients to accelerate convergence and reduce oscillations.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Nesterov Accelerated Gradient (NAG)</strong></p></td>
+<td><p>A variant of momentum that computes the gradient after the momentum update, leading to more accurate parameter updates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>AdaGrad</strong></p></td>
+<td><p>Adjusts the learning rate for each parameter based on the historical squared gradients.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>RMSProp</strong></p></td>
+<td><p>Modifies AdaGrad to use a moving average of squared gradients, preventing the learning rate from decreasing too rapidly.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Adam</strong></p></td>
+<td><p>Combines elements of Momentum and RMSProp. Maintains moving averages of both gradients and squared gradients.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Adadelta</strong></p></td>
+<td><p>An extension of AdaGrad that reduces its aggressive, monotonically decreasing learning rate.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FTRL (Follow-the-Regularized-Leader)</strong></p></td>
+<td><p>Especially suited for large-scale and online learning. Often used with L1 regularization for feature selection.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>L-BFGS (Limited-memory Broyden-Fletcher-Goldfarb-Shanno)</strong></p></td>
+<td><p>A quasi-Newton method that approximates the second-order derivative (Hessian) to guide the parameter updates. Suitable for smaller datasets.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Conjugate Gradient</strong></p></td>
+<td><p>Uses conjugate directions (instead of just the gradient) to avoid re-visiting previously minimized directions. Used for non-linear optimizations.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="optimisation-algorithm-nn-vs-other">
+<h2>Optimisation Algorithm (NN vs Other)<a class="headerlink" href="#optimisation-algorithm-nn-vs-other" title="Permalink to this heading">#</a></h2>
+<p>Optimization algorithms in neural networks (NN) and traditional machine learning models serve the same fundamental purpose: minimizing (or maximizing) an objective function, typically the loss or cost function. However, there are differences in the challenges posed by these models, leading to nuances in the optimization techniques used. Let’s explore these differences:</p>
+<ol class="arabic simple">
+<li><p><strong>Scale of Parameters</strong>:</p>
+<ul class="simple">
+<li><p><strong>Neural Networks</strong>: NNs, especially deep networks, can have millions to billions of parameters. Optimizing such a large parameter space introduces challenges not typically found in traditional models.</p></li>
+<li><p><strong>Traditional ML Models</strong>: These models often have fewer parameters. For instance, linear regression has one parameter for each feature (plus a bias).</p></li>
+</ul>
+</li>
+<li><p><strong>Non-Convexity</strong>:</p>
+<ul class="simple">
+<li><p><strong>Neural Networks</strong>: The loss surfaces of deep NNs are non-convex, meaning they have many local minima, saddle points, and complex structures. This makes the optimization landscape challenging.</p></li>
+<li><p><strong>Traditional ML Models</strong>: Some traditional models (like linear regression with a squared error loss) have convex loss surfaces, ensuring a unique global minimum.</p></li>
+</ul>
+</li>
+<li><p><strong>Stochasticity</strong>:</p>
+<ul class="simple">
+<li><p><strong>Neural Networks</strong>: Due to their size and complexity, NNs are often trained using stochastic methods (like mini-batch gradient descent) to speed up convergence.</p></li>
+<li><p><strong>Traditional ML Models</strong>: While stochastic methods can be used, many traditional algorithms can efficiently process the entire dataset in one iteration.</p></li>
+</ul>
+</li>
+<li><p><strong>Regularization Techniques</strong>:</p>
+<ul class="simple">
+<li><p><strong>Neural Networks</strong>: NNs introduce unique regularization techniques like dropout, batch normalization, and weight normalization to combat overfitting and aid optimization.</p></li>
+<li><p><strong>Traditional ML Models</strong>: Regularization techniques for traditional models often revolve around adding penalty terms to the loss (e.g., L1 and L2 regularization).</p></li>
+</ul>
+</li>
+<li><p><strong>Learning Rate Scheduling</strong>:</p>
+<ul class="simple">
+<li><p><strong>Neural Networks</strong>: Adaptive learning rate techniques and schedulers (like learning rate annealing or cyclical learning rates) are more commonly employed in NN training to ensure convergence in complex landscapes.</p></li>
+<li><p><strong>Traditional ML Models</strong>: While adaptive learning rates can be used, many traditional algorithms converge well with fixed or simpler learning rate strategies.</p></li>
+</ul>
+</li>
+<li><p><strong>Optimization Algorithms</strong>:</p>
+<ul class="simple">
+<li><p><strong>Neural Networks</strong>: Advanced optimization algorithms like Adam, RMSProp, and Nadam, which combine momentum and adaptive learning rates, are popular in deep learning.</p></li>
+<li><p><strong>Traditional ML Models</strong>: Simpler algorithms like gradient descent, conjugate gradient, and L-BFGS are often sufficient for these models.</p></li>
+</ul>
+</li>
+<li><p><strong>Challenge of Vanishing/Exploding Gradients</strong>:</p>
+<ul class="simple">
+<li><p><strong>Neural Networks</strong>: Deep networks face the issue of vanishing or exploding gradients, which can hinder training. Techniques like gradient clipping and careful weight initialization are used to mitigate this.</p></li>
+<li><p><strong>Traditional ML Models</strong>: These issues are less prevalent in traditional models.</p></li>
+</ul>
+</li>
+<li><p><strong>Parallelism and Hardware Acceleration</strong>:</p>
+<ul class="simple">
+<li><p><strong>Neural Networks</strong>: Training large NNs benefits significantly from parallelism and hardware acceleration (e.g., GPUs). Optimization algorithms are sometimes adapted to better leverage these hardware capabilities.</p></li>
+<li><p><strong>Traditional ML Models</strong>: While some models can be parallelized or hardware-accelerated, the gains are often less pronounced than in deep learning.</p></li>
+</ul>
+</li>
+</ol>
+<p>In summary, while the core principles of optimization remain consistent across neural networks and traditional machine learning models, the scale, complexity, and challenges posed by deep learning have led to the development and adaptation of various optimization strategies specific to neural networks.</p>
+</section>
+<section id="svm-lamda-and-c">
+<h2>SVM lamda and C<a class="headerlink" href="#svm-lamda-and-c" title="Permalink to this heading">#</a></h2>
+<p>In the context of a soft-margin SVM, <span class="math notranslate nohighlight">\( \lambda \)</span> (often denoted as <span class="math notranslate nohighlight">\( \alpha \)</span> in many textbooks) and <span class="math notranslate nohighlight">\( E \)</span> (often referred to as <span class="math notranslate nohighlight">\( \xi \)</span> or slack variables) have specific interpretations:</p>
+<ol class="arabic simple">
+<li><p><strong>Lagrange Multipliers (<span class="math notranslate nohighlight">\( \lambda \)</span> or <span class="math notranslate nohighlight">\( \alpha \)</span>)</strong>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \lambda = 0 \)</span>: The training example is correctly classified and lies outside the margin. It doesn’t influence the decision boundary.</p></li>
+<li><p><span class="math notranslate nohighlight">\( 0 &lt; \lambda &lt; C \)</span>: The training example lies on the margin’s boundary and is correctly classified. It is a support vector.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \lambda = C \)</span>: The training example is wrongly classified, despite its position to the boundary.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \lambda &gt; C \)</span>: impossible</p></li>
+</ul>
+</li>
+<li><p><strong>Slack Variables (<span class="math notranslate nohighlight">\( E \)</span> or <span class="math notranslate nohighlight">\( \xi \)</span>)</strong>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( E = 0 \)</span>: The training example is correctly classified and lies on the correct side of the margin.</p></li>
+<li><p><span class="math notranslate nohighlight">\( 0 &lt; E &lt; 1 \)</span>: The training example is correctly classified but lies inside the margin.</p></li>
+<li><p><span class="math notranslate nohighlight">\( E = 1 \)</span>: The training example lies exactly on the decision boundary.</p></li>
+<li><p><span class="math notranslate nohighlight">\( 1 &lt; E &lt; 2 \)</span>: The training example is misclassified but lies within the margin.</p></li>
+<li><p><span class="math notranslate nohighlight">\( E &gt; 2 \)</span>: The training example is misclassified and lies outside the margin on the wrong side.</p></li>
+</ul>
+</li>
+</ol>
+<p>So, for the points A, B, C, and D, you’d use the criteria listed above to determine the values of <span class="math notranslate nohighlight">\( \lambda \)</span> and <span class="math notranslate nohighlight">\( E \)</span> based on their positions relative to the decision boundary and margin. The exact values would depend on the specific locations of these points in relation to the SVM’s decision boundary and margin.</p>
+</section>
+<section id="cnn">
+<h2>CNN<a class="headerlink" href="#cnn" title="Permalink to this heading">#</a></h2>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/cnn3.png"><img alt="cnn" class="bg-primary mb-1 align-center" src="_images/cnn3.png" style="width: 800px;" /></a>
+</section>
+<section id="kernel-proof">
+<h2>Kernel Proof<a class="headerlink" href="#kernel-proof" title="Permalink to this heading">#</a></h2>
+<section id="sum">
+<h3>sum<a class="headerlink" href="#sum" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://stats.stackexchange.com/questions/270967/proof-of-sum-of-kernels-of-concatenated-vector">Proof of sum of kernels of concatenated vector</a></p></li>
+</ul>
+</section>
+<section id="product">
+<h3>product<a class="headerlink" href="#product" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.quora.com/How-do-I-formally-proof-the-product-of-two-kernels-is-a-kernel-If-K1-x-x1-and-K2-x-x2-are-both-kernel-function-then-K1-x-x1-K2-x-x2-is-also-a-kernel">How do I formally proof the product of two kernels is a kernel? If K1 (x,x1) and K2 (x,x2) are both kernel function, then K1 (x,x1) K2 (x,x2) is also a kernel?</a></p></li>
+</ul>
+</section>
+<section id="exp">
+<h3>exp<a class="headerlink" href="#exp" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://stats.stackexchange.com/questions/320768/proof-that-exponential-of-a-kernel-is-a-kernel">Proof that exponential of a kernel is a kernel</a></p></li>
+</ul>
+<p>To prove that a function <span class="math notranslate nohighlight">\( k \)</span> is a valid kernel, one generally needs to demonstrate that the kernel matrix (or Gram matrix) constructed using <span class="math notranslate nohighlight">\( k \)</span> is positive semi-definite (PSD) for any set of input data points. Here are the general approaches to prove this:</p>
+<ol class="arabic simple">
+<li><p><strong>Direct Method</strong>:</p>
+<ul class="simple">
+<li><p>Construct the Gram matrix <span class="math notranslate nohighlight">\( K \)</span> using the kernel function <span class="math notranslate nohighlight">\( k \)</span> for any set of data points.</p></li>
+<li><p>Show that for any vector <span class="math notranslate nohighlight">\( \alpha \)</span> of appropriate dimensions, the value of <span class="math notranslate nohighlight">\( \alpha^T K \alpha \)</span> is non-negative. If this is true for all such <span class="math notranslate nohighlight">\( \alpha \)</span>, then <span class="math notranslate nohighlight">\( K \)</span> is PSD, and <span class="math notranslate nohighlight">\( k \)</span> is a valid kernel.</p></li>
+</ul>
+</li>
+<li><p><strong>Using Kernel Properties</strong>:</p>
+<ul class="simple">
+<li><p><strong>Closure Properties</strong>: Kernels have several closure properties. For instance, if <span class="math notranslate nohighlight">\( k_1 \)</span> and <span class="math notranslate nohighlight">\( k_2 \)</span> are kernels, then the following are also kernels:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\( c \cdot k_1 \)</span> for <span class="math notranslate nohighlight">\( c &gt; 0 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( k_1 + k_2 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( k_1 \times k_2 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( f(x) \cdot k_1(x, y) \cdot f(y) \)</span> for any function <span class="math notranslate nohighlight">\( f \)</span></p></li>
+</ul>
+</li>
+<li><p>Using these properties, one can construct new kernels from known kernels.</p></li>
+</ul>
+</li>
+<li><p><strong>Mercer’s Theorem</strong>:</p>
+<ul class="simple">
+<li><p>Mercer’s theorem provides conditions under which a function can be expressed as an inner product in some (possibly infinite-dimensional) feature space, and therefore is a kernel. If a function satisfies Mercer’s conditions (related to non-negative integrals over the product of the function with test functions), it is a valid kernel.</p></li>
+</ul>
+</li>
+<li><p><strong>Feature Map Representation</strong>:</p>
+<ul class="simple">
+<li><p>Demonstrate that there exists a feature map <span class="math notranslate nohighlight">\( \phi \)</span> such that <span class="math notranslate nohighlight">\( k(x, y) = \langle \phi(x), \phi(y) \rangle \)</span>, where <span class="math notranslate nohighlight">\( \langle \cdot, \cdot \rangle \)</span> denotes the inner product. If you can explicitly find or describe such a feature map, then <span class="math notranslate nohighlight">\( k \)</span> is a kernel.</p></li>
+</ul>
+</li>
+<li><p><strong>Using Existing Kernels</strong>:</p>
+<ul class="simple">
+<li><p>Sometimes it’s easier to derive new kernels based on known kernels. If you can express a function in terms of operations and compositions that preserve the kernel property, then the function is a valid kernel.</p></li>
+</ul>
+</li>
+<li><p><strong>Eigenvalues</strong>:</p>
+<ul class="simple">
+<li><p>Another way to prove a matrix is PSD is by showing all its eigenvalues are non-negative. However, computing eigenvalues might not always be feasible, especially for infinite-dimensional spaces.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="generative-vs-discriminative">
+<h2>Generative vs Discriminative<a class="headerlink" href="#generative-vs-discriminative" title="Permalink to this heading">#</a></h2>
+<p>Of course, I can help clarify the difference between generative and discriminative models.</p>
+<p>Generative models attempt to model how the data is generated. They capture the joint probability distribution <span class="math notranslate nohighlight">\( P(X, Y) \)</span>, where <span class="math notranslate nohighlight">\( X \)</span> is the feature and <span class="math notranslate nohighlight">\( Y \)</span> is the label or class. Using this joint distribution, they can compute the conditional probability <span class="math notranslate nohighlight">\( P(Y|X) \)</span> for prediction.</p>
+<p>Discriminative models focus on distinguishing between classes. They model the boundary between classes and learn the conditional probability <span class="math notranslate nohighlight">\( P(Y|X) \)</span> directly without worrying about how the data is generated.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Criteria</p></th>
+<th class="head"><p>Generative Models</p></th>
+<th class="head"><p>Discriminative Models</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Description</strong></p></td>
+<td><p>Model how the data is generated.</p></td>
+<td><p>Model the boundary between classes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>What They Learn</strong></p></td>
+<td><p>Distribution of each class.</p></td>
+<td><p>Boundary between classes.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Examples</strong></p></td>
+<td><p>Gaussian Mixture Models, Naïve Bayes, Hidden Markov Models.</p></td>
+<td><p>Logistic Regression, SVM, Random Forests, Neural Networks.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Advantages</strong></p></td>
+<td><p>Can generate new data points. More robust with limited data.</p></td>
+<td><p>Often more accurate in classification with ample data.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Drawbacks</strong></p></td>
+<td><p>Might be less accurate in classification tasks.</p></td>
+<td><p>Cannot generate new data points.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Analogy</strong></p></td>
+<td><p>Studying individual apples and oranges.</p></td>
+<td><p>Looking directly at differences between apples and oranges.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="resources.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Resources</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="week1.0.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">week1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-and-underfitting">Overfitting and Underfitting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity">Linearity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-algorithms">Optimization algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-algorithm-nn-vs-other">Optimisation Algorithm (NN vs Other)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-lamda-and-c">SVM lamda and C</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn">CNN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-proof">Kernel Proof</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sum">sum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#product">product</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exp">exp</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-vs-discriminative">Generative vs Discriminative</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

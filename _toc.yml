@@ -7,6 +7,7 @@ chapters:
 - file: revision_progress
 - file: basics
 - file: resources
+- file: comparisons
 - file: week1.0
   sections:
   - file: week1.1
