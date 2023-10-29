@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'week11.1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -159,39 +161,46 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="revision_progress.html">Revision Progress</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparisons.html">Final Review Notes</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week1.0.html">week1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week1.1.html">Lecture 1.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week1.2.html">Lecture 2.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week1.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet2note.html">worksheet2note</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week2.0.html">week2</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week2.1.html">Lecture 3.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week2.2.html">Lecture 4.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week2.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet3note.html">worksheet3note</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week3.0.html">week3</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="week3.1.html">Lecture 5.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week3.2.html">Lecture 6.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week3.1.html">Lecture 5. Regularization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week3.2.html">Lecture 6. PAC Learning Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week3.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet4note.html">worksheet4note</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week4.0.html">week4</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="week4.1.html">Lecture 7.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week4.2.html">Lecture 8.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week4.1.html">Lecture 7. VC Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week4.2.html">Lecture 8. Support Vector Machines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week4.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet5note.html">worksheet5note</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week5.0.html">week5</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="week5.1.html">Lecture 9.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week5.2.html">Lecture 10.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week5.1.html">Lecture 9. Kernel Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week5.2.html">Lecture 10. The Perceptron</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week5.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet6note.html">worksheet6note</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="week6.1.html">Lecture 11.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week6.2.html">week6 lec2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week6.1.html">Lecture 11. Neural Network Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week6.2.html">Lecture 12.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week6.3.html">Additional notes</a></li>
 </ul>
 </li>
@@ -209,15 +218,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="week9.0.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week9.1.html">Stochastic Multi-Armed Bandits (MABs)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week9.2.html">Bayesian regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="worksheet10.html">Workshop 10: Multi-armed bandits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="worksheet10note.html">Workshop 10: Multi-armed bandits notes</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week10.0.html">week10</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="week10.1.html">wk10 notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.1.html">Bayesian classification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes -  More on Bayesian</a></li>
-<li class="toctree-l2"><a class="reference internal" href="worksheet11.html">COMP90051 Workshop 11</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="week11.0.html">week11</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -229,6 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week12.0.html">week12</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week12.1.html">Lecture 22. Inference on PGMs Cont. &amp; Lecture 23. Gaussian Mixture Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week12.2.html">Lecture 24. Subject Review and Exam Info</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="review.html">Review Notes</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -236,6 +244,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="review1.html">Review 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="review2.html">Review 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="review3.html">Review 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review4.html">Review 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review5.html">Review 5</a></li>
 </ul>
 </li>
 </ul>
@@ -522,7 +532,7 @@ document.write(`
 </li>
 <li><p><strong>Discriminative Nature:</strong></p>
 <ul class="simple">
-<li><p>CRFs are discriminative models, focusing on modeling the boundary between classes. They model the conditional probability ( P(Q|O) ), where ( Q ) is the sequence of states and ( O ) is the sequence of observations.</p></li>
+<li><p>CRFs are discriminative models, focusing on modeling the boundary between classes. They model the conditional probability <span class="math notranslate nohighlight">\( P(Q|O) \)</span>, where <span class="math notranslate nohighlight">\( Q \)</span> is the sequence of states and <span class="math notranslate nohighlight">\( O \)</span> is the sequence of observations.</p></li>
 </ul>
 </li>
 </ol>
@@ -575,13 +585,13 @@ document.write(`
 <ol class="arabic simple">
 <li><p><strong>O (Observation Sequence):</strong></p>
 <ul class="simple">
-<li><p>( O ) represents the sequence of observed data.</p></li>
-<li><p>In this example, ( O ) is the sentence “I love Machine Learning”. It’s the data that you can directly observe and want to infer hidden states (tags) for.</p></li>
+<li><p><span class="math notranslate nohighlight">\( O \)</span> represents the sequence of observed data.</p></li>
+<li><p>In this example, <span class="math notranslate nohighlight">\( O \)</span> is the sentence “I love Machine Learning”. It’s the data that you can directly observe and want to infer hidden states (tags) for.</p></li>
 </ul>
 </li>
 <li><p><strong>μ (HMM Model):</strong></p>
 <ul class="simple">
-<li><p>( \mu ) represents the HMM model itself, which includes:</p>
+<li><p><span class="math notranslate nohighlight">\( \mu \)</span> represents the HMM model itself, which includes:</p>
 <ul>
 <li><p><strong>State Set:</strong> The possible parts of speech tags (e.g., noun, verb, adjective, adverb, etc.).</p></li>
 <li><p><strong>Transition Probabilities (A):</strong> The probabilities of transitioning from one part of speech to another. For instance, the probability of a noun being followed by a verb, a verb being followed by an adjective, etc.</p></li>
@@ -592,7 +602,7 @@ document.write(`
 </ul>
 </li>
 </ol>
-<p>In the given example, the HMM model ( \mu ) would have been trained on a large corpus of sentences with known parts of speech tags. This training allows the model to learn the transition and emission probabilities, which it then uses to infer the sequence of tags for new sentences like “I love Machine Learning”.</p>
+<p>In the given example, the HMM model <span class="math notranslate nohighlight">\( \mu \)</span> would have been trained on a large corpus of sentences with known parts of speech tags. This training allows the model to learn the transition and emission probabilities, which it then uses to infer the sequence of tags for new sentences like “I love Machine Learning”.</p>
 <hr class="docutils" />
 <p>In the context of the sentence “I love Machine Learning” and its inferred sequence of tags “noun, verb, noun, noun” using an HMM, let’s break down the tasks of Evaluation, Decoding, and Learning:</p>
 </section>
@@ -604,20 +614,20 @@ document.write(`
 <ol class="arabic simple">
 <li><p><strong>Evaluation:</strong></p>
 <ul class="simple">
-<li><p><strong>Task:</strong> Given an HMM model ( \mu ) and an observation sequence ( O ), determine the likelihood ( Pr(O|\mu) ).</p></li>
-<li><p><strong>In this example:</strong> The task would be to compute the likelihood of observing the sentence “I love Machine Learning” given the HMM model ( \mu ) (which has been trained on a corpus of sentences with known parts of speech tags). Essentially, how probable is this sequence of words given the model we have?</p></li>
+<li><p><strong>Task:</strong> Given an HMM model <span class="math notranslate nohighlight">\( \mu \)</span> and an observation sequence <span class="math notranslate nohighlight">\( O \)</span>, determine the likelihood <span class="math notranslate nohighlight">\( Pr(O|\mu) \)</span>.</p></li>
+<li><p><strong>In this example:</strong> The task would be to compute the likelihood of observing the sentence “I love Machine Learning” given the HMM model <span class="math notranslate nohighlight">\( \mu \)</span> (which has been trained on a corpus of sentences with known parts of speech tags). Essentially, how probable is this sequence of words given the model we have?</p></li>
 </ul>
 </li>
 <li><p><strong>Decoding:</strong></p>
 <ul class="simple">
-<li><p><strong>Task:</strong> Given an HMM model ( \mu ) and an observation sequence ( O ), determine the most probable hidden state sequence ( Q ).</p></li>
-<li><p><strong>In this example:</strong> The task is to find the most likely sequence of parts of speech tags (hidden states) for the sentence “I love Machine Learning” given the HMM model ( \mu ). The result, in this case, is “noun, verb, noun, noun”. This is the sequence of tags that the model believes is most likely to have generated the observed sequence of words.</p></li>
+<li><p><strong>Task:</strong> Given an HMM model <span class="math notranslate nohighlight">\( \mu \)</span> and an observation sequence <span class="math notranslate nohighlight">\( O \)</span>, determine the most probable hidden state sequence <span class="math notranslate nohighlight">\( Q \)</span>.</p></li>
+<li><p><strong>In this example:</strong> The task is to find the most likely sequence of parts of speech tags (hidden states) for the sentence “I love Machine Learning” given the HMM model <span class="math notranslate nohighlight">\( \mu \)</span>. The result, in this case, is “noun, verb, noun, noun”. This is the sequence of tags that the model believes is most likely to have generated the observed sequence of words.</p></li>
 </ul>
 </li>
 <li><p><strong>Learning:</strong></p>
 <ul class="simple">
-<li><p><strong>Task:</strong> Given an observation sequence ( O ) and a set of states, learn the parameters ( A ) (transition probabilities), ( B ) (emission probabilities), and ( \Pi ) (initial state probabilities).</p></li>
-<li><p><strong>In this example:</strong> If we were given a large corpus of sentences (like “I love Machine Learning”) with their corresponding parts of speech tags (like “noun, verb, noun, noun”), the task would be to adjust or train the HMM model ( \mu ) to best fit this data. This involves estimating the transition probabilities between tags, the probabilities of words being emitted for given tags, and the probabilities of starting a sentence with each possible tag.</p></li>
+<li><p><strong>Task:</strong> Given an observation sequence <span class="math notranslate nohighlight">\( O \)</span> and a set of states, learn the parameters <span class="math notranslate nohighlight">\( A \)</span> (transition probabilities), <span class="math notranslate nohighlight">\( B \)</span> (emission probabilities), and <span class="math notranslate nohighlight">\( \Pi \)</span> (initial state probabilities).</p></li>
+<li><p><strong>In this example:</strong> If we were given a large corpus of sentences (like “I love Machine Learning”) with their corresponding parts of speech tags (like “noun, verb, noun, noun”), the task would be to adjust or train the HMM model <span class="math notranslate nohighlight">\( \mu \)</span> to best fit this data. This involves estimating the transition probabilities between tags, the probabilities of words being emitted for given tags, and the probabilities of starting a sentence with each possible tag.</p></li>
 </ul>
 </li>
 </ol>

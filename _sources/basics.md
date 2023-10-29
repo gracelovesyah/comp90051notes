@@ -1,5 +1,95 @@
 # Basic Concepts
 
+---
+
+### **Probability Basics**
+1. **Probability of an Event**:
+
+$$ P(A) = \frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes}} $$
+
+2. **Conditional Probability**:
+
+$$ P(A|B) = \frac{P(A \cap B)}{P(B)} $$
+
+3. **Bayes' Theorem**:
+
+$$ P(A|B) = \frac{P(B|A) \times P(A)}{P(B)} $$
+
+4. **Law of Total Probability**:
+
+$$ P(A) = \sum_i P(A|B_i) \times P(B_i) $$
+
+
+### **Random Variables**
+1. **Expected Value**:
+
+$$ \mathbb{E}[X] = \sum x_i P(X = x_i) $$
+ (for discrete)
+
+$$ \mathbb{E}[X] = \int x f(x) \, dx $$
+ (for continuous)
+2. **Variance**:
+
+$$ \text{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2 $$
+
+3. **Standard Deviation**:
+
+$$ \sigma_X = \sqrt{\text{Var}(X)} $$
+
+
+### **Common Distributions**
+1. **Binomial** (n trials, p success probability):
+
+$$ P(X=k) = \binom{n}{k} p^k (1-p)^{n-k} $$
+
+2. **Poisson** (λ rate):
+
+$$ P(X=k) = \frac{e^{-\lambda} \lambda^k}{k!} $$
+
+3. **Normal** (μ mean, σ standard deviation):
+
+$$ f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} $$
+
+
+### **Descriptive Statistics**
+1. **Mean**:
+
+$$ \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i $$
+
+2. **Sample Variance**:
+
+$$ s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2 $$
+
+3. **Correlation**:
+
+$$ r = \frac{\sum (x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum (x_i-\bar{x})^2 \sum (y_i-\bar{y})^2}} $$
+
+
+### **Inferential Statistics**
+1. **Z-Score**:
+
+$$ z = \frac{x - \mu}{\sigma} $$
+
+2. **t-Score** (for sample):
+
+$$ t = \frac{\bar{x} - \mu}{s/\sqrt{n}} $$
+
+
+### **Regression**
+1. **Simple Linear Regression**:
+
+$$ y = \beta_0 + \beta_1 x $$
+
+
+$$ \beta_1 = \frac{\sum (x_i-\bar{x})(y_i-\bar{y})}{\sum (x_i-\bar{x})^2} $$
+
+
+$$ \beta_0 = \bar{y} - \beta_1 \bar{x} $$
+
+
+---
+
+
 ## OWLS
 06/10/2023
 The equation $ \mathbf{w}^* = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y} $ is the solution for the weights $ \mathbf{w}^* $ in linear regression using the method of least squares. Let's break down how we arrive at this solution:
@@ -136,7 +226,7 @@ In essence, hidden layers can be seen as a series of transformations that refine
 ## Likelihood and Prob
 [Probability is not Likelihood. Find out why!!!](https://www.youtube.com/watch?v=pYxNSUDSFH4)
 
-```{image} ./images/likelihood1.png
+```{image} ./images/likelihood.png
 :alt: likelihood
 :class: bg-primary mb-1
 :width: 800px
