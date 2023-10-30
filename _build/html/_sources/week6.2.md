@@ -1,4 +1,5 @@
 # Lecture 12.
+
 ## Backward propagation
 Backward propagation, often referred to as backpropagation, is a fundamental concept in training artificial neural networks, especially deep learning networks. It's an optimization algorithm used for minimizing the error in the predictions of the network. The basic idea can be summarized as follows:
 用来算NN里某一个参数的偏导数的(with chain rule)

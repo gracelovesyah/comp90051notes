@@ -8,6 +8,10 @@ chapters:
 - file: basics
 - file: resources
 - file: comparisons
+- file: shortanswer
+  sections:
+  - file: QNA
+- file: emmle
 - file: week1.0
   sections:
   - file: week1.1

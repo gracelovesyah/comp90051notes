@@ -1,5 +1,5 @@
 # week6
-This notes is completed with assistance of [ChatGPT](xx)
+This notes is completed with assistance of [ChatGPT](https://chat.openai.com/c/90f9d3bc-a155-4431-ac8e-ceef71477b2b)
 
 [View Lecture 11. Convolutional Neural Networks (CNN)](./slide/13.pdf)
 

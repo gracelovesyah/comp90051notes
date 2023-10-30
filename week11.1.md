@@ -48,7 +48,7 @@ This note is completed with the assistance of [ChatGPT](https://chat.openai.com/
    - Used for tasks like part-of-speech tagging, where observed outputs are words and states are tags like noun, verb, etc.
 
 3. **Discriminative Nature:**
-   - CRFs are discriminative models, focusing on modeling the boundary between classes. They model the conditional probability \( P(Q|O) \), where \( Q \) is the sequence of states and \( O \) is the sequence of observations.
+   - CRFs are discriminative models, focusing on modeling the boundary between classes. They model the conditional probability $ P(Q|O) $, where $ Q $ is the sequence of states and $ O $ is the sequence of observations.
 
 ---
 
@@ -86,17 +86,17 @@ This note is completed with the assistance of [ChatGPT](https://chat.openai.com/
 In the context of the sentence "I love Machine Learning" and its inferred sequence of tags "noun, verb, noun, noun" using an HMM:
 
 1. **O (Observation Sequence):**
-   - \( O \) represents the sequence of observed data. 
-   - In this example, \( O \) is the sentence "I love Machine Learning". It's the data that you can directly observe and want to infer hidden states (tags) for.
+   - $ O $ represents the sequence of observed data. 
+   - In this example, $ O $ is the sentence "I love Machine Learning". It's the data that you can directly observe and want to infer hidden states (tags) for.
 
 2. **μ (HMM Model):**
-   - \( \mu \) represents the HMM model itself, which includes:
+   - $ \mu $ represents the HMM model itself, which includes:
      - **State Set:** The possible parts of speech tags (e.g., noun, verb, adjective, adverb, etc.).
      - **Transition Probabilities (A):** The probabilities of transitioning from one part of speech to another. For instance, the probability of a noun being followed by a verb, a verb being followed by an adjective, etc.
      - **Emission Probabilities (B):** The probabilities of a particular word being emitted for a given part of speech. For example, the probability that the word "love" is a verb, the probability that "I" is a noun, etc.
      - **Initial State Probabilities (Π):** The probabilities of starting a sentence with each possible part of speech.
 
-In the given example, the HMM model \( \mu \) would have been trained on a large corpus of sentences with known parts of speech tags. This training allows the model to learn the transition and emission probabilities, which it then uses to infer the sequence of tags for new sentences like "I love Machine Learning".
+In the given example, the HMM model $ \mu $ would have been trained on a large corpus of sentences with known parts of speech tags. This training allows the model to learn the transition and emission probabilities, which it then uses to infer the sequence of tags for new sentences like "I love Machine Learning".
 
 ---
 
@@ -106,16 +106,16 @@ In the context of the sentence "I love Machine Learning" and its inferred sequen
 ## HMM
 ### Example cont. Evaluation, Decoding, Learning
 1. **Evaluation:**
-   - **Task:** Given an HMM model \( \mu \) and an observation sequence \( O \), determine the likelihood \( Pr(O|\mu) \).
-   - **In this example:** The task would be to compute the likelihood of observing the sentence "I love Machine Learning" given the HMM model \( \mu \) (which has been trained on a corpus of sentences with known parts of speech tags). Essentially, how probable is this sequence of words given the model we have?
+   - **Task:** Given an HMM model $ \mu $ and an observation sequence $ O $, determine the likelihood $ Pr(O|\mu) $.
+   - **In this example:** The task would be to compute the likelihood of observing the sentence "I love Machine Learning" given the HMM model $ \mu $ (which has been trained on a corpus of sentences with known parts of speech tags). Essentially, how probable is this sequence of words given the model we have?
 
 2. **Decoding:**
-   - **Task:** Given an HMM model \( \mu \) and an observation sequence \( O \), determine the most probable hidden state sequence \( Q \).
-   - **In this example:** The task is to find the most likely sequence of parts of speech tags (hidden states) for the sentence "I love Machine Learning" given the HMM model \( \mu \). The result, in this case, is "noun, verb, noun, noun". This is the sequence of tags that the model believes is most likely to have generated the observed sequence of words.
+   - **Task:** Given an HMM model $ \mu $ and an observation sequence $ O $, determine the most probable hidden state sequence $ Q $.
+   - **In this example:** The task is to find the most likely sequence of parts of speech tags (hidden states) for the sentence "I love Machine Learning" given the HMM model $ \mu $. The result, in this case, is "noun, verb, noun, noun". This is the sequence of tags that the model believes is most likely to have generated the observed sequence of words.
 
 3. **Learning:**
-   - **Task:** Given an observation sequence \( O \) and a set of states, learn the parameters \( A \) (transition probabilities), \( B \) (emission probabilities), and \( \Pi \) (initial state probabilities).
-   - **In this example:** If we were given a large corpus of sentences (like "I love Machine Learning") with their corresponding parts of speech tags (like "noun, verb, noun, noun"), the task would be to adjust or train the HMM model \( \mu \) to best fit this data. This involves estimating the transition probabilities between tags, the probabilities of words being emitted for given tags, and the probabilities of starting a sentence with each possible tag.
+   - **Task:** Given an observation sequence $ O $ and a set of states, learn the parameters $ A $ (transition probabilities), $ B $ (emission probabilities), and $ \Pi $ (initial state probabilities).
+   - **In this example:** If we were given a large corpus of sentences (like "I love Machine Learning") with their corresponding parts of speech tags (like "noun, verb, noun, noun"), the task would be to adjust or train the HMM model $ \mu $ to best fit this data. This involves estimating the transition probabilities between tags, the probabilities of words being emitted for given tags, and the probabilities of starting a sentence with each possible tag.
 
 ---
 

@@ -1,0 +1,827 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Relationship &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'emmle';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="week1" href="week1.0.html" />
+    <link rel="prev" title="Short Answers" href="QNA.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to COMP90051
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="revision_progress.html">Revision Progress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparisons.html">Final Review Notes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="shortanswer.html">Short Answer Questions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="QNA.html">Short Answers</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Relationship</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week1.0.html">week1</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week1.1.html">Lecture 1.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week1.2.html">Lecture 2.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week1.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet2note.html">worksheet2note</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week2.0.html">week2</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week2.1.html">Lecture 3.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2.2.html">Lecture 4.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet3note.html">worksheet3note</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week3.0.html">week3</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week3.1.html">Lecture 5. Regularization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week3.2.html">Lecture 6. PAC Learning Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week3.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet4note.html">worksheet4note</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week4.0.html">week4</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week4.1.html">Lecture 7. VC Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week4.2.html">Lecture 8. Support Vector Machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week4.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet5note.html">worksheet5note</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week5.0.html">week5</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week5.1.html">Lecture 9. Kernel Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week5.2.html">Lecture 10. The Perceptron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week5.3.html">Additional notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet6note.html">worksheet6note</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week6.1.html">Lecture 11. Neural Network Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week6.2.html">Lecture 12.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week6.3.html">Additional notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week7.0.html">week7</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week7.1.html">Lecture 13. Convolutional Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14. RNN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week7.3.html">Additional Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week8.1.html">Lecture 16 Graph Convolution Networks (Deep Learning After You Drop The Camera)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week8.2.html">Lecture 16. Learning with expert advice</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week9.0.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week9.1.html">Stochastic Multi-Armed Bandits (MABs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week9.2.html">Bayesian regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worksheet10note.html">Workshop 10: Multi-armed bandits notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week10.0.html">week10</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week10.1.html">Bayesian classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes -  More on Bayesian</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week11.0.html">week11</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week11.1.html">U-PGM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week11.2.html">SVM assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week11.3.html">Lecture 22. Inference on PGMs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week12.0.html">week12</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="week12.1.html">Lecture 22. Inference on PGMs Cont. &amp; Lecture 23. Gaussian Mixture Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week12.2.html">Lecture 24. Subject Review and Exam Info</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="review.html">Review Notes</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="review0.html">Review 0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review1.html">Review 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review2.html">Review 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review3.html">Review 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review4.html">Review 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review5.html">Review 5</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Femmle.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/emmle.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Relationship</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mle-and-em">MLE and EM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-likelihood-estimation-mle">1. Maximum Likelihood Estimation (MLE):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-maximization-em-algorithm">2. Expectation-Maximization (EM) Algorithm:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Relationship:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-and-posterior">MAP and Posterior</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-framework">1. Bayesian Framework:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-a-posteriori-map-estimation">2. Maximum A Posteriori (MAP) Estimation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Relationship:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-and-ridge-regression">MAP and ridge regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ridge-regression">1. Ridge Regression:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-interpretation">2. Bayesian Interpretation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Relationship:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="relationship">
+<h1>Relationship<a class="headerlink" href="#relationship" title="Permalink to this heading">#</a></h1>
+<section id="mle-and-em">
+<h2>MLE and EM<a class="headerlink" href="#mle-and-em" title="Permalink to this heading">#</a></h2>
+<section id="maximum-likelihood-estimation-mle">
+<h3>1. Maximum Likelihood Estimation (MLE):<a class="headerlink" href="#maximum-likelihood-estimation-mle" title="Permalink to this heading">#</a></h3>
+<p>Given a set of independent and identically distributed observations <span class="math notranslate nohighlight">\( \mathbf{X} = \{ x_1, x_2, \ldots, x_n \} \)</span> and a parameterized probability distribution <span class="math notranslate nohighlight">\( P(x | \theta) \)</span> where <span class="math notranslate nohighlight">\( \theta \)</span> represents the parameters of the distribution, the likelihood function <span class="math notranslate nohighlight">\( \mathcal{L}(\theta | \mathbf{X}) \)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}(\theta | \mathbf{X}) = \prod_{i=1}^{n} P(x_i | \theta)
+\]</div>
+<p>The MLE estimate <span class="math notranslate nohighlight">\( \hat{\theta} \)</span> maximizes this likelihood:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\theta} = \arg \max_{\theta} \mathcal{L}(\theta | \mathbf{X})
+\]</div>
+<p>In practice, it’s often more convenient to maximize the log-likelihood:</p>
+<div class="math notranslate nohighlight">
+\[
+l(\theta) = \log \mathcal{L}(\theta | \mathbf{X}) = \sum_{i=1}^{n} \log P(x_i | \theta)
+\]</div>
+</section>
+<section id="expectation-maximization-em-algorithm">
+<h3>2. Expectation-Maximization (EM) Algorithm:<a class="headerlink" href="#expectation-maximization-em-algorithm" title="Permalink to this heading">#</a></h3>
+<p>Assume we have observed data <span class="math notranslate nohighlight">\( \mathbf{X} \)</span> and missing or latent data <span class="math notranslate nohighlight">\( \mathbf{Z} \)</span>. The complete-data likelihood is given by <span class="math notranslate nohighlight">\( P(\mathbf{X}, \mathbf{Z} | \theta) \)</span>.</p>
+<p>The EM algorithm aims to maximize the marginal likelihood of the observed data <span class="math notranslate nohighlight">\( P(\mathbf{X} | \theta) \)</span>, which can be tricky due to the latent variables <span class="math notranslate nohighlight">\( \mathbf{Z} \)</span>.</p>
+<p>The EM algorithm consists of two steps:</p>
+<p><strong>E-step</strong>: Calculate the expected value of the complete-data log-likelihood with respect to the posterior distribution of the latent data given the current parameter estimate:</p>
+<div class="math notranslate nohighlight">
+\[
+Q(\theta, \theta^{(t)}) = \mathbb{E}_{\mathbf{Z} | \mathbf{X}, \theta^{(t)}}[\log P(\mathbf{X}, \mathbf{Z} | \theta)]
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\( \theta^{(t)} \)</span> is the current estimate of the parameters.</p>
+<p><strong>M-step</strong>: Maximize the function <span class="math notranslate nohighlight">\( Q \)</span> with respect to <span class="math notranslate nohighlight">\( \theta \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\theta^{(t+1)} = \arg \max_{\theta} Q(\theta, \theta^{(t)})
+\]</div>
+<p>This step involves an MLE based on the expected data from the E-step.</p>
+<p>The process iterates between these two steps until convergence.</p>
+</section>
+<section id="id1">
+<h3>Relationship:<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>The EM algorithm provides a way to simplify the maximization of the likelihood <span class="math notranslate nohighlight">\( P(\mathbf{X} | \theta) \)</span> by introducing the latent variables <span class="math notranslate nohighlight">\( \mathbf{Z} \)</span> and working with the complete-data likelihood <span class="math notranslate nohighlight">\( P(\mathbf{X}, \mathbf{Z} | \theta) \)</span>. The M-step of the EM algorithm, where the maximization occurs, is a form of MLE for the expected complete data.</p>
+<p>Certainly! Maximum A Posteriori (MAP) estimation is closely related to Bayesian statistics and involves the posterior distribution. Let’s break this down:</p>
+</section>
+</section>
+<section id="map-and-posterior">
+<h2>MAP and Posterior<a class="headerlink" href="#map-and-posterior" title="Permalink to this heading">#</a></h2>
+<section id="bayesian-framework">
+<h3>1. Bayesian Framework:<a class="headerlink" href="#bayesian-framework" title="Permalink to this heading">#</a></h3>
+<p>In Bayesian statistics, we update our beliefs about a parameter <span class="math notranslate nohighlight">\( \theta \)</span> based on observed data <span class="math notranslate nohighlight">\( \mathbf{X} \)</span> using Bayes’ theorem:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\theta | \mathbf{X}) = \frac{P(\mathbf{X} | \theta) P(\theta)}{P(\mathbf{X})}
+\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( P(\theta | \mathbf{X}) \)</span> is the <strong>posterior</strong> distribution of <span class="math notranslate nohighlight">\( \theta \)</span> given the data <span class="math notranslate nohighlight">\( \mathbf{X} \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( P(\mathbf{X} | \theta) \)</span> is the <strong>likelihood</strong> of the data given the parameter <span class="math notranslate nohighlight">\( \theta \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( P(\theta) \)</span> is the <strong>prior</strong> distribution of <span class="math notranslate nohighlight">\( \theta \)</span>, representing our beliefs about <span class="math notranslate nohighlight">\( \theta \)</span> before seeing the data.</p></li>
+<li><p><span class="math notranslate nohighlight">\( P(\mathbf{X}) \)</span> is the <strong>marginal likelihood</strong> of the data, which acts as a normalizing constant.</p></li>
+</ul>
+</section>
+<section id="maximum-a-posteriori-map-estimation">
+<h3>2. Maximum A Posteriori (MAP) Estimation:<a class="headerlink" href="#maximum-a-posteriori-map-estimation" title="Permalink to this heading">#</a></h3>
+<p>MAP estimation aims to find the value of <span class="math notranslate nohighlight">\( \theta \)</span> that maximizes the posterior distribution. Mathematically, the MAP estimate <span class="math notranslate nohighlight">\( \hat{\theta}_{MAP} \)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\theta}_{MAP} = \arg \max_{\theta} P(\theta | \mathbf{X})
+\]</div>
+<p>Expanding using Bayes’ theorem:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\theta}_{MAP} = \arg \max_{\theta} \left[ P(\mathbf{X} | \theta) P(\theta) \right]
+\]</div>
+<p>Notice that we don’t include <span class="math notranslate nohighlight">\( P(\mathbf{X}) \)</span> in the maximization since it’s a constant with respect to <span class="math notranslate nohighlight">\( \theta \)</span>.</p>
+</section>
+<section id="id2">
+<h3>Relationship:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>MAP estimation can be viewed as a regularized version of Maximum Likelihood Estimation (MLE). While MLE only considers the likelihood <span class="math notranslate nohighlight">\( P(\mathbf{X} | \theta) \)</span>, MAP also takes into account the prior <span class="math notranslate nohighlight">\( P(\theta) \)</span>. The prior can be thought of as introducing regularization or bias based on prior beliefs about <span class="math notranslate nohighlight">\( \theta \)</span>.</p>
+<p>To summarize:</p>
+<ul class="simple">
+<li><p>MLE aims to find the parameter values that maximize the likelihood of the observed data.</p></li>
+<li><p>MAP aims to find the parameter values that maximize the posterior distribution, which considers both the likelihood of the observed data and the prior beliefs about the parameters.</p></li>
+</ul>
+<p>In cases where the prior is uniform (i.e., constant for all <span class="math notranslate nohighlight">\( \theta \)</span>), the MAP estimate reduces to the MLE.</p>
+</section>
+</section>
+<section id="map-and-ridge-regression">
+<h2>MAP and ridge regression<a class="headerlink" href="#map-and-ridge-regression" title="Permalink to this heading">#</a></h2>
+<p>Absolutely! The relationship between Maximum A Posteriori (MAP) estimation and Ridge Regression can be best understood by looking at Ridge Regression in a Bayesian context.</p>
+<section id="ridge-regression">
+<h3>1. Ridge Regression:<a class="headerlink" href="#ridge-regression" title="Permalink to this heading">#</a></h3>
+<p>Ridge Regression is a linear regression method that introduces an L2 regularization term. Given a dataset with predictors <span class="math notranslate nohighlight">\( \mathbf{X} \)</span> and responses <span class="math notranslate nohighlight">\( \mathbf{y} \)</span>, the Ridge Regression estimates <span class="math notranslate nohighlight">\( \boldsymbol{\beta} \)</span> by minimizing:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Cost}(\boldsymbol{\beta}) = ||\mathbf{y} - \mathbf{X}\boldsymbol{\beta}||^2_2 + \lambda ||\boldsymbol{\beta}||^2_2
+\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( ||\mathbf{y} - \mathbf{X}\boldsymbol{\beta}||^2_2 \)</span> is the squared error term, similar to ordinary least squares.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \lambda \)</span> is a regularization parameter.</p></li>
+<li><p><span class="math notranslate nohighlight">\( ||\boldsymbol{\beta}||^2_2 \)</span> is the L2 norm of the coefficients, which penalizes large coefficient values.</p></li>
+</ul>
+</section>
+<section id="bayesian-interpretation">
+<h3>2. Bayesian Interpretation:<a class="headerlink" href="#bayesian-interpretation" title="Permalink to this heading">#</a></h3>
+<p>Let’s interpret Ridge Regression in a Bayesian framework:</p>
+<p>Assume a linear model:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\( \boldsymbol{\epsilon} \)</span> is normally distributed noise with mean 0 and variance <span class="math notranslate nohighlight">\( \sigma^2 \)</span>.</p>
+<p>The likelihood of the data given the parameters is:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\mathbf{y} | \mathbf{X}, \boldsymbol{\beta}) \propto \exp\left(-\frac{1}{2\sigma^2}||\mathbf{y} - \mathbf{X}\boldsymbol{\beta}||^2_2\right)
+\]</div>
+<p>Now, let’s introduce a prior on <span class="math notranslate nohighlight">\( \boldsymbol{\beta} \)</span>. For Ridge Regression, this prior is Gaussian with mean 0 and variance <span class="math notranslate nohighlight">\( \tau^2 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\boldsymbol{\beta}) \propto \exp\left(-\frac{1}{2\tau^2}||\boldsymbol{\beta}||^2_2\right)
+\]</div>
+<p>The posterior distribution of <span class="math notranslate nohighlight">\( \boldsymbol{\beta} \)</span> given the data is:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\boldsymbol{\beta} | \mathbf{y}, \mathbf{X}) \propto P(\mathbf{y} | \mathbf{X}, \boldsymbol{\beta}) P(\boldsymbol{\beta})
+\]</div>
+</section>
+<section id="id3">
+<h3>Relationship:<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>Performing a MAP estimate on this posterior is equivalent to finding <span class="math notranslate nohighlight">\( \boldsymbol{\beta} \)</span> that maximizes:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\mathbf{y} | \mathbf{X}, \boldsymbol{\beta}) P(\boldsymbol{\beta})
+\]</div>
+<p>Taking the negative logarithm of this expression and discarding constants (which don’t affect the location of the maximum) results in an objective function that looks like the Ridge Regression cost function. The regularization parameter <span class="math notranslate nohighlight">\( \lambda \)</span> is related to the ratio <span class="math notranslate nohighlight">\( \frac{\sigma^2}{\tau^2} \)</span>.</p>
+</section>
+<section id="summary">
+<h3>Summary:<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h3>
+<p>Ridge Regression can be viewed as a MAP estimation where:</p>
+<ul class="simple">
+<li><p>The likelihood of the data is Gaussian with mean <span class="math notranslate nohighlight">\( \mathbf{X}\boldsymbol{\beta} \)</span> and variance <span class="math notranslate nohighlight">\( \sigma^2 \)</span>.</p></li>
+<li><p>The prior on the regression coefficients <span class="math notranslate nohighlight">\( \boldsymbol{\beta} \)</span> is Gaussian with mean 0 and variance <span class="math notranslate nohighlight">\( \tau^2 \)</span>.</p></li>
+</ul>
+<p>The L2 penalty in Ridge Regression corresponds to the assumption of a Gaussian prior on the regression coefficients. The strength of the regularization, <span class="math notranslate nohighlight">\( \lambda \)</span>, is tied to the relative variances of the likelihood and the prior.</p>
+<hr class="docutils" />
+<p>There are several regularization techniques and methods in statistical machine learning that have Bayesian interpretations. Let’s discuss some of the notable ones:</p>
+<ol class="arabic simple">
+<li><p><strong>Lasso Regression and Laplace Prior</strong>:</p>
+<ul class="simple">
+<li><p><strong>Lasso Regression</strong> introduces an L1 regularization term. The objective function is:</p></li>
+</ul>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+     \text{Cost}(\boldsymbol{\beta}) = ||\mathbf{y} - \mathbf{X}\boldsymbol{\beta}||^2_2 + \lambda ||\boldsymbol{\beta}||_1
+     \]</div>
+<ul class="simple">
+<li><p>From a Bayesian perspective, Lasso Regression can be interpreted as a MAP estimation with a <strong>Laplace prior</strong> on the coefficients. This prior leads to sparsity in the estimated coefficients.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>Elastic Net Regression and a Combination of Gaussian and Laplace Priors</strong>:</p>
+<ul class="simple">
+<li><p><strong>Elastic Net</strong> combines L1 and L2 regularization:</p></li>
+</ul>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+     \text{Cost}(\boldsymbol{\beta}) = ||\mathbf{y} - \mathbf{X}\boldsymbol{\beta}||^2_2 + \lambda_1 ||\boldsymbol{\beta}||_1 + \lambda_2 ||\boldsymbol{\beta}||^2_2
+     \]</div>
+<ul class="simple">
+<li><p>From a Bayesian standpoint, this can be seen as a MAP estimation with a combination of Gaussian (for L2) and Laplace (for L1) priors on the coefficients.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>Gaussian Processes and Kernel Functions</strong>:</p>
+<ul class="simple">
+<li><p>A <strong>Gaussian Process</strong> is a collection of random variables, any finite number of which have a joint Gaussian distribution. It’s a non-parametric method used for regression and classification.</p></li>
+<li><p>The choice of <strong>kernel function</strong> in a Gaussian process can be viewed as specifying a prior over functions.</p></li>
+</ul>
+</li>
+<li><p><strong>Variational Inference</strong>:</p>
+<ul class="simple">
+<li><p>This is an alternative to traditional sampling methods for approximating posterior distributions.</p></li>
+<li><p>It involves finding a simpler distribution (like a Gaussian) that is close to the true posterior. The “closeness” is measured using the Kullback-Leibler (KL) divergence.</p></li>
+<li><p>The approach can be viewed as an optimization problem where the objective is to minimize the KL divergence between the true posterior and the approximating distribution.</p></li>
+</ul>
+</li>
+<li><p><strong>Dropout in Neural Networks and Bayesian Approximation</strong>:</p>
+<ul class="simple">
+<li><p><strong>Dropout</strong> is a regularization technique for neural networks where units are randomly “dropped out” during training.</p></li>
+<li><p>From a Bayesian perspective, dropout in neural networks can be seen as a form of approximate Bayesian inference. It provides a form of model averaging, where each sub-network (with dropped-out units) can be viewed as a “sample” from the posterior distribution of networks.</p></li>
+</ul>
+</li>
+<li><p><strong>Hierarchical Models and Hyperpriors</strong>:</p>
+<ul class="simple">
+<li><p>In Bayesian statistics, hierarchical models involve placing priors on parameters, and then further placing priors on those priors, called <strong>hyperpriors</strong>.</p></li>
+<li><p>This structure captures different levels of variation in the data and can be seen in models like mixed-effects models.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="QNA.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Short Answers</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="week1.0.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">week1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mle-and-em">MLE and EM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-likelihood-estimation-mle">1. Maximum Likelihood Estimation (MLE):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-maximization-em-algorithm">2. Expectation-Maximization (EM) Algorithm:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Relationship:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-and-posterior">MAP and Posterior</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-framework">1. Bayesian Framework:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-a-posteriori-map-estimation">2. Maximum A Posteriori (MAP) Estimation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Relationship:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-and-ridge-regression">MAP and ridge regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ridge-regression">1. Ridge Regression:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-interpretation">2. Bayesian Interpretation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Relationship:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

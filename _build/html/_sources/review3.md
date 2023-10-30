@@ -80,9 +80,15 @@ $$ \theta = (X^T X)^{-1} X^T y $$
 This shows that a single step of Newton-Raphson optimization recovers the normal equation exact solution.
 ```
 
-## PCA
+## PAC
 The formula you provided breaks down the excess risk of a learned model $ f_m $ into two components: the estimation error and the approximation error. Let's dissect the formula and its components:
 
+```{image} ./images/pac6.png
+:alt: PAC
+:class: bg-primary mb-1
+:width: 800px
+:align: center
+```
 1. **Excess Risk**:
 
 $$ R[f_m] - R^* $$
@@ -116,36 +122,43 @@ The formula essentially decomposes the excess risk into these two main sources o
 - AKA achieve low generalization error with high prob. 
 - AKA we want our model to be approximately correct as much as possible where
     - approximately correct is up-bounded by the error rate ($\epsilon$) and 
-    - as much as possible is low-bounded by $delta$ 
+    - as much as possible is low-bounded by $\delta$ 
     - where both $\epsilon$ and $\delta$ are very small numbers.
+
+```{admonition} Why not $\delta = 0$ ?
+In real word scenario, we don't know the data distribution. Hence we need a general framework to set the indications.
+```
 **Parameters**:
+
 $\epsilon$ gives an upper bound on the error in accuracy with which h approximated (accuracy: $1 - \epsilon$) $\delta$ gives the probability of failure in achieving this accuracy (confidence: $1 - \delta$)
 
 ```{tip}
 In the PAC model, we specify two small parameters, $\epsilon$ and $\delta$, and require that with probability at least $1 - \delta$ a system learn a concept with error at most $\epsilon$.
 ```
 
+
+
 ```{image} ./images/pca1.png
-:alt: PCA
+:alt: PAC
 :class: bg-primary mb-1
 :width: 800px
 :align: center
 ```
 ```{image} ./images/pca2.png
-:alt: PCA
+:alt: PAC
 :class: bg-primary mb-1
 :width: 800px
 :align: center
 ```
 ```{image} ./images/pca3.png
-:alt: PCA
+:alt: PAC
 :class: bg-primary mb-1
 :width: 800px
 :align: center
 ```
 
 ```{image} ./images/pca4.png
-:alt: PCA
+:alt: PAC
 :class: bg-primary mb-1
 :width: 800px
 :align: center
@@ -157,7 +170,7 @@ $$
 m > \frac{4}{\epsilon}ln\frac{4}{\delta}
 $$
 ```{image} ./images/pca5.png
-:alt: PCA
+:alt: PAC
 :class: bg-primary mb-1
 :width: 800px
 :align: center
@@ -411,12 +424,16 @@ The mathematical justification of why the eigenvectors of the covariance matrix 
 Given:
 - A data matrix $ X $ of size $ n \times m $ where $ n $ is the number of observations and $ m $ is the number of features. The data is mean-centered (i.e., the mean of each feature is zero).
 - The covariance matrix $ C $ is given by: 
-\[ C = \frac{1}{n-1} X^T X \]
+
+$$ C = \frac{1}{n-1} X^T X 
+$$
 
 We want to find the direction $ w $ (a unit vector) that maximizes the variance of the projected data.
 
 The variance $ V $ of the data projected onto $ w $ is given by:
-\[ V = w^T C w \]
+
+$$ V = w^T C w 
+$$
 
 Under the constraint that $ w $ is a unit vector, the above expression is maximized when $ w $ is the eigenvector of $ C $ corresponding to its largest eigenvalue.
 
@@ -425,11 +442,17 @@ Under the constraint that $ w $ is a unit vector, the above expression is maximi
 To maximize $ V $ under the constraint $ ||w|| = 1 $ (where $ ||\cdot|| $ denotes the Euclidean norm), we can use the method of Lagrange multipliers. 
 
 Consider the Lagrangian:
-\[ L(w, \lambda) = w^T C w - \lambda (w^T w - 1) \]
+
+$$ L(w, \lambda) = w^T C w - \lambda (w^T w - 1) 
+$$
 
 Taking the gradient with respect to $ w $ and setting it to zero, we get:
-\[ \nabla_w L = 2Cw - 2\lambda w = 0 \]
-\[ \Rightarrow Cw = \lambda w \]
+
+$$ \nabla_w L = 2Cw - 2\lambda w = 0 
+$$
+
+$$ \Rightarrow Cw = \lambda w 
+$$
 
 This is the eigenvalue equation! It says that $ w $ is an eigenvector of $ C $ and $ \lambda $ is the corresponding eigenvalue.
 
