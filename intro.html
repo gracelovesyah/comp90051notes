@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -160,83 +162,88 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comparisons.html">Final Review Notes</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week1.0.html">week1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="shortanswer.html">Short Answer Questions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="QNA.html">Short Answers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="emmle.html">Relationship</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week1.0.html">week1</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week1.1.html">Lecture 1.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week1.2.html">Lecture 2.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week1.3.html">Additional notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="worksheet2note.html">worksheet2note</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week2.0.html">week2</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week2.0.html">week2</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week2.1.html">Lecture 3.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week2.2.html">Lecture 4.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week2.3.html">Additional notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="worksheet3note.html">worksheet3note</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week3.0.html">week3</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week3.0.html">week3</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week3.1.html">Lecture 5. Regularization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week3.2.html">Lecture 6. PAC Learning Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week3.3.html">Additional notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="worksheet4note.html">worksheet4note</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week4.0.html">week4</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week4.0.html">week4</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week4.1.html">Lecture 7. VC Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week4.2.html">Lecture 8. Support Vector Machines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week4.3.html">Additional notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="worksheet5note.html">worksheet5note</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week5.0.html">week5</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week5.0.html">week5</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week5.1.html">Lecture 9. Kernel Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week5.2.html">Lecture 10. The Perceptron</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week5.3.html">Additional notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="worksheet6note.html">worksheet6note</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week6.0.html">week6</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week6.1.html">Lecture 11. Neural Network Fundamentals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week6.2.html">Lecture 12.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week6.3.html">Additional notes</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week7.0.html">week7</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week7.0.html">week7</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week7.1.html">Lecture 13. Convolutional Neural Networks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14. RNN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week7.3.html">Additional Resource</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week8.0.html">week8</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week8.1.html">Lecture 16 Graph Convolution Networks (Deep Learning After You Drop The Camera)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week8.2.html">Lecture 16. Learning with expert advice</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week9.0.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week9.0.html">week9</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week9.1.html">Stochastic Multi-Armed Bandits (MABs)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week9.2.html">Bayesian regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="worksheet10note.html">Workshop 10: Multi-armed bandits notes</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week10.0.html">week10</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week10.0.html">week10</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week10.1.html">Bayesian classification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week10.2.html">PGM Representation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week10.3.html">Additional Notes -  More on Bayesian</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week11.0.html">week11</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week11.0.html">week11</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week11.1.html">U-PGM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week11.2.html">SVM assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week11.3.html">Lecture 22. Inference on PGMs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="asm1feedback.html">ASM2 feedback</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="week12.0.html">week12</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week12.0.html">week12</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week12.1.html">Lecture 22. Inference on PGMs Cont. &amp; Lecture 23. Gaussian Mixture Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week12.2.html">Lecture 24. Subject Review and Exam Info</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="review.html">Review Notes</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="review.html">Review Notes</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="review0.html">Review 0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="review1.html">Review 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="review2.html">Review 2</a></li>
@@ -415,7 +422,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -431,6 +440,20 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-theory">1. <strong>Machine Learning Theory</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support-vector-machines-svm">2. <strong>Support Vector Machines (SVM)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning">3. <strong>Deep Learning</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-and-gradient-descent">4. <strong>Optimization and Gradient Descent</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilistic-models-and-expectation-maximization">5. <strong>Probabilistic Models and Expectation Maximization</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-machine-learning-techniques">6. <strong>Other Machine Learning Techniques</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions-and-concepts">7. <strong>Definitions and Concepts</strong></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -451,6 +474,8 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comparisons.html">Final Review Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shortanswer.html">Short Answer Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emmle.html">Relationship</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week1.0.html">week1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week2.0.html">week2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week3.0.html">week3</a></li>
@@ -466,6 +491,102 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="review.html">Review Notes</a></li>
 </ul>
 </div>
+<hr class="docutils" />
+<section id="machine-learning-theory">
+<h2>1. <strong>Machine Learning Theory</strong><a class="headerlink" href="#machine-learning-theory" title="Permalink to this heading">#</a></h2>
+<p><em>Pro Tip: Deepen your understanding of the fundamental concepts and theories to provide a solid foundation for your machine learning journey.</em></p>
+<p><strong>Questions:</strong></p>
+<ul class="simple">
+<li><p>Why are maximum likelihood estimation, max a posteriori, and empirical risk minimization all instances of extremum estimators?</p></li>
+<li><p>Why was there a third irreducible error term in the bias-variance decomposition for supervised regression but not in parameter estimation?</p></li>
+<li><p>How do the frequentist and Bayesian approaches differ in their modeling of unknown parameters?</p></li>
+<li><p>Why might VC-dimension based PAC learning theory give impractical risk bounds for deep neural networks?</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="support-vector-machines-svm">
+<h2>2. <strong>Support Vector Machines (SVM)</strong><a class="headerlink" href="#support-vector-machines-svm" title="Permalink to this heading">#</a></h2>
+<p><em>Pro Tip: Understanding the intricacies of SVM helps in harnessing its power for classification and regression problems.</em></p>
+<p><strong>Questions:</strong></p>
+<ul class="simple">
+<li><p>Explain a benefit of using the kernel trick with a polynomial kernel of degree <span class="math notranslate nohighlight">\( p = 12 \)</span> in SVM vs explicit basis expansion.</p></li>
+<li><p>How are support vectors characterized by dual variables <span class="math notranslate nohighlight">\( \lambda_i \)</span> in the soft-margin SVM?</p></li>
+<li><p>How is the objective function for soft-margin SVM a relaxation of the hard-margin SVM objective?</p></li>
+<li><p>Explain how support vectors can have a margin of 1 from the decision boundary but be further than 1 unit away in Euclidean space.</p></li>
+<li><p>Strategies to change the hyperparameters of the soft-margin SVM with a RBF kernel for better performance?</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="deep-learning">
+<h2>3. <strong>Deep Learning</strong><a class="headerlink" href="#deep-learning" title="Permalink to this heading">#</a></h2>
+<p><em>Pro Tip: Deep learning has revolutionized many domains. Staying updated with its nuances is essential for state-of-the-art results.</em></p>
+<p><strong>Questions:</strong></p>
+<ul class="simple">
+<li><p>In what respect is a recurrent neural network deep?</p></li>
+<li><p>How are artificial neural networks a form of non-linear basis function in learning a linear model?</p></li>
+<li><p>Can training a deep neural network with tanh activation using backpropagation lead to the vanishing gradient problem? Why?</p></li>
+<li><p>Another use of padding besides preserving spatial dimensions in convolutional layers?</p></li>
+<li><p>Key benefit of RNNs over CNNs for sequence inputs?</p></li>
+<li><p>How can Attention be used to process dynamic sized inputs in neural models?</p></li>
+<li><p>Why use backpropagation through time for RNNs?</p></li>
+<li><p>How are RNNs different from CNNs when handling sequential data?</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="optimization-and-gradient-descent">
+<h2>4. <strong>Optimization and Gradient Descent</strong><a class="headerlink" href="#optimization-and-gradient-descent" title="Permalink to this heading">#</a></h2>
+<p><em>Pro Tip: Effective optimization techniques are at the heart of training machine learning models.</em></p>
+<p><strong>Questions:</strong></p>
+<ul class="simple">
+<li><p>Describe a problem with gradient descent during training and one approach to mitigate it.</p></li>
+<li><p>How does the dynamic learning rate in Adagrad operate and its importance?</p></li>
+<li><p>How does the value of the learning rate, <span class="math notranslate nohighlight">\( \eta \)</span> in SGD affect the training progress?</p></li>
+<li><p>How is the dynamic learning rate in Adagrad different from that in RMSProp?</p></li>
+<li><p>Main drawback of AdaGrad compared to RMSProp?</p></li>
+<li><p>How can momentum in an optimizer help avoid local optima or saddle points?</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="probabilistic-models-and-expectation-maximization">
+<h2>5. <strong>Probabilistic Models and Expectation Maximization</strong><a class="headerlink" href="#probabilistic-models-and-expectation-maximization" title="Permalink to this heading">#</a></h2>
+<p><em>Pro Tip: Probabilistic models provide a principled way to handle uncertainty in data.</em></p>
+<p><strong>Questions:</strong></p>
+<ul class="simple">
+<li><p>How do the frequentist and Bayesian approaches differ in their modeling of unknown parameters?</p></li>
+<li><p>How can the posterior variance vary for different test points in Bayesian linear regression?</p></li>
+<li><p>Why use coordinate ascent in the Expectation Maximization algorithm despite the preference for gradient descent?</p></li>
+<li><p>Objective function optimized during GMM training?</p></li>
+<li><p>How does the expectation maximization (EM) algorithm relate to the MLE?</p></li>
+<li><p>Benefit of using the Gaussian mixture model (GMM) over k-means clustering.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="other-machine-learning-techniques">
+<h2>6. <strong>Other Machine Learning Techniques</strong><a class="headerlink" href="#other-machine-learning-techniques" title="Permalink to this heading">#</a></h2>
+<p><em>Pro Tip: Diverse machine learning techniques cater to different types of data and problem settings.</em></p>
+<p><strong>Questions:</strong></p>
+<ul class="simple">
+<li><p>How are generative models different from discriminative models?</p></li>
+<li><p>Why are training examples weighted within the AdaBoost algorithm?</p></li>
+<li><p>Describe where within multi-armed bandit algorithms like ε-greedy, statistical estimation is performed and how these estimates are used.</p></li>
+<li><p>How does Thompson sampling achieve exploration in multi-armed bandit learning?</p></li>
+<li><p>How to reduce memory footprint when training a GCN over a very large graph?</p></li>
+<li><p>Strategy that allows VAE to apply gradient descent through the samples of latent representation <span class="math notranslate nohighlight">\( z \)</span>?</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="definitions-and-concepts">
+<h2>7. <strong>Definitions and Concepts</strong><a class="headerlink" href="#definitions-and-concepts" title="Permalink to this heading">#</a></h2>
+<p><em>Pro Tip: Having clear definitions and understanding core concepts is foundational for any machine learning practitioner.</em></p>
+<p><strong>Questions:</strong></p>
+<ul class="simple">
+<li><p>Define the tree width of a directed graph <span class="math notranslate nohighlight">\( G \)</span> in words.</p></li>
+<li><p>Can any undirected graphical model’s joint probability be expressed as a directed one?</p></li>
+<li><p>Two benefits of max pooling.</p></li>
+<li><p>Two general strategies for proving that a learning algorithm can be kernelized.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -517,6 +638,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-theory">1. <strong>Machine Learning Theory</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support-vector-machines-svm">2. <strong>Support Vector Machines (SVM)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning">3. <strong>Deep Learning</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-and-gradient-descent">4. <strong>Optimization and Gradient Descent</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilistic-models-and-expectation-maximization">5. <strong>Probabilistic Models and Expectation Maximization</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-machine-learning-techniques">6. <strong>Other Machine Learning Techniques</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions-and-concepts">7. <strong>Definitions and Concepts</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

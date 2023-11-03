@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>week7 &#8212; My sample book</title>
+    <title>Relationship &#8212; My sample book</title>
   
   
   
@@ -61,11 +61,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'week7.0';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'emmle';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Lecture 13. Convolutional Neural Networks" href="week7.1.html" />
-    <link rel="prev" title="Additional notes" href="week6.3.html" />
+    <link rel="next" title="week1" href="week1.0.html" />
+    <link rel="prev" title="Short Answers" href="QNA.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="QNA.html">Short Answers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="emmle.html">Relationship</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Relationship</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week1.0.html">week1</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week1.1.html">Lecture 1.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week1.2.html">Lecture 2.</a></li>
@@ -207,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="week6.3.html">Additional notes</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">week7</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week7.0.html">week7</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="week7.1.html">Lecture 13. Convolutional Neural Networks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week7.2.html">Lecture 14. RNN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week7.3.html">Additional Resource</a></li>
@@ -322,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fweek7.0.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Femmle.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -352,7 +354,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/week7.0.md" target="_blank"
+      <li><a href="_sources/emmle.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -421,7 +423,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -432,11 +436,37 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>week7</h1>
+    <h1>Relationship</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mle-and-em">MLE and EM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-likelihood-estimation-mle">1. Maximum Likelihood Estimation (MLE):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-maximization-em-algorithm">2. Expectation-Maximization (EM) Algorithm:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Relationship:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-and-posterior">MAP and Posterior</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-framework">1. Bayesian Framework:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-a-posteriori-map-estimation">2. Maximum A Posteriori (MAP) Estimation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Relationship:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-and-ridge-regression">MAP and ridge regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ridge-regression">1. Ridge Regression:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-interpretation">2. Bayesian Interpretation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Relationship:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -446,71 +476,213 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="week7">
-<h1>week7<a class="headerlink" href="#week7" title="Permalink to this heading">#</a></h1>
-<p>This notes is completed with assistance of <a class="reference external" href="https://chat.openai.com/c/446f0a4a-334c-463e-8c08-b23536813867">ChatGPT</a></p>
-<p><a class="reference download internal" download="" href="_downloads/532b6adab7b603d9ae5cc006b6c00040/13.pdf"><span class="xref download myst">View Lecture 13. Convolutional Neural Networks (CNN)</span></a></p>
-<p><a class="reference download internal" download="" href="_downloads/994664f1c60a3c30740f80c3857387dc/14.pdf"><span class="xref download myst">View Lecture 14. Bayesian regression</span></a></p>
-<p><span class="xref myst">View workshop8-slides</span></p>
-<p><span class="xref myst">View workshop8</span></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="relationship">
+<h1>Relationship<a class="headerlink" href="#relationship" title="Permalink to this heading">#</a></h1>
+<section id="mle-and-em">
+<h2>MLE and EM<a class="headerlink" href="#mle-and-em" title="Permalink to this heading">#</a></h2>
+<section id="maximum-likelihood-estimation-mle">
+<h3>1. Maximum Likelihood Estimation (MLE):<a class="headerlink" href="#maximum-likelihood-estimation-mle" title="Permalink to this heading">#</a></h3>
+<p>Given a set of independent and identically distributed observations <span class="math notranslate nohighlight">\( \mathbf{X} = \{ x_1, x_2, \ldots, x_n \} \)</span> and a parameterized probability distribution <span class="math notranslate nohighlight">\( P(x | \theta) \)</span> where <span class="math notranslate nohighlight">\( \theta \)</span> represents the parameters of the distribution, the likelihood function <span class="math notranslate nohighlight">\( \mathcal{L}(\theta | \mathbf{X}) \)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}(\theta | \mathbf{X}) = \prod_{i=1}^{n} P(x_i | \theta)
+\]</div>
+<p>The MLE estimate <span class="math notranslate nohighlight">\( \hat{\theta} \)</span> maximizes this likelihood:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\theta} = \arg \max_{\theta} \mathcal{L}(\theta | \mathbf{X})
+\]</div>
+<p>In practice, it’s often more convenient to maximize the log-likelihood:</p>
+<div class="math notranslate nohighlight">
+\[
+l(\theta) = \log \mathcal{L}(\theta | \mathbf{X}) = \sum_{i=1}^{n} \log P(x_i | \theta)
+\]</div>
+</section>
+<section id="expectation-maximization-em-algorithm">
+<h3>2. Expectation-Maximization (EM) Algorithm:<a class="headerlink" href="#expectation-maximization-em-algorithm" title="Permalink to this heading">#</a></h3>
+<p>Assume we have observed data <span class="math notranslate nohighlight">\( \mathbf{X} \)</span> and missing or latent data <span class="math notranslate nohighlight">\( \mathbf{Z} \)</span>. The complete-data likelihood is given by <span class="math notranslate nohighlight">\( P(\mathbf{X}, \mathbf{Z} | \theta) \)</span>.</p>
+<p>The EM algorithm aims to maximize the marginal likelihood of the observed data <span class="math notranslate nohighlight">\( P(\mathbf{X} | \theta) \)</span>, which can be tricky due to the latent variables <span class="math notranslate nohighlight">\( \mathbf{Z} \)</span>.</p>
+<p>The EM algorithm consists of two steps:</p>
+<p><strong>E-step</strong>: Calculate the expected value of the complete-data log-likelihood with respect to the posterior distribution of the latent data given the current parameter estimate:</p>
+<div class="math notranslate nohighlight">
+\[
+Q(\theta, \theta^{(t)}) = \mathbb{E}_{\mathbf{Z} | \mathbf{X}, \theta^{(t)}}[\log P(\mathbf{X}, \mathbf{Z} | \theta)]
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\( \theta^{(t)} \)</span> is the current estimate of the parameters.</p>
+<p><strong>M-step</strong>: Maximize the function <span class="math notranslate nohighlight">\( Q \)</span> with respect to <span class="math notranslate nohighlight">\( \theta \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\theta^{(t+1)} = \arg \max_{\theta} Q(\theta, \theta^{(t)})
+\]</div>
+<p>This step involves an MLE based on the expected data from the E-step.</p>
+<p>The process iterates between these two steps until convergence.</p>
+</section>
+<section id="id1">
+<h3>Relationship:<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>The EM algorithm provides a way to simplify the maximization of the likelihood <span class="math notranslate nohighlight">\( P(\mathbf{X} | \theta) \)</span> by introducing the latent variables <span class="math notranslate nohighlight">\( \mathbf{Z} \)</span> and working with the complete-data likelihood <span class="math notranslate nohighlight">\( P(\mathbf{X}, \mathbf{Z} | \theta) \)</span>. The M-step of the EM algorithm, where the maximization occurs, is a form of MLE for the expected complete data.</p>
+<p>Certainly! Maximum A Posteriori (MAP) estimation is closely related to Bayesian statistics and involves the posterior distribution. Let’s break this down:</p>
+</section>
+</section>
+<section id="map-and-posterior">
+<h2>MAP and Posterior<a class="headerlink" href="#map-and-posterior" title="Permalink to this heading">#</a></h2>
+<section id="bayesian-framework">
+<h3>1. Bayesian Framework:<a class="headerlink" href="#bayesian-framework" title="Permalink to this heading">#</a></h3>
+<p>In Bayesian statistics, we update our beliefs about a parameter <span class="math notranslate nohighlight">\( \theta \)</span> based on observed data <span class="math notranslate nohighlight">\( \mathbf{X} \)</span> using Bayes’ theorem:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\theta | \mathbf{X}) = \frac{P(\mathbf{X} | \theta) P(\theta)}{P(\mathbf{X})}
+\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( P(\theta | \mathbf{X}) \)</span> is the <strong>posterior</strong> distribution of <span class="math notranslate nohighlight">\( \theta \)</span> given the data <span class="math notranslate nohighlight">\( \mathbf{X} \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( P(\mathbf{X} | \theta) \)</span> is the <strong>likelihood</strong> of the data given the parameter <span class="math notranslate nohighlight">\( \theta \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( P(\theta) \)</span> is the <strong>prior</strong> distribution of <span class="math notranslate nohighlight">\( \theta \)</span>, representing our beliefs about <span class="math notranslate nohighlight">\( \theta \)</span> before seeing the data.</p></li>
+<li><p><span class="math notranslate nohighlight">\( P(\mathbf{X}) \)</span> is the <strong>marginal likelihood</strong> of the data, which acts as a normalizing constant.</p></li>
+</ul>
+</section>
+<section id="maximum-a-posteriori-map-estimation">
+<h3>2. Maximum A Posteriori (MAP) Estimation:<a class="headerlink" href="#maximum-a-posteriori-map-estimation" title="Permalink to this heading">#</a></h3>
+<p>MAP estimation aims to find the value of <span class="math notranslate nohighlight">\( \theta \)</span> that maximizes the posterior distribution. Mathematically, the MAP estimate <span class="math notranslate nohighlight">\( \hat{\theta}_{MAP} \)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\theta}_{MAP} = \arg \max_{\theta} P(\theta | \mathbf{X})
+\]</div>
+<p>Expanding using Bayes’ theorem:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\theta}_{MAP} = \arg \max_{\theta} \left[ P(\mathbf{X} | \theta) P(\theta) \right]
+\]</div>
+<p>Notice that we don’t include <span class="math notranslate nohighlight">\( P(\mathbf{X}) \)</span> in the maximization since it’s a constant with respect to <span class="math notranslate nohighlight">\( \theta \)</span>.</p>
+</section>
+<section id="id2">
+<h3>Relationship:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>MAP estimation can be viewed as a regularized version of Maximum Likelihood Estimation (MLE). While MLE only considers the likelihood <span class="math notranslate nohighlight">\( P(\mathbf{X} | \theta) \)</span>, MAP also takes into account the prior <span class="math notranslate nohighlight">\( P(\theta) \)</span>. The prior can be thought of as introducing regularization or bias based on prior beliefs about <span class="math notranslate nohighlight">\( \theta \)</span>.</p>
+<p>To summarize:</p>
+<ul class="simple">
+<li><p>MLE aims to find the parameter values that maximize the likelihood of the observed data.</p></li>
+<li><p>MAP aims to find the parameter values that maximize the posterior distribution, which considers both the likelihood of the observed data and the prior beliefs about the parameters.</p></li>
+</ul>
+<p>In cases where the prior is uniform (i.e., constant for all <span class="math notranslate nohighlight">\( \theta \)</span>), the MAP estimate reduces to the MLE.</p>
+</section>
+</section>
+<section id="map-and-ridge-regression">
+<h2>MAP and ridge regression<a class="headerlink" href="#map-and-ridge-regression" title="Permalink to this heading">#</a></h2>
+<p>Absolutely! The relationship between Maximum A Posteriori (MAP) estimation and Ridge Regression can be best understood by looking at Ridge Regression in a Bayesian context.</p>
+<section id="ridge-regression">
+<h3>1. Ridge Regression:<a class="headerlink" href="#ridge-regression" title="Permalink to this heading">#</a></h3>
+<p>Ridge Regression is a linear regression method that introduces an L2 regularization term. Given a dataset with predictors <span class="math notranslate nohighlight">\( \mathbf{X} \)</span> and responses <span class="math notranslate nohighlight">\( \mathbf{y} \)</span>, the Ridge Regression estimates <span class="math notranslate nohighlight">\( \boldsymbol{\beta} \)</span> by minimizing:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Cost}(\boldsymbol{\beta}) = ||\mathbf{y} - \mathbf{X}\boldsymbol{\beta}||^2_2 + \lambda ||\boldsymbol{\beta}||^2_2
+\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( ||\mathbf{y} - \mathbf{X}\boldsymbol{\beta}||^2_2 \)</span> is the squared error term, similar to ordinary least squares.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \lambda \)</span> is a regularization parameter.</p></li>
+<li><p><span class="math notranslate nohighlight">\( ||\boldsymbol{\beta}||^2_2 \)</span> is the L2 norm of the coefficients, which penalizes large coefficient values.</p></li>
+</ul>
+</section>
+<section id="bayesian-interpretation">
+<h3>2. Bayesian Interpretation:<a class="headerlink" href="#bayesian-interpretation" title="Permalink to this heading">#</a></h3>
+<p>Let’s interpret Ridge Regression in a Bayesian framework:</p>
+<p>Assume a linear model:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\( \boldsymbol{\epsilon} \)</span> is normally distributed noise with mean 0 and variance <span class="math notranslate nohighlight">\( \sigma^2 \)</span>.</p>
+<p>The likelihood of the data given the parameters is:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\mathbf{y} | \mathbf{X}, \boldsymbol{\beta}) \propto \exp\left(-\frac{1}{2\sigma^2}||\mathbf{y} - \mathbf{X}\boldsymbol{\beta}||^2_2\right)
+\]</div>
+<p>Now, let’s introduce a prior on <span class="math notranslate nohighlight">\( \boldsymbol{\beta} \)</span>. For Ridge Regression, this prior is Gaussian with mean 0 and variance <span class="math notranslate nohighlight">\( \tau^2 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\boldsymbol{\beta}) \propto \exp\left(-\frac{1}{2\tau^2}||\boldsymbol{\beta}||^2_2\right)
+\]</div>
+<p>The posterior distribution of <span class="math notranslate nohighlight">\( \boldsymbol{\beta} \)</span> given the data is:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\boldsymbol{\beta} | \mathbf{y}, \mathbf{X}) \propto P(\mathbf{y} | \mathbf{X}, \boldsymbol{\beta}) P(\boldsymbol{\beta})
+\]</div>
+</section>
+<section id="id3">
+<h3>Relationship:<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>Performing a MAP estimate on this posterior is equivalent to finding <span class="math notranslate nohighlight">\( \boldsymbol{\beta} \)</span> that maximizes:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\mathbf{y} | \mathbf{X}, \boldsymbol{\beta}) P(\boldsymbol{\beta})
+\]</div>
+<p>Taking the negative logarithm of this expression and discarding constants (which don’t affect the location of the maximum) results in an objective function that looks like the Ridge Regression cost function. The regularization parameter <span class="math notranslate nohighlight">\( \lambda \)</span> is related to the ratio <span class="math notranslate nohighlight">\( \frac{\sigma^2}{\tau^2} \)</span>.</p>
+</section>
+<section id="summary">
+<h3>Summary:<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h3>
+<p>Ridge Regression can be viewed as a MAP estimation where:</p>
+<ul class="simple">
+<li><p>The likelihood of the data is Gaussian with mean <span class="math notranslate nohighlight">\( \mathbf{X}\boldsymbol{\beta} \)</span> and variance <span class="math notranslate nohighlight">\( \sigma^2 \)</span>.</p></li>
+<li><p>The prior on the regression coefficients <span class="math notranslate nohighlight">\( \boldsymbol{\beta} \)</span> is Gaussian with mean 0 and variance <span class="math notranslate nohighlight">\( \tau^2 \)</span>.</p></li>
+</ul>
+<p>The L2 penalty in Ridge Regression corresponds to the assumption of a Gaussian prior on the regression coefficients. The strength of the regularization, <span class="math notranslate nohighlight">\( \lambda \)</span>, is tied to the relative variances of the likelihood and the prior.</p>
 <hr class="docutils" />
-<p><strong>Convolutional Neural Networks (CNN) - Summary</strong></p>
+<p>There are several regularization techniques and methods in statistical machine learning that have Bayesian interpretations. Let’s discuss some of the notable ones:</p>
 <ol class="arabic simple">
-<li><p><strong>Overview</strong>:</p>
+<li><p><strong>Lasso Regression and Laplace Prior</strong>:</p>
 <ul class="simple">
-<li><p>CNNs are a type of deep learning model primarily used for image recognition and processing.</p></li>
-<li><p>Inspired by the human visual system.</p></li>
-</ul>
-</li>
-<li><p><strong>Architecture</strong>:</p>
-<ul class="simple">
-<li><p><strong>Input Layer</strong>: Takes raw pixel values of the image.</p></li>
-<li><p><strong>Convolutional Layer</strong>: Filters slide over the image to produce feature maps. Highlights important features.</p></li>
-<li><p><strong>ReLU Layer</strong>: Introduces non-linearity using a function like Rectified Linear Unit (ReLU). Makes the network powerful.</p></li>
-<li><p><strong>Pooling/Subsampling Layer</strong>: Reduces spatial size, reduces computation, and helps in achieving translational invariance.</p></li>
-<li><p><strong>Fully Connected (FC) Layer</strong>: Connects every neuron from the previous layer, making decisions based on learned features.</p></li>
-</ul>
-</li>
-<li><p><strong>Key Concepts</strong>:</p>
-<ul class="simple">
-<li><p><strong>Filter/Kernels</strong>: Small, learnable weight matrices which slide over the input data (like a window) to produce a feature map.</p></li>
-<li><p><strong>Stride</strong>: Number of pixels the filter moves while sliding over the image. Affects the size of the output feature map.</p></li>
-<li><p><strong>Padding</strong>: Adding layers of zeros around the image border to ensure the spatial dimensions remain the same after convolution.</p></li>
-<li><p><strong>Pooling</strong>: Down-sampling technique. Max pooling (takes maximum value) and average pooling (takes average) are popular methods.</p></li>
-</ul>
-</li>
-<li><p><strong>Advantages</strong>:</p>
-<ul class="simple">
-<li><p><strong>Parameter Sharing</strong>: Reduces the number of parameters, thus reducing computation and preventing overfitting.</p></li>
-<li><p><strong>Translational Invariance</strong>: Recognizes patterns irrespective of their position in the image.</p></li>
-<li><p><strong>Hierarchical Learning</strong>: Lower layers learn basic patterns; higher layers learn complex features.</p></li>
-</ul>
-</li>
-<li><p><strong>Applications</strong>:</p>
-<ul class="simple">
-<li><p>Image and Video Recognition</p></li>
-<li><p>Image Classification</p></li>
-<li><p>Medical Image Analysis</p></li>
-<li><p>Self-driving Cars</p></li>
-<li><p>Many others in vision-based tasks.</p></li>
-</ul>
-</li>
-<li><p><strong>Challenges</strong>:</p>
-<ul class="simple">
-<li><p>Requires a large amount of labeled data for training.</p></li>
-<li><p>Computationally intensive, especially for larger images or deeper networks.</p></li>
-</ul>
-</li>
-<li><p><strong>Optimization and Training</strong>:</p>
-<ul class="simple">
-<li><p>Often trained using backpropagation and optimizers like SGD, Adam, or RMSprop.</p></li>
-<li><p>Regularization techniques (e.g., dropout) are used to prevent overfitting.</p></li>
+<li><p><strong>Lasso Regression</strong> introduces an L1 regularization term. The objective function is:</p></li>
 </ul>
 </li>
 </ol>
-<hr class="docutils" />
-<div class="toctree-wrapper compound">
-</div>
+<div class="math notranslate nohighlight">
+\[
+     \text{Cost}(\boldsymbol{\beta}) = ||\mathbf{y} - \mathbf{X}\boldsymbol{\beta}||^2_2 + \lambda ||\boldsymbol{\beta}||_1
+     \]</div>
+<ul class="simple">
+<li><p>From a Bayesian perspective, Lasso Regression can be interpreted as a MAP estimation with a <strong>Laplace prior</strong> on the coefficients. This prior leads to sparsity in the estimated coefficients.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>Elastic Net Regression and a Combination of Gaussian and Laplace Priors</strong>:</p>
+<ul class="simple">
+<li><p><strong>Elastic Net</strong> combines L1 and L2 regularization:</p></li>
+</ul>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+     \text{Cost}(\boldsymbol{\beta}) = ||\mathbf{y} - \mathbf{X}\boldsymbol{\beta}||^2_2 + \lambda_1 ||\boldsymbol{\beta}||_1 + \lambda_2 ||\boldsymbol{\beta}||^2_2
+     \]</div>
+<ul class="simple">
+<li><p>From a Bayesian standpoint, this can be seen as a MAP estimation with a combination of Gaussian (for L2) and Laplace (for L1) priors on the coefficients.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>Gaussian Processes and Kernel Functions</strong>:</p>
+<ul class="simple">
+<li><p>A <strong>Gaussian Process</strong> is a collection of random variables, any finite number of which have a joint Gaussian distribution. It’s a non-parametric method used for regression and classification.</p></li>
+<li><p>The choice of <strong>kernel function</strong> in a Gaussian process can be viewed as specifying a prior over functions.</p></li>
+</ul>
+</li>
+<li><p><strong>Variational Inference</strong>:</p>
+<ul class="simple">
+<li><p>This is an alternative to traditional sampling methods for approximating posterior distributions.</p></li>
+<li><p>It involves finding a simpler distribution (like a Gaussian) that is close to the true posterior. The “closeness” is measured using the Kullback-Leibler (KL) divergence.</p></li>
+<li><p>The approach can be viewed as an optimization problem where the objective is to minimize the KL divergence between the true posterior and the approximating distribution.</p></li>
+</ul>
+</li>
+<li><p><strong>Dropout in Neural Networks and Bayesian Approximation</strong>:</p>
+<ul class="simple">
+<li><p><strong>Dropout</strong> is a regularization technique for neural networks where units are randomly “dropped out” during training.</p></li>
+<li><p>From a Bayesian perspective, dropout in neural networks can be seen as a form of approximate Bayesian inference. It provides a form of model averaging, where each sub-network (with dropped-out units) can be viewed as a “sample” from the posterior distribution of networks.</p></li>
+</ul>
+</li>
+<li><p><strong>Hierarchical Models and Hyperpriors</strong>:</p>
+<ul class="simple">
+<li><p>In Bayesian statistics, hierarchical models involve placing priors on parameters, and then further placing priors on those priors, called <strong>hyperpriors</strong>.</p></li>
+<li><p>This structure captures different levels of variation in the data and can be seen in models like mixed-effects models.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -545,20 +717,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="week6.3.html"
+       href="QNA.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Additional notes</p>
+        <p class="prev-next-title">Short Answers</p>
       </div>
     </a>
     <a class="right-next"
-       href="week7.1.html"
+       href="week1.0.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lecture 13. Convolutional Neural Networks</p>
+        <p class="prev-next-title">week1</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -571,6 +743,38 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mle-and-em">MLE and EM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-likelihood-estimation-mle">1. Maximum Likelihood Estimation (MLE):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-maximization-em-algorithm">2. Expectation-Maximization (EM) Algorithm:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Relationship:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-and-posterior">MAP and Posterior</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-framework">1. Bayesian Framework:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-a-posteriori-map-estimation">2. Maximum A Posteriori (MAP) Estimation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Relationship:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-and-ridge-regression">MAP and ridge regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ridge-regression">1. Ridge Regression:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-interpretation">2. Bayesian Interpretation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Relationship:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
