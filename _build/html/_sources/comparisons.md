@@ -724,7 +724,53 @@ Using the properties of kernel addition and multiplication, every term in the Ta
 Thus, the exponential of a kernel, $ \exp(K) $, is also a valid kernel.
 
 ---
+In machine learning, a kernel is a function that computes a dot product in some (potentially very high-dimensional) feature space. Formally, given a set $ X $ and a function $ k: X \times X \rightarrow \mathbb{R} $, $ k $ is called a kernel if there exists a feature map $ \phi: X \rightarrow F $ into some feature space $ F $ such that for all $ x, x' \in X $,
 
+$$
+k(x, x') = \langle \phi(x), \phi(x') \rangle
+$$
+
+where $ \langle \cdot , \cdot \rangle $ denotes the dot product in $ F $.
+
+To show that a kernel plus a constant is still a kernel, let's consider a kernel $ k $ and a constant $ c $. We want to show that the function $ k_c: X \times X \rightarrow \mathbb{R} $ defined by
+
+$$
+k_c(x, x') = k(x, x') + c
+$$
+
+is also a kernel.
+
+To prove that $ k_c $ is a kernel, we need to show that for any finite set of points $ \{x_1, x_2, ..., x_n\} \subset X $, the corresponding kernel matrix $ K_c $ is positive semi-definite. The kernel matrix $ K_c $ is defined by
+
+$$
+(K_c)_{ij} = k_c(x_i, x_j) = k(x_i, x_j) + c
+$$
+
+for $ i, j = 1, 2, ..., n $.
+
+The matrix $ K_c $ is positive semi-definite if for any vector $ a \in \mathbb{R}^n $,
+
+$$
+a^T K_c a \geq 0
+$$
+
+Now, let's check this condition for the kernel $ k_c $.
+
+$$
+a^T K_c a = \sum_{i=1}^{n}\sum_{j=1}^{n} a_i a_j (k(x_i, x_j) + c)
+$$
+
+Since $ k $ is a kernel, we know that the matrix $ K $ with entries $ K_{ij} = k(x_i, x_j) $ is positive semi-definite, hence $ a^T K a \geq 0 $. Now, let's see how the constant $ c $ affects this.
+
+$$
+a^T K_c a = a^T K a + c \sum_{i=1}^{n}\sum_{j=1}^{n} a_i a_j
+$$
+
+The term $ c \sum_{i=1}^{n}\sum_{j=1}^{n} a_i a_j $ is simply $ c $ times the square of the sum of all elements of $ a $, which is always non-negative (since $ c $ is a constant and the square of a real number is non-negative).
+
+Thus, we can conclude that $ a^T K_c a \geq 0 $, which means $ K_c $ is positive semi-definite, and therefore $ k_c $ is a kernel. This argument holds for any constant $ c $, and so adding a constant to a kernel function yields another kernel function.
+
+---
 ### general proof solutions
 To prove that a function $ k $ is a valid kernel, one generally needs to demonstrate that the kernel matrix (or Gram matrix) constructed using $ k $ is positive semi-definite (PSD) for any set of input data points. Here are the general approaches to prove this:
 
